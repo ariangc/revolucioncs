@@ -144,5 +144,10 @@ namespace Presentation
                 IngresarButton_Click(sender, e);
             }
         }
+
+        private void signInForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

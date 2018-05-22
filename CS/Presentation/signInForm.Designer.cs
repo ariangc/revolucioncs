@@ -121,6 +121,7 @@
             this.Controls.Add(this.label1);
             this.Name = "signInForm";
             this.Text = "Farmacia La Alternativa - Inicio de Sesión";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.signInForm_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
