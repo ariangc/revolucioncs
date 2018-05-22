@@ -7,13 +7,13 @@ using static Utils.Enumerators;
 
 namespace Model
 {
-    public class Requirement
+    public class Request
     {
         //atributos
         private RequirementType type;
         private string description;
 
-        public Requirement(RequirementType type, string description)
+        public Request(RequirementType type, string description)
         {
             this.type = type;
             this.description = description;

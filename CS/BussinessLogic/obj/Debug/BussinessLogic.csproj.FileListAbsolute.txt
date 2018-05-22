@@ -1,0 +1,5 @@
+C:\temp\revolucioncs\CS\BussinessLogic\bin\Debug\BussinessLogic.dll
+C:\temp\revolucioncs\CS\BussinessLogic\bin\Debug\BussinessLogic.pdb
+C:\temp\revolucioncs\CS\BussinessLogic\obj\Debug\BussinessLogic.csprojResolveAssemblyReference.cache
+C:\temp\revolucioncs\CS\BussinessLogic\obj\Debug\BussinessLogic.dll
+C:\temp\revolucioncs\CS\BussinessLogic\obj\Debug\BussinessLogic.pdb

@@ -10,3 +10,9 @@ C:\temp\proyectolp2\CS\Reports\bin\Debug\Reports.dll
 C:\temp\proyectolp2\CS\Reports\bin\Debug\Reports.pdb
 C:\temp\proyectolp2\CS\Reports\obj\Debug\Reports.dll
 C:\temp\proyectolp2\CS\Reports\obj\Debug\Reports.pdb
+C:\temp\revolucioncs\CS\Reports\bin\Debug\Reports.dll.config
+C:\temp\revolucioncs\CS\Reports\bin\Debug\Reports.dll
+C:\temp\revolucioncs\CS\Reports\bin\Debug\Reports.pdb
+C:\temp\revolucioncs\CS\Reports\obj\Debug\Reports.csprojResolveAssemblyReference.cache
+C:\temp\revolucioncs\CS\Reports\obj\Debug\Reports.dll
+C:\temp\revolucioncs\CS\Reports\obj\Debug\Reports.pdb
