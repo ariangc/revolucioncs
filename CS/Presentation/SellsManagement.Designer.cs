@@ -83,6 +83,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -109,6 +111,8 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.tabPage1.Controls.Add(this.label17);
+            this.tabPage1.Controls.Add(this.textBox8);
             this.tabPage1.Controls.Add(this.label16);
             this.tabPage1.Controls.Add(this.textBox7);
             this.tabPage1.Controls.Add(this.button6);
@@ -169,7 +173,7 @@
             // 
             this.button5.BackColor = System.Drawing.Color.Silver;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(566, 333);
+            this.button5.Location = new System.Drawing.Point(650, 337);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(114, 33);
             this.button5.TabIndex = 22;
@@ -380,7 +384,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.Silver;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(566, 403);
+            this.button1.Location = new System.Drawing.Point(650, 407);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 33);
             this.button1.TabIndex = 7;
@@ -402,7 +406,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 12F);
-            this.label2.Location = new System.Drawing.Point(152, 58);
+            this.label2.Location = new System.Drawing.Point(272, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(194, 18);
             this.label2.TabIndex = 1;
@@ -413,7 +417,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 24F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(136, 22);
+            this.label1.Location = new System.Drawing.Point(256, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(237, 34);
             this.label1.TabIndex = 0;
@@ -589,6 +593,23 @@
             this.label12.Text = "< Regresar";
             this.label12.Click += new System.EventHandler(this.label12_Click_1);
             // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(510, 414);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
+            this.textBox8.Size = new System.Drawing.Size(100, 20);
+            this.textBox8.TabIndex = 26;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(510, 395);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(65, 13);
+            this.label17.TabIndex = 27;
+            this.label17.Text = "Total Venta:";
+            // 
             // SellsManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -666,5 +687,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBox8;
     }
 }

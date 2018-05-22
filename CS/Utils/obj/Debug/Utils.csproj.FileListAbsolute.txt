@@ -14,3 +14,9 @@ C:\temp\proyectolp2\CS\Utils\bin\Debug\Utils.pdb
 C:\temp\proyectolp2\CS\Utils\obj\Debug\Utils.csprojResolveAssemblyReference.cache
 C:\temp\proyectolp2\CS\Utils\obj\Debug\Utils.dll
 C:\temp\proyectolp2\CS\Utils\obj\Debug\Utils.pdb
+C:\temp\revolucioncs\CS\Utils\bin\Debug\Utils.dll.config
+C:\temp\revolucioncs\CS\Utils\bin\Debug\Utils.dll
+C:\temp\revolucioncs\CS\Utils\bin\Debug\Utils.pdb
+C:\temp\revolucioncs\CS\Utils\obj\Debug\Utils.csprojResolveAssemblyReference.cache
+C:\temp\revolucioncs\CS\Utils\obj\Debug\Utils.dll
+C:\temp\revolucioncs\CS\Utils\obj\Debug\Utils.pdb
