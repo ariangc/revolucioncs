@@ -1,0 +1,12 @@
+C:\temp\LP2Farmacia\Reports\obj\Debug\Reports.csprojResolveAssemblyReference.cache
+C:\Users\arian\Desktop\proyectolp2\CS\Reports\bin\Debug\Reports.dll.config
+C:\Users\arian\Desktop\proyectolp2\CS\Reports\bin\Debug\Reports.dll
+C:\Users\arian\Desktop\proyectolp2\CS\Reports\bin\Debug\Reports.pdb
+C:\Users\arian\Desktop\proyectolp2\CS\Reports\obj\Debug\Reports.csproj.CoreCompileInputs.cache
+C:\Users\arian\Desktop\proyectolp2\CS\Reports\obj\Debug\Reports.dll
+C:\Users\arian\Desktop\proyectolp2\CS\Reports\obj\Debug\Reports.pdb
+C:\temp\proyectolp2\CS\Reports\bin\Debug\Reports.dll.config
+C:\temp\proyectolp2\CS\Reports\bin\Debug\Reports.dll
+C:\temp\proyectolp2\CS\Reports\bin\Debug\Reports.pdb
+C:\temp\proyectolp2\CS\Reports\obj\Debug\Reports.dll
+C:\temp\proyectolp2\CS\Reports\obj\Debug\Reports.pdb

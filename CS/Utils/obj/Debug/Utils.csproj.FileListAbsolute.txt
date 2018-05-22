@@ -1,0 +1,16 @@
+C:\temp\LP2Farmacia\Utils\obj\Debug\Utils.csprojResolveAssemblyReference.cache
+C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\interfaces graficas\LP2Farmacia\Utils\obj\Debug\Utils.csprojResolveAssemblyReference.cache
+C:\temp\farmaciacs\CS\Utils\obj\Debug\Utils.csprojResolveAssemblyReference.cache
+C:\Users\arian\Desktop\proyectolp2\CS\Utils\bin\Debug\Utils.dll.config
+C:\Users\arian\Desktop\proyectolp2\CS\Utils\bin\Debug\Utils.dll
+C:\Users\arian\Desktop\proyectolp2\CS\Utils\bin\Debug\Utils.pdb
+C:\Users\arian\Desktop\proyectolp2\CS\Utils\obj\Debug\Utils.csproj.CoreCompileInputs.cache
+C:\Users\arian\Desktop\proyectolp2\CS\Utils\obj\Debug\Utils.dll
+C:\Users\arian\Desktop\proyectolp2\CS\Utils\obj\Debug\Utils.pdb
+C:\Users\arian\Desktop\proyectolp2\CS\Utils\obj\Debug\Utils.csprojResolveAssemblyReference.cache
+C:\temp\proyectolp2\CS\Utils\bin\Debug\Utils.dll.config
+C:\temp\proyectolp2\CS\Utils\bin\Debug\Utils.dll
+C:\temp\proyectolp2\CS\Utils\bin\Debug\Utils.pdb
+C:\temp\proyectolp2\CS\Utils\obj\Debug\Utils.csprojResolveAssemblyReference.cache
+C:\temp\proyectolp2\CS\Utils\obj\Debug\Utils.dll
+C:\temp\proyectolp2\CS\Utils\obj\Debug\Utils.pdb

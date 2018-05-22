@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{65CF1A86-FFBB-4A85-B7CF-15A95376B624}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Presentation</RootNamespace>
+    <AssemblyName>Presentation</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="changePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="changePassword.Designer.cs">
+      <DependentUpon>changePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientManagement.Designer.cs">
+      <DependentUpon>ClientManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditClient.Designer.cs">
+      <DependentUpon>EditClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="first.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="first.Designer.cs">
+      <DependentUpon>first.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RequestManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RequestManagement.Designer.cs">
+      <DependentUpon>RequestManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SellsManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellsManagement.Designer.cs">
+      <DependentUpon>SellsManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserSession.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserSession.Designer.cs">
+      <DependentUpon>UserSession.cs</DependentUpon>
+    </Compile>
+    <Compile Include="signInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="signInForm.Designer.cs">
+      <DependentUpon>signInForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="changePassword.resx">
+      <DependentUpon>changePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientManagement.resx">
+      <DependentUpon>ClientManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditClient.resx">
+      <DependentUpon>EditClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="first.resx">
+      <DependentUpon>first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RequestManagement.resx">
+      <DependentUpon>RequestManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellsManagement.resx">
+      <DependentUpon>SellsManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserSession.resx">
+      <DependentUpon>UserSession.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="signInForm.resx">
+      <DependentUpon>signInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{efd999c7-9d80-4773-8535-b2275ba40bf6}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

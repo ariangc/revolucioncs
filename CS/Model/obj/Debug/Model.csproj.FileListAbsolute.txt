@@ -1,0 +1,8 @@
+C:\temp\proyectolp2\CS\Model\bin\Debug\Model.dll
+C:\temp\proyectolp2\CS\Model\bin\Debug\Model.pdb
+C:\temp\proyectolp2\CS\Model\bin\Debug\Utils.dll
+C:\temp\proyectolp2\CS\Model\bin\Debug\Utils.pdb
+C:\temp\proyectolp2\CS\Model\bin\Debug\Utils.dll.config
+C:\temp\proyectolp2\CS\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\temp\proyectolp2\CS\Model\obj\Debug\Model.dll
+C:\temp\proyectolp2\CS\Model\obj\Debug\Model.pdb
