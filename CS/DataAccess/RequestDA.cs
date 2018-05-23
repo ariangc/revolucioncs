@@ -56,7 +56,7 @@ namespace DataAccess
             cmd.CommandText = "addToBDRequirement";
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.Add("_description", MySqlDbType.String).Value = r.Description;
-            cmd.Parameters.Add("_type", MySqlDbType.String).Value = r.Description;
+            cmd.Parameters.Add("_type", MySqlDbType.String).Value = r.Type;
             cmd.Parameters.Add("_User_IdUser", MySqlDbType.Int32).Value = r.IdEmployee;
             cmd.ExecuteNonQuery();
             con.Close();

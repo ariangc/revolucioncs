@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Utils;
 
 namespace Presentation
 {
@@ -49,11 +50,11 @@ namespace Presentation
                     //se logra enviar solicitud
                     Request r = new Request();
                     r.Description = requestTextBox.Text;
-                    if (RequestRadioButton.Checked == true) r.Type2 = 0;
-                    else if (problemRadioButton.Checked == true) r.Type2 = 1;
-                    else r.Type2 = 2;
+                    if (RequestRadioButton.Checked == true) r.Type = Enumerators.RequirementType.Suggestion;
+                    else if (problemRadioButton.Checked == true) r.Type = Enumerators.RequirementType.Warning;
+                    else r.Type = Enumerators.RequirementType.Other;
+
                     r.IdEmployee = bussinessLogic.returnIdUser("12345678");
-                    Console.WriteLine("ID: " + r.IdEmployee);
                     bussinessLogic.newRequest(r);
 
                     MessageBox.Show("Solicitud enviada", "Estado de solicitud", MessageBoxButtons.OK, MessageBoxIcon.Information);

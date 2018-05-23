@@ -13,7 +13,6 @@ namespace Model
         //atributos
         public RequirementType type;
         private string description;
-        private int type2;
         private int idEmployee;
 
         public Request()
@@ -28,7 +27,6 @@ namespace Model
 
         //getters y setters
         public RequirementType Type { get => type; set => type = value; }
-        public int Type2 { get => type2; set => type2 = value; }
         public string Description { get => description; set => description = value; }
         public int IdEmployee { get => idEmployee; set => idEmployee = value; }
 
