@@ -16,7 +16,7 @@ namespace DataAccess
         public string returnPassword()
         {
 
-            return 1;
+            return "1";
         }
     }
 }
