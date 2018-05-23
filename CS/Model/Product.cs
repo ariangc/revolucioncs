@@ -77,9 +77,9 @@ namespace Model
 
         public int TotalItems { get => totalItems; set => totalItems = value; }
 
-        //Hola Sergio, probando trucaso de git
-        //Trucaso 2
-        //Hola FROZZZ, trucaso recivido
+        private int quantitySale;
+        public int QuantitySale { get => quantitySale; set => quantitySale = value; }
+        public double Subtotal { get => quantitySale * price; }
 
         //Métodos
         public void addComponent(string componentName)

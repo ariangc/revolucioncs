@@ -20,7 +20,7 @@ namespace BussinessLogic {
         }
 
         public BindingList<Product> listProductsByName(string productName) {
-            return dataAccess.listProductsByName();
+            return dataAccess.listProductsByName(productName);
         }
     }
 }

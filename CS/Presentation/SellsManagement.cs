@@ -15,10 +15,13 @@ namespace Presentation
     public partial class SellsManagement : Form
     {
         private ProductBL productBL;
+        private ClientBL clientBL;
 
         static int cliente = 0;
         static int productos = 0;
+        static double totalSale = 0.0;
 
+        private BindingList<Product> listAdded;
 
         public SellsManagement()
         {
@@ -27,14 +30,17 @@ namespace Presentation
             this.CenterToScreen();
 
             productBL = new ProductBL();
+            clientBL = new ClientBL();
 
             DateTime thisDay = DateTime.Today;
             fechaTextBox.Text = thisDay.ToString("d");
 
-            dataGridView1.AutoGenerateColumns = false;
+            dataGridView3.AutoGenerateColumns = false;
             dataGridView2.AutoGenerateColumns = false;
 
+            listAdded = new BindingList<Product>();
             dataGridView2.DataSource = productBL.listProducts();
+            dataGridView3.DataSource = listAdded;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -95,7 +101,16 @@ namespace Presentation
         }
 
         private void button1_Click_1(object sender, EventArgs e) {
-            MessageBox.Show("La venta ha sido registrada", "Registro de venta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            String dniClient = textBox1.Text;
+            if (dniClient.Equals("")) {
+                MessageBox.Show("Por favor, inserte el DNI del cliente", "Falta DNI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (dniClient.Length != 8 || !dniClient.All(char.IsDigit)) {
+                MessageBox.Show("Por favor, inserte un DNI valido", "DNI invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else {
+                int idClient = clientBL.searchClient(dniClient);
+            }
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e) {
@@ -140,12 +155,8 @@ namespace Presentation
         private void button4_Click(object sender, EventArgs e) {
             String productName = textBox2.Text;
             String symptoms = textBox6.Text;
-            if (productName.Equals("") && symptoms.Equals("")) {
-                MessageBox.Show("Por favor ingrese el nombre del producto o el sintoma a buscar", "Error de busqueda", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (!productName.Equals("")) {
-                dataGridView2.DataSource = productBL.listProductsByName(productName);
-            }
+
+            dataGridView2.DataSource = productBL.listProductsByName(productName);
         }
 
         private void textBox2_TextChanged_2(object sender, EventArgs e) {
@@ -154,6 +165,42 @@ namespace Presentation
 
         private void textBox6_TextChanged(object sender, EventArgs e) {
 
+        }
+
+        private void button6_Click(object sender, EventArgs e) {
+            String quantity = textBox7.Text;
+            if (quantity.Equals("")) {
+                MessageBox.Show("Por favor ingrese la cantidad a vender", "Falta cantidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else {
+                int quantitySale;
+                if (Int32.TryParse(quantity, out quantitySale)) {
+                    Product p = (Product)dataGridView2.CurrentRow.DataBoundItem;
+                    p.QuantitySale = quantitySale;
+
+                    listAdded.Add(p);
+                    dataGridView3.DataSource = listAdded;
+                    totalSale += p.Subtotal;
+                    textBox8.Text = totalSale.ToString("0.00");
+                    MessageBox.Show("Producto " + p.Name + " agregado " + listAdded.Count, "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else {
+                    MessageBox.Show("Ingrese una cantidad numerica", "Cantidad no numerica", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e) {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e) {
+            int positionDelete = dataGridView3.CurrentRow.Index;
+            totalSale -= listAdded[positionDelete].Subtotal;
+            textBox8.Text = totalSale.ToString("0.00");
+
+            listAdded.RemoveAt(positionDelete);
+            dataGridView3.DataSource = listAdded;
         }
     }
 }
