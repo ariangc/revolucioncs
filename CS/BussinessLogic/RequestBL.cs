@@ -31,5 +31,10 @@ namespace BussinessLogic
         {
             dataAccess.newRequest(r);
         }
+
+        public void deleteRequest(Request r)
+        {
+            dataAccess.deleteRequest(r);
+        }
     }
 }

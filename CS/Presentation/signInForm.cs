@@ -87,6 +87,7 @@ namespace Presentation
             {
                 //success login
                 Constants.CurrentUserText = "Usuario: " + employeeBussinessLogic.getEmployeeName(us);
+                Constants.CurrentUserName = us;
                 UserSession session = new UserSession();
 
                 this.Hide();
