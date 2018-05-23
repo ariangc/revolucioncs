@@ -14,7 +14,7 @@ namespace Presentation
 {
     public partial class RequestManagement : Form
     {
-        //private RequestBL bussinessLogic;
+        private RequestBL bussinessLogic;
         public RequestManagement()
         {
             InitializeComponent();
@@ -52,8 +52,9 @@ namespace Presentation
                     if (RequestRadioButton.Checked == true) r.Type2 = 0;
                     else if (problemRadioButton.Checked == true) r.Type2 = 1;
                     else r.Type2 = 2;
-                    r.Username = 12345678;
-         //           bussinessLogic.newRequest(r);
+                    r.IdEmployee = bussinessLogic.returnIdUser("12345678");
+                    Console.WriteLine("ID: " + r.IdEmployee);
+                    bussinessLogic.newRequest(r);
 
                     MessageBox.Show("Solicitud enviada", "Estado de solicitud", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     requestTextBox.Text = "";
@@ -70,6 +71,11 @@ namespace Presentation
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
         {
 
         }
