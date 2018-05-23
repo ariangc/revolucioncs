@@ -34,3 +34,11 @@ C:\Users\arian\Desktop\revolucioncs\CS\Model\obj\Debug\Model.csproj.CoreCompileI
 C:\Users\arian\Desktop\revolucioncs\CS\Model\obj\Debug\Model.csproj.CopyComplete
 C:\Users\arian\Desktop\revolucioncs\CS\Model\obj\Debug\Model.dll
 C:\Users\arian\Desktop\revolucioncs\CS\Model\obj\Debug\Model.pdb
+C:\Users\alulab14.INF.000\Desktop\revolucioncs\CS\Model\bin\Debug\Model.dll
+C:\Users\alulab14.INF.000\Desktop\revolucioncs\CS\Model\bin\Debug\Model.pdb
+C:\Users\alulab14.INF.000\Desktop\revolucioncs\CS\Model\bin\Debug\Utils.dll
+C:\Users\alulab14.INF.000\Desktop\revolucioncs\CS\Model\bin\Debug\Utils.pdb
+C:\Users\alulab14.INF.000\Desktop\revolucioncs\CS\Model\bin\Debug\Utils.dll.config
+C:\Users\alulab14.INF.000\Desktop\revolucioncs\CS\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\alulab14.INF.000\Desktop\revolucioncs\CS\Model\obj\Debug\Model.dll
+C:\Users\alulab14.INF.000\Desktop\revolucioncs\CS\Model\obj\Debug\Model.pdb

@@ -22,7 +22,7 @@ namespace Presentation
             this.CenterToScreen();
 
             //añadir las encuestas al datagridview
-         //   bussinessLogic = new RequestBL();
+            bussinessLogic = new RequestBL();
             //dataGridView1.AutoGenerateColumns = false;
             //dataGridView1.DataSource = bussinessLogic.listRequests();
         }
@@ -54,7 +54,7 @@ namespace Presentation
                     else if (problemRadioButton.Checked == true) r.Type = Enumerators.RequirementType.Warning;
                     else r.Type = Enumerators.RequirementType.Other;
 
-                    r.IdEmployee = bussinessLogic.returnIdUser("12345678");
+                   r.IdEmployee = bussinessLogic.returnIdUser("12345678");
                     bussinessLogic.newRequest(r);
 
                     MessageBox.Show("Solicitud enviada", "Estado de solicitud", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -34,3 +34,9 @@ C:\Users\arian\Desktop\revolucioncs\CS\Utils\obj\Debug\Utils.csprojResolveAssemb
 C:\Users\arian\Desktop\revolucioncs\CS\Utils\obj\Debug\Utils.csproj.CoreCompileInputs.cache
 C:\Users\arian\Desktop\revolucioncs\CS\Utils\obj\Debug\Utils.dll
 C:\Users\arian\Desktop\revolucioncs\CS\Utils\obj\Debug\Utils.pdb
+C:\Users\alulab14.INF.000\Desktop\revolucioncs\CS\Utils\bin\Debug\Utils.dll.config
+C:\Users\alulab14.INF.000\Desktop\revolucioncs\CS\Utils\bin\Debug\Utils.dll
+C:\Users\alulab14.INF.000\Desktop\revolucioncs\CS\Utils\bin\Debug\Utils.pdb
+C:\Users\alulab14.INF.000\Desktop\revolucioncs\CS\Utils\obj\Debug\Utils.csprojResolveAssemblyReference.cache
+C:\Users\alulab14.INF.000\Desktop\revolucioncs\CS\Utils\obj\Debug\Utils.dll
+C:\Users\alulab14.INF.000\Desktop\revolucioncs\CS\Utils\obj\Debug\Utils.pdb
