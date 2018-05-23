@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Utils;
 using DataAccess;
 using Model;
+using System.ComponentModel;
 
 namespace BussinessLogic {
     public class NaturalClientBL {
@@ -22,6 +23,16 @@ namespace BussinessLogic {
         public void addNaturalClient(NaturalClient nc)
         {
             dataAccess.addNaturalClient(nc);
+        }
+
+        public void updateNaturalClient(NaturalClient nc)
+        {
+            dataAccess.updateNaturalClient(nc);
+        }
+
+        public BindingList<NaturalClient> listNaturalClients()
+        {
+            return dataAccess.listNaturalClients();
         }
         
     }

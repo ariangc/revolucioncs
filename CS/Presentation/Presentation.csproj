@@ -69,6 +69,12 @@
     <Compile Include="EditClient.Designer.cs">
       <DependentUpon>EditClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditLegalClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditLegalClient.Designer.cs">
+      <DependentUpon>EditLegalClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="first.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,8 +122,14 @@
     <EmbeddedResource Include="EditClient.resx">
       <DependentUpon>EditClient.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditLegalClient.resx">
+      <DependentUpon>EditLegalClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="first.resx">
       <DependentUpon>first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LegalClientManagement.resx">
+      <DependentUpon>LegalClientManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RequestManagement.resx">
       <DependentUpon>RequestManagement.cs</DependentUpon>

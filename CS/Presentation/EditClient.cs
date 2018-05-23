@@ -7,14 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BussinessLogic;
+using Model;
 
 namespace Presentation
 {
     public partial class EditClient : Form
     {
-        public EditClient()
+        private NaturalClientBL naturalClientBL;
+        private NaturalClient selectedClient;
+        public EditClient(NaturalClient nc)
         {
             InitializeComponent();
+            naturalClientBL = new NaturalClientBL();
+            selectedClient = nc;
+            textBox2.Text = nc.Name;
+            textBox3.Text = nc.Surname;
+            textBox4.Text = nc.Address;
+            textBox4.Text = nc.PhoneNumber;
+            textBox5.Text = nc.Email;
+            textBox2.Enabled = false;
+            textBox3.Enabled = false;
+            textBox4.Enabled = false;
+            textBox5.Enabled = false;
             this.CenterToScreen();
         }
 
@@ -65,7 +80,14 @@ namespace Presentation
                 DialogResult result;
                 result = MessageBox.Show("¿Esta Seguro de que desea cambiar el/los campo(s)?", "Cambio de cmapos de cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == System.Windows.Forms.DialogResult.Yes)
-                    this.Close();
+                {
+                    if (namesCheckBox.Checked) selectedClient.Name = textBox2.Text;
+                    if (surnameCheckBox.Checked) selectedClient.Surname = textBox3.Text;
+                    if (districtCheckBox.Checked) selectedClient.Address = textBox4.Text;
+                    if (phoneCheckBox.Checked) selectedClient.PhoneNumber = textBox5.Text;
+                    if (emailCheckBox.Checked) selectedClient.Email = textBox6.Text;
+                    naturalClientBL.updateNaturalClient(selectedClient);
+                }
             }
             else MessageBox.Show("Debe ingresar algún campo", "Cambio de cmapos de cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -74,6 +96,11 @@ namespace Presentation
         private void label3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

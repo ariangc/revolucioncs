@@ -50,6 +50,7 @@ namespace Presentation
             */
 
             dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.DataSource = naturalClientBL.listNaturalClients();
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)
@@ -354,7 +355,8 @@ namespace Presentation
 
         private void modifyClientButton_Click(object sender, EventArgs e)
         {
-            EditClient ec = new EditClient();
+            NaturalClient nc = (NaturalClient)dataGridView1.CurrentRow.DataBoundItem;
+            EditClient ec = new EditClient(nc);
             ec.ShowDialog();
         }
 

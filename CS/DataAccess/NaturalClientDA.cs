@@ -68,6 +68,54 @@ namespace DataAccess {
             cmd.Parameters.Add("_dni", MySqlDbType.String).Value = nc.Dni;
 
             cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        public void updateNaturalClient(NaturalClient nc)
+        {
+            MySqlConnection con = new MySqlConnection(Constants.connectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "updateToBDNaturalClient";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("_address", MySqlDbType.String).Value = nc.Address;
+            cmd.Parameters.Add("_phoneNumber", MySqlDbType.String).Value = nc.PhoneNumber;
+            cmd.Parameters.Add("_email", MySqlDbType.String).Value = nc.Email;
+            cmd.Parameters.Add("_name", MySqlDbType.String).Value = nc.Name;
+            cmd.Parameters.Add("_surname", MySqlDbType.String).Value = nc.Surname;
+            cmd.Parameters.Add("_dni", MySqlDbType.String).Value = nc.Dni;
+
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        public BindingList<NaturalClient> listNaturalClients()
+        {
+            BindingList<NaturalClient> list = new BindingList<NaturalClient>();
+            MySqlConnection con = new MySqlConnection(Constants.connectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "listNaturalClients";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                NaturalClient nc = new NaturalClient();
+                nc.Dni = reader.GetString("Dni");
+                nc.Name = reader.GetString("Name");
+                nc.Surname = reader.GetString("Surname");
+                nc.Address = reader.GetString("Address");
+                nc.PhoneNumber = reader.GetString("PhoneNumber");
+                nc.Email = reader.GetString("Email");
+                list.Add(nc);
+            }
+            con.Close();
+            return list;
         }
     }
 }
