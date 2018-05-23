@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Utils;
 using static Utils.Enumerators;
 
 namespace Model
@@ -13,25 +14,17 @@ namespace Model
         private RequirementType type;
         private string description;
 
+        public Request()
+        {
+
+        }
         public Request(RequirementType type, string description)
         {
-            this.type = type;
+            this.Type = type;
             this.description = description;
         }
 
         //getters y setters
-        private RequirementType Type
-        {
-            get
-            {
-                return type;
-            }
-
-            set
-            {
-                type = value;
-            }
-        }
 
         public string Description
         {
@@ -46,7 +39,9 @@ namespace Model
             }
         }
 
+        public RequirementType Type { get => type; set => type = value; }
+
         //Métodos
-       
+
     }
 }
