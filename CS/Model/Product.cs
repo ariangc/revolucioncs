@@ -16,6 +16,9 @@ namespace Model
         private bool needsPrescription;
         private double utility;
         private int points;
+        private int totalItems;
+
+        public Product() { }
 
         //constructor con lista de componentes
         public Product(int id, string name, List<string> components, double price, bool needsPrescription, double utility, int points)
@@ -27,6 +30,7 @@ namespace Model
             this.needsPrescription = needsPrescription;
             this.utility = utility;
             this.points = points;
+            this.totalItems = 0;
         }
         //constructor sin lista de componentes
         public Product(int id, string name, double price, bool needsPrescription, double utility, int points)
@@ -70,6 +74,8 @@ namespace Model
             get { return this.points; }
             set { this.points = value; }
         }
+
+        public int TotalItems { get => totalItems; set => totalItems = value; }
 
         //Métodos
         public void addComponent(string componentName)
