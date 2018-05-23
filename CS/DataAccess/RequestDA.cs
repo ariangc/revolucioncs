@@ -35,6 +35,18 @@ namespace DataAccess
             con.Close();
             return list;
         }
+
+        public int returnIdUser(string us)
+        {
+            MySqlConnection con = new MySqlConnection(Constants.connectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "SELECT Person_IdPerson FROM Employee WHERE Dni = " + us;
+            MySqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            return reader.GetInt32("Person_IdPerson");
+        }
         public void newRequest(Request r)
         {
             MySqlConnection con = new MySqlConnection(Constants.connectionString);
@@ -45,7 +57,7 @@ namespace DataAccess
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.Add("_description", MySqlDbType.String).Value = r.Description;
             cmd.Parameters.Add("_type", MySqlDbType.String).Value = r.Description;
-            cmd.Parameters.Add("_User_IdUser", MySqlDbType.Int32).Value = r.Username;
+            cmd.Parameters.Add("_User_IdUser", MySqlDbType.Int32).Value = r.IdEmployee;
             cmd.ExecuteNonQuery();
             con.Close();
         }

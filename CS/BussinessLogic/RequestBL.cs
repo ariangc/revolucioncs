@@ -22,6 +22,11 @@ namespace BussinessLogic
             return dataAccess.listRequests();
         }
 
+        public int returnIdUser(string us)
+        {
+            return dataAccess.returnIdUser(us);
+        }
+
         public void newRequest(Request r)
         {
             dataAccess.newRequest(r);

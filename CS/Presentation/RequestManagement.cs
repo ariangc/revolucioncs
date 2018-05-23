@@ -52,7 +52,8 @@ namespace Presentation
                     if (RequestRadioButton.Checked == true) r.Type2 = 0;
                     else if (problemRadioButton.Checked == true) r.Type2 = 1;
                     else r.Type2 = 2;
-                    r.Username = 12345678;
+                    r.IdEmployee = bussinessLogic.returnIdUser("12345678");
+                    Console.WriteLine("ID: " + r.IdEmployee);
                     bussinessLogic.newRequest(r);
 
                     MessageBox.Show("Solicitud enviada", "Estado de solicitud", MessageBoxButtons.OK, MessageBoxIcon.Information);
