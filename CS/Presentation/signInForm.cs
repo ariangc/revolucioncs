@@ -46,8 +46,6 @@ namespace Presentation
         private EmployeeBL employeeBussinessLogic;
         public signInForm()
         {
-            Username = "12345678";
-            Password = "sergio";
             InitializeComponent();
             this.CenterToScreen();
             employeeBussinessLogic = new EmployeeBL();
@@ -55,8 +53,6 @@ namespace Presentation
 
         public signInForm(string newPassword)
         {
-            Username = "12345678";
-            Password = newPassword;
             InitializeComponent();
             this.CenterToScreen();
             this.TopMost = true;

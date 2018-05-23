@@ -11,35 +11,26 @@ namespace Model
     public class Request
     {
         //atributos
-        private RequirementType type;
+        public RequirementType type;
         private string description;
+        private int type2;
+        private int username;
 
         public Request()
         {
-
+            this.description = null;
         }
         public Request(RequirementType type, string description)
         {
             this.Type = type;
-            this.description = description;
+            this.Description = description;
         }
 
         //getters y setters
-
-        public string Description
-        {
-            get
-            {
-                return description;
-            }
-
-            set
-            {
-                description = value;
-            }
-        }
-
         public RequirementType Type { get => type; set => type = value; }
+        public int Type2 { get => type2; set => type2 = value; }
+        public string Description { get => description; set => description = value; }
+        public int Username { get => username; set => username = value; }
 
         //Métodos
 
