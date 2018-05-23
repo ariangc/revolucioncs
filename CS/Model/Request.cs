@@ -14,6 +14,7 @@ namespace Model
         public RequirementType type;
         private string description;
         private int idEmployee;
+        private int index;
 
         public Request()
         {
@@ -29,6 +30,7 @@ namespace Model
         public RequirementType Type { get => type; set => type = value; }
         public string Description { get => description; set => description = value; }
         public int IdEmployee { get => idEmployee; set => idEmployee = value; }
+        public int Index { get => index; set => index = value; }
 
         //Métodos
 

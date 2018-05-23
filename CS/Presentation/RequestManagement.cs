@@ -23,8 +23,8 @@ namespace Presentation
 
             //añadir las encuestas al datagridview
             bussinessLogic = new RequestBL();
-            //dataGridView1.AutoGenerateColumns = false;
-            //dataGridView1.DataSource = bussinessLogic.listRequests();
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.DataSource = bussinessLogic.listRequests();
         }
 
         private void sendButton_Click(object sender, EventArgs e)
@@ -54,7 +54,7 @@ namespace Presentation
                     else if (problemRadioButton.Checked == true) r.Type = Enumerators.RequirementType.Warning;
                     else r.Type = Enumerators.RequirementType.Other;
 
-                   r.IdEmployee = bussinessLogic.returnIdUser("12345678");
+                    r.IdEmployee = bussinessLogic.returnIdUser(Constants.CurrentUserName);
                     bussinessLogic.newRequest(r);
 
                     MessageBox.Show("Solicitud enviada", "Estado de solicitud", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -77,6 +77,18 @@ namespace Presentation
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Request r = (Request)dataGridView1.CurrentRow.DataBoundItem;
+            bussinessLogic.deleteRequest(r);
+            dataGridView1.DataSource = bussinessLogic.listRequests();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
