@@ -27,3 +27,14 @@ C:\Users\arian\Desktop\revolucioncs\CS\DataAccess\obj\Debug\DataAccess.csproj.Co
 C:\Users\arian\Desktop\revolucioncs\CS\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
 C:\Users\arian\Desktop\revolucioncs\CS\DataAccess\obj\Debug\DataAccess.dll
 C:\Users\arian\Desktop\revolucioncs\CS\DataAccess\obj\Debug\DataAccess.pdb
+C:\temp\revolucioncs\CS\DataAccess\bin\Debug\Model.dll
+C:\temp\revolucioncs\CS\DataAccess\bin\Debug\MySql.Data.dll
+C:\temp\revolucioncs\CS\DataAccess\bin\Debug\MySql.Data.EntityFramework.dll
+C:\temp\revolucioncs\CS\DataAccess\bin\Debug\MySQL.Data.EntityFrameworkCore.Design.dll
+C:\temp\revolucioncs\CS\DataAccess\bin\Debug\MySQL.Data.EntityFrameworkCore.dll
+C:\temp\revolucioncs\CS\DataAccess\bin\Debug\MySql.Web.dll
+C:\temp\revolucioncs\CS\DataAccess\bin\Debug\Utils.dll
+C:\temp\revolucioncs\CS\DataAccess\bin\Debug\Google.Protobuf.dll
+C:\temp\revolucioncs\CS\DataAccess\bin\Debug\Model.pdb
+C:\temp\revolucioncs\CS\DataAccess\bin\Debug\Utils.pdb
+C:\temp\revolucioncs\CS\DataAccess\bin\Debug\Utils.dll.config
