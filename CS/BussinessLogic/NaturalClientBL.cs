@@ -17,5 +17,7 @@ namespace BussinessLogic {
         public int searchNaturalClient(string dni) {
             return dataAccess.searchNaturalClient(dni);
         }
+
+        
     }
 }
