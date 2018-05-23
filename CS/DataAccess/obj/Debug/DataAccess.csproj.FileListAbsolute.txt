@@ -3,3 +3,9 @@ C:\temp\revolucioncs\CS\DataAccess\bin\Debug\DataAccess.pdb
 C:\temp\revolucioncs\CS\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
 C:\temp\revolucioncs\CS\DataAccess\obj\Debug\DataAccess.dll
 C:\temp\revolucioncs\CS\DataAccess\obj\Debug\DataAccess.pdb
+C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolucionlp2\revolucioncs\CS\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolucionlp2\revolucioncs\CS\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolucionlp2\revolucioncs\CS\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolucionlp2\revolucioncs\CS\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolucionlp2\revolucioncs\CS\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolucionlp2\revolucioncs\CS\DataAccess\obj\Debug\DataAccess.pdb
