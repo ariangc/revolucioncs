@@ -78,6 +78,7 @@ namespace Model
         public int TotalItems { get => totalItems; set => totalItems = value; }
 
         //Hola Sergio, probando trucaso de git
+        //Trucaso 2
 
         //Métodos
         public void addComponent(string componentName)
