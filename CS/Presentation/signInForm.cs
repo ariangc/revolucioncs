@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BussinessLogic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,13 +41,14 @@ namespace Presentation
                 password = value;
             }
         }
-
+        private EmployeeBL employeeBussinessLogic;
         public signInForm()
         {
             Username = "12345678";
             Password = "sergio";
             InitializeComponent();
             this.CenterToScreen();
+            employeeBussinessLogic = new EmployeeBL();
         }
 
         public signInForm(string newPassword)
@@ -86,7 +88,7 @@ namespace Presentation
             {
                 //Conectar con la base de datos
 
-                if (pass.Equals(Password))
+                if (employeeBussinessLogic.passwordVerify(pass))
                 {
                     //success login
                     UserSession session = new UserSession();

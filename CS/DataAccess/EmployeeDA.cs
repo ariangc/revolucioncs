@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    class EmployeeDA
+    public class EmployeeDA
     {
+        public EmployeeDA()
+        {
+
+        }
+
+        public string returnPassword()
+        {
+
+            return 
+        }
     }
 }

@@ -142,6 +142,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BussinessLogic\BussinessLogic.csproj">
+      <Project>{0BA1AE06-B1F2-46BE-9134-89D8585D5D10}</Project>
+      <Name>BussinessLogic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{efd999c7-9d80-4773-8535-b2275ba40bf6}</Project>
       <Name>Model</Name>
