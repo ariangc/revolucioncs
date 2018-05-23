@@ -26,7 +26,7 @@ namespace DataAccess
             MySqlDataReader reader = comando.ExecuteReader();
             reader.Read();
             string pass = reader.GetString("Password");
-
+            con.Close();
             return pass;
         }
     }
