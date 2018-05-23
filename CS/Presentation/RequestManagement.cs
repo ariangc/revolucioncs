@@ -14,14 +14,14 @@ namespace Presentation
 {
     public partial class RequestManagement : Form
     {
-        private RequestBL bussinessLogic;
+        //private RequestBL bussinessLogic;
         public RequestManagement()
         {
             InitializeComponent();
             this.CenterToScreen();
 
             //añadir las encuestas al datagridview
-            bussinessLogic = new RequestBL();
+         //   bussinessLogic = new RequestBL();
             //dataGridView1.AutoGenerateColumns = false;
             //dataGridView1.DataSource = bussinessLogic.listRequests();
         }
@@ -53,7 +53,7 @@ namespace Presentation
                     else if (problemRadioButton.Checked == true) r.Type2 = 1;
                     else r.Type2 = 2;
                     r.Username = 12345678;
-                    bussinessLogic.newRequest(r);
+         //           bussinessLogic.newRequest(r);
 
                     MessageBox.Show("Solicitud enviada", "Estado de solicitud", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     requestTextBox.Text = "";
