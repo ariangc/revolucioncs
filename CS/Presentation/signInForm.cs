@@ -84,26 +84,17 @@ namespace Presentation
                 if (us[i] < '0' || us[i] > '9') flag = false;
                 i++;
             }
-            if (flag && us.Equals(Username))
+
+            if (flag && employeeBussinessLogic.passwordVerify(us,pass))
             {
-                //Conectar con la base de datos
+                //success login
+                UserSession session = new UserSession();
 
-                if (employeeBussinessLogic.passwordVerify(pass))
-                {
-                    //success login
-                    UserSession session = new UserSession();
-
-                    this.Hide();
-                    session.ShowDialog();
-                    this.Show();
-                    this.UsernameTextBox.Text = "";
-                    this.PasswordTextBox.Text = "";
-                }
-                else
-                {
-                    //fail by password
-                    MessageBox.Show("Error en ingresar la contraseña", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                this.Hide();
+                session.ShowDialog();
+                this.Show();
+                this.UsernameTextBox.Text = "";
+                this.PasswordTextBox.Text = "";
             }
             else if(!flag){
                 MessageBox.Show("Ingresar número de documento de identidad", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);

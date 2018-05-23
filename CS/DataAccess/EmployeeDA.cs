@@ -15,19 +15,19 @@ namespace DataAccess
 
         }
 
-        public string returnPassword()
+        public string returnPassword(string username)
         {
             string cadena = Constants.connectionString;
             MySqlConnection con = new MySqlConnection(cadena);
             con.Open();
             MySqlCommand comando = new MySqlCommand();
-            comando.CommandText = "";
+            comando.CommandText = "SELECT Password FROM Employee WHERE Dni = " + username + ";";
             comando.Connection = con;
             MySqlDataReader reader = comando.ExecuteReader();
             reader.Read();
+            string pass = reader.GetString("Password");
 
-
-            return "1";
+            return pass;
         }
     }
 }

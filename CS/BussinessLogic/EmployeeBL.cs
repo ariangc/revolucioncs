@@ -9,16 +9,15 @@ namespace BussinessLogic
 {
     public class EmployeeBL
     {
-        private string passwordRecieve;
         private EmployeeDA employeeDataAccess;
         public EmployeeBL()
         {
             employeeDataAccess = new EmployeeDA();
         }
 
-        public bool passwordVerify(string passwordRecieve)
+        public bool passwordVerify(string username, string passwordRecieve)
         {
-            string passwordBD = employeeDataAccess.returnPassword();
+            string passwordBD = employeeDataAccess.returnPassword(username);
             return passwordRecieve.Equals(passwordBD);
         }
     }
