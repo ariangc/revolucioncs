@@ -1,8 +1,10 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Utils;
 
 namespace DataAccess
 {
@@ -15,9 +17,16 @@ namespace DataAccess
 
         public string returnPassword()
         {
-            string cadena = "Server=quilla.lab.inf.pucp.edu.pe;" + "User=inf282g3; database=inf282g3;" +
-                "port=3306; password=H9u1oC; SslMode=none;" + "";
-            
+            string cadena = Constants.connectionString;
+            MySqlConnection con = new MySqlConnection(cadena);
+            con.Open();
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandText = "";
+            comando.Connection = con;
+            MySqlDataReader reader = comando.ExecuteReader();
+            reader.Read();
+
+
             return "1";
         }
     }
