@@ -41,12 +41,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EmployeeBL.cs" />
+    <Compile Include="LegalClientBL.cs" />
+    <Compile Include="NaturalClientBL.cs" />
+    <Compile Include="ProductBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
       <Project>{ED618A2A-FBA8-4866-A745-E7E7F733E561}</Project>
       <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{efd999c7-9d80-4773-8535-b2275ba40bf6}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utils\Utils.csproj">
+      <Project>{e9f008bd-b960-4410-85ea-e4c7a52f37a5}</Project>
+      <Name>Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

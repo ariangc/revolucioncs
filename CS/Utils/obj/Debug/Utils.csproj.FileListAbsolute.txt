@@ -27,3 +27,10 @@ C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolucionlp2\revolucioncs\CS\Utils\
 C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolucionlp2\revolucioncs\CS\Utils\obj\Debug\Utils.csproj.CoreCompileInputs.cache
 C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolucionlp2\revolucioncs\CS\Utils\obj\Debug\Utils.dll
 C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolucionlp2\revolucioncs\CS\Utils\obj\Debug\Utils.pdb
+C:\Users\arian\Desktop\revolucioncs\CS\Utils\bin\Debug\Utils.dll.config
+C:\Users\arian\Desktop\revolucioncs\CS\Utils\bin\Debug\Utils.dll
+C:\Users\arian\Desktop\revolucioncs\CS\Utils\bin\Debug\Utils.pdb
+C:\Users\arian\Desktop\revolucioncs\CS\Utils\obj\Debug\Utils.csprojResolveAssemblyReference.cache
+C:\Users\arian\Desktop\revolucioncs\CS\Utils\obj\Debug\Utils.csproj.CoreCompileInputs.cache
+C:\Users\arian\Desktop\revolucioncs\CS\Utils\obj\Debug\Utils.dll
+C:\Users\arian\Desktop\revolucioncs\CS\Utils\obj\Debug\Utils.pdb

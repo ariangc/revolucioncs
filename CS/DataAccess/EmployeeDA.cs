@@ -29,5 +29,19 @@ namespace DataAccess
             con.Close();
             return pass;
         }
+
+        public string getEmployeeName(string username) {
+            MySqlConnection con = new MySqlConnection(Constants.connectionString);
+            con.Open();
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandText = "SELECT Name, Surname FROM Employee WHERE Dni = " + username + ";";
+            comando.Connection = con;
+            MySqlDataReader reader = comando.ExecuteReader();
+            reader.Read();
+            string fullname = reader.GetString("Name") + " " + reader.GetString("Surname");
+            con.Close();
+            Console.WriteLine(fullname);
+            return fullname;
+        }
     }
 }

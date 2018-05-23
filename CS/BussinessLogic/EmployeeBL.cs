@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Model;
 
 namespace BussinessLogic
 {
@@ -19,6 +20,10 @@ namespace BussinessLogic
         {
             string passwordBD = employeeDataAccess.returnPassword(username);
             return passwordRecieve.Equals(passwordBD);
+        }
+
+        public string getEmployeeName(string dni) {
+            return employeeDataAccess.getEmployeeName(dni);
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Utils;
 
 namespace Presentation
 {
@@ -10,6 +11,8 @@ namespace Presentation
         {
             InitializeComponent();
             this.CenterToScreen();
+
+            userNameLabel.Text = Constants.CurrentUserText;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -64,6 +67,10 @@ namespace Presentation
             this.Hide();
             sm.ShowDialog();
             this.Show();
+        }
+
+        private void userNameLabel_Click(object sender, EventArgs e) {
+
         }
     }
 }

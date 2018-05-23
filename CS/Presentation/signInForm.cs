@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Model;
+using Utils;
 
 namespace Presentation
 {
@@ -84,10 +86,11 @@ namespace Presentation
                 if (us[i] < '0' || us[i] > '9') flag = false;
                 i++;
             }
-
+            
             if (flag && employeeBussinessLogic.passwordVerify(us,pass))
             {
                 //success login
+                Constants.CurrentUserText = "Usuario: " + employeeBussinessLogic.getEmployeeName(us);
                 UserSession session = new UserSession();
 
                 this.Hide();

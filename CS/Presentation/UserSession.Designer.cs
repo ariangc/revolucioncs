@@ -45,6 +45,7 @@
             this.userNameLabel.Size = new System.Drawing.Size(405, 32);
             this.userNameLabel.TabIndex = 0;
             this.userNameLabel.Text = "Usuario: Daniela Argumanis";
+            this.userNameLabel.Click += new System.EventHandler(this.userNameLabel_Click);
             // 
             // clientManageButton
             // 

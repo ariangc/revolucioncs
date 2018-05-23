@@ -9,13 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BussinessLogic;
 using Model;
+using Utils;
 
 namespace Presentation
 {
     public partial class SellsManagement : Form
     {
         private ProductBL productBL;
-        private ClientBL clientBL;
+        private NaturalClientBL naturalClientBL;
+        private LegalClientBL legalClientBL;
 
         static int cliente = 0;
         static int productos = 0;
@@ -29,8 +31,11 @@ namespace Presentation
             InitializeComponent();
             this.CenterToScreen();
 
+            label2.Text = Constants.CurrentUserText;
+
             productBL = new ProductBL();
-            clientBL = new ClientBL();
+            naturalClientBL = new NaturalClientBL();
+            legalClientBL = new LegalClientBL();
 
             DateTime thisDay = DateTime.Today;
             fechaTextBox.Text = thisDay.ToString("d");
@@ -101,15 +106,36 @@ namespace Presentation
         }
 
         private void button1_Click_1(object sender, EventArgs e) {
-            String dniClient = textBox1.Text;
-            if (dniClient.Equals("")) {
-                MessageBox.Show("Por favor, inserte el DNI del cliente", "Falta DNI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            String docClient = textBox1.Text;
+            String document = (comboBox1.SelectedIndex == 0 ? "DNI" : "RUC");
+            if (docClient.Equals("")) {
+                MessageBox.Show("Por favor, inserte el " + document + " del cliente", "Falta " + document, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (dniClient.Length != 8 || !dniClient.All(char.IsDigit)) {
-                MessageBox.Show("Por favor, inserte un DNI valido", "DNI invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if ((document == "DNI" && docClient.Length != 8) || (document == "RUC" && docClient.Length != 11) || !docClient.All(char.IsDigit)) {
+                MessageBox.Show("Por favor, inserte un " + document + " valido", document + " invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (listAdded.Count == 0) {
+                MessageBox.Show("Por favor, ingrese los productos a vender", "No hay productos seleccionados", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else {
-                int idClient = clientBL.searchClient(dniClient);
+                if (document == "DNI") {
+                    int idNaturalClient = naturalClientBL.searchNaturalClient(docClient);
+                    if (idNaturalClient == -1) {
+                        MessageBox.Show("No se encontró un cliente con DNI " + docClient, "No existe cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else {
+                        MessageBox.Show("Se deberia insertar Ticket", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else {
+                    int idLegalClient = legalClientBL.searchLegalClient(docClient);
+                    if (idLegalClient == -1) {
+                        MessageBox.Show("No se encontró un cliente con RUC " + docClient, "No existe cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else {
+                        MessageBox.Show("Se deberia insertar Ticket", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
             }
         }
 
@@ -160,7 +186,10 @@ namespace Presentation
         }
 
         private void textBox2_TextChanged_2(object sender, EventArgs e) {
+            String productName = textBox2.Text;
+            String symptoms = textBox6.Text;
 
+            dataGridView2.DataSource = productBL.listProductsByName(productName);
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e) {
@@ -201,6 +230,15 @@ namespace Presentation
 
             listAdded.RemoveAt(positionDelete);
             dataGridView3.DataSource = listAdded;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) {
+            if (comboBox1.SelectedIndex == 0) label3.Text = "DNI del Cliente";
+            else label3.Text = "RUC de la Empresa";
+        }
+
+        private void label3_Click_1(object sender, EventArgs e) {
+
         }
     }
 }

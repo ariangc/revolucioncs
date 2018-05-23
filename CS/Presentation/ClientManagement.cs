@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
+using Utils;
 
 namespace Presentation
 {
@@ -30,6 +31,9 @@ namespace Presentation
             dniModify = nameModify = surnameModify = 0;
             InitializeComponent();
             this.CenterToScreen();
+
+            label2.Text = Constants.CurrentUserText;
+
             /*
             dataGridView1.Rows.Add(71205561,"Sergio André","Rivas Medina","Chorrillos",987976060,"sergio.rivas@pucp.pe");
             dataGridView1.Rows.Add(71205562, "Daniela", "Argumanis Escalante", "Santiago de Surco", 960312264, "daniela.argumanis@pucp.pe");
@@ -346,6 +350,10 @@ namespace Presentation
 
         private void clientTabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e) {
 
         }
     }
