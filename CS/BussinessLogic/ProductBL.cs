@@ -18,5 +18,9 @@ namespace BussinessLogic {
         public BindingList<Product> listProducts() {
             return dataAccess.listProducts();
         }
+
+        public BindingList<Product> listProductsByName(string productName) {
+            return dataAccess.listProductsByName();
+        }
     }
 }

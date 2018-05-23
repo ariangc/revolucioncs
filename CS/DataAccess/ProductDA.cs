@@ -29,6 +29,7 @@ namespace DataAccess {
                 p.Utility = reader.GetDouble("Utility");
                 p.Points = reader.GetInt32("Points");
                 p.TotalItems = reader.GetInt32("TotalItems");
+                Console.WriteLine(p.Id + " " + p.Name + " " + p.Price + " " + p.NeedsPrescription);
                 list.Add(p);
             }
             con.Close();

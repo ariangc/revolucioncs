@@ -7,21 +7,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BussinessLogic;
+using Model;
 
 namespace Presentation
 {
     public partial class SellsManagement : Form
     {
+        private ProductBL productBL;
+
         static int cliente = 0;
         static int productos = 0;
+
+
         public SellsManagement()
         {
             cliente = productos = 0;
             InitializeComponent();
             this.CenterToScreen();
 
+            productBL = new ProductBL();
+
             DateTime thisDay = DateTime.Today;
             fechaTextBox.Text = thisDay.ToString("d");
+
+            dataGridView1.AutoGenerateColumns = false;
+            dataGridView2.AutoGenerateColumns = false;
+
+            dataGridView2.DataSource = productBL.listProducts();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -121,6 +134,25 @@ namespace Presentation
 
         private void label7_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e) {
+            String productName = textBox2.Text;
+            String symptoms = textBox6.Text;
+            if (productName.Equals("") && symptoms.Equals("")) {
+                MessageBox.Show("Por favor ingrese el nombre del producto o el sintoma a buscar", "Error de busqueda", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!productName.Equals("")) {
+                dataGridView2.DataSource = productBL.listProductsByName(productName);
+            }
+        }
+
+        private void textBox2_TextChanged_2(object sender, EventArgs e) {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e) {
 
         }
     }
