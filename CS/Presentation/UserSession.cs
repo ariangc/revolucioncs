@@ -17,10 +17,10 @@ namespace Presentation
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ClientManagement cm = new ClientManagement();
+            ClientType ct = new ClientType();
 
             this.Hide();
-            cm.ShowDialog();
+            ct.ShowDialog();
             this.Show();
         }
 

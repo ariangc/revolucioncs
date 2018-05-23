@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Utils;
+using Model;
 
 namespace DataAccess {
     public class LegalClientDA {
@@ -22,6 +23,25 @@ namespace DataAccess {
             }
             con.Close();
             return idLegalClient;
+            
+        }
+
+        public void addLegalClient(LegalClient lc)
+        {
+            MySqlConnection con = new MySqlConnection(Constants.connectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "addToBDLegalClient";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("_address", MySqlDbType.String).Value = lc.Address;
+            cmd.Parameters.Add("_phoneNumber", MySqlDbType.String).Value = lc.PhoneNumber;
+            cmd.Parameters.Add("_email", MySqlDbType.String).Value = lc.Email;
+            cmd.Parameters.Add("_companyName", MySqlDbType.String).Value = lc.CompanyName;
+            cmd.Parameters.Add("_ruc", MySqlDbType.String).Value = lc.RUC;
+
+            cmd.ExecuteNonQuery();
         }
     }
 }

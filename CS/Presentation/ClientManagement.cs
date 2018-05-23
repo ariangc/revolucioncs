@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
 using Utils;
+using BussinessLogic;
 
 namespace Presentation
 {
@@ -25,11 +26,16 @@ namespace Presentation
         private static int nameModify;
         private static int surnameModify;
 
+        private NaturalClientBL naturalClientBL;
+
         public ClientManagement()
         {
             dni = name = surname = district = phone = email = 0;
             dniModify = nameModify = surnameModify = 0;
             InitializeComponent();
+
+            naturalClientBL = new NaturalClientBL();
+
             this.CenterToScreen();
 
             label2.Text = Constants.CurrentUserText;
@@ -221,7 +227,16 @@ namespace Presentation
                 string district = districtTextBox.Text;
                 string email = emailTextBox.Text;
 
-                Client c = new Client(name, surname, dni, district, phone, email);
+                NaturalClient nc = new NaturalClient();
+                nc.Address = district;
+                nc.Dni = dni;
+                nc.Name = name;
+                nc.Surname = surname;
+                nc.Email = email;
+                nc.PhoneNumber = phone;
+
+                naturalClientBL.addNaturalClient(nc);
+
                 MessageBox.Show("El cliente ha sido registrado", "Registro de cliente nuevo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 dniTextBox.Text = "";
@@ -235,7 +250,7 @@ namespace Presentation
 
         private void searchButon_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

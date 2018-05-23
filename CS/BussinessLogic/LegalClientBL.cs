@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccess;
+using Model;
 
 namespace BussinessLogic {
     public class LegalClientBL {
@@ -15,6 +16,11 @@ namespace BussinessLogic {
 
         public int searchLegalClient(string ruc) {
             return dataAccess.searchLegalClient(ruc);
+        }
+
+        public void addLegalClient(LegalClient lc)
+        {
+            dataAccess.addLegalClient(lc);
         }
     }
 }

@@ -453,7 +453,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Modern No. 20", 12F);
-            this.label2.Location = new System.Drawing.Point(97, 63);
+            this.label2.Location = new System.Drawing.Point(112, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(194, 18);
             this.label2.TabIndex = 10;
@@ -464,7 +464,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 24F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(72, 17);
+            this.label1.Location = new System.Drawing.Point(82, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(253, 34);
             this.label1.TabIndex = 9;
@@ -474,7 +474,7 @@
             // 
             this.clientTabControl.Controls.Add(this.RegisterTabControl);
             this.clientTabControl.Controls.Add(this.ModifyTabControl);
-            this.clientTabControl.Location = new System.Drawing.Point(3, 0);
+            this.clientTabControl.Location = new System.Drawing.Point(6, 0);
             this.clientTabControl.Name = "clientTabControl";
             this.clientTabControl.SelectedIndex = 0;
             this.clientTabControl.Size = new System.Drawing.Size(442, 429);

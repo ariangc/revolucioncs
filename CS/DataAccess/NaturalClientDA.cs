@@ -25,5 +25,49 @@ namespace DataAccess {
             con.Close();
             return idNaturalClient;
         }
+        public BindingList<Person> listPeople()
+        {
+            BindingList<Person> list = new BindingList<Person>();
+            MySqlConnection con = new MySqlConnection(Constants.connectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "SELECT * FROM LegalClient";
+            MySqlDataReader reader = cmd.ExecuteReader();
+            Person p = new Person();
+            while (reader.Read())
+            {
+                //para persona natural
+                list.Add(p);
+            }
+            cmd.CommandText = "SELECT * FROM LegalClient";
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                //para persona jurídica
+                list.Add(p);
+            }
+            con.Close();
+            return list;
+        }
+
+        public void addNaturalClient(NaturalClient nc)
+        {
+            MySqlConnection con = new MySqlConnection(Constants.connectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "addToBDNaturalClient";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("_address", MySqlDbType.String).Value = nc.Address;
+            cmd.Parameters.Add("_phoneNumber", MySqlDbType.String).Value = nc.PhoneNumber;
+            cmd.Parameters.Add("_email", MySqlDbType.String).Value = nc.Email;
+            cmd.Parameters.Add("_name", MySqlDbType.String).Value = nc.Name;
+            cmd.Parameters.Add("_surname", MySqlDbType.String).Value = nc.Surname;
+            cmd.Parameters.Add("_dni", MySqlDbType.String).Value = nc.Dni;
+
+            cmd.ExecuteNonQuery();
+        }
     }
 }

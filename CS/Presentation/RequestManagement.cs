@@ -22,7 +22,7 @@ namespace Presentation
             this.CenterToScreen();
 
             //añadir las encuestas al datagridview
-            bussinessLogic = new RequestBL();
+         //   bussinessLogic = new RequestBL();
             //dataGridView1.AutoGenerateColumns = false;
             //dataGridView1.DataSource = bussinessLogic.listRequests();
         }
@@ -72,6 +72,11 @@ namespace Presentation
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
         {
 
         }
