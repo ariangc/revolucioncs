@@ -79,6 +79,7 @@ namespace Model
 
         //Hola Sergio, probando trucaso de git
         //Trucaso 2
+        //Hola FROZZZ, trucaso recivido
 
         //Métodos
         public void addComponent(string componentName)
