@@ -26,6 +26,8 @@ namespace Presentation
         private static int nameModify;
         private static int surnameModify;
 
+        private bool dgvFlag = false;
+
         private NaturalClientBL naturalClientBL;
 
         public ClientManagement()
@@ -40,17 +42,9 @@ namespace Presentation
 
             label2.Text = Constants.CurrentUserText;
 
-            /*
-            dataGridView1.Rows.Add(71205561,"Sergio André","Rivas Medina","Chorrillos",987976060,"sergio.rivas@pucp.pe");
-            dataGridView1.Rows.Add(71205562, "Daniela", "Argumanis Escalante", "Santiago de Surco", 960312264, "daniela.argumanis@pucp.pe");
-            dataGridView1.Rows.Add(71205563, "Arian", "Gallardo Callalli", "San Miguel", 993128246, "arian.gallardo@pucp.pe");
-            dataGridView1.Rows.Add(71205564, "Pato", "Ávila", "Pueblo Libre", 999909704, "patricio.avila@pucp.pe");
-            dataGridView1.Rows.Add(71205565, "Patrick", "Figueroa", "San Miguel", 95906115, "patrick.figueroa@pucp.pe");
-            dataGridView1.Rows.Add(66666666, "Daniel Marcelo", "Chapi Alejo", "Magdalena", 944441181, "daniel.chapi@pucp.pe");
-            */
-
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = naturalClientBL.listNaturalClients("","","");
+            dgvFlag = true;
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)
@@ -332,9 +326,9 @@ namespace Presentation
             }
         }
 
-        
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
+            if(dgvFlag) dataGridView1.DataSource = naturalClientBL.listNaturalClients("", "", "");
         }
 
         private void modifyClientButton_Click(object sender, EventArgs e)
