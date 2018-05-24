@@ -28,9 +28,9 @@ namespace DataAccess
                 Request r = new Request();
                 r.Description = reader.GetString("Description");
                 string type = reader.GetString("Type");
-                if (type == "Suggestion") r.Type = Enumerators.RequirementType.Suggestion;
-                else if (type == "Warning") r.Type = Enumerators.RequirementType.Warning;
-                else r.Type = Enumerators.RequirementType.Other;
+                if (type == "Suggestion") r.Type = Enumerators.RequirementType.Sugerencia;
+                else if (type == "Warning") r.Type = Enumerators.RequirementType.Problema;
+                else r.Type = Enumerators.RequirementType.Otro;
                 r.IdEmployee = reader.GetInt32("Employee_IdPerson");
                 r.IdRequest = reader.GetInt32("IdRequirement");
                 r.Index = ++index;

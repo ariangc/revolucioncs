@@ -9,7 +9,7 @@
 
         public enum RequirementType
         {
-            Suggestion, Warning, Other
+            Sugerencia, Problema, Otro
         }
     }
 }

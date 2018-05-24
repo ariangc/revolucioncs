@@ -52,9 +52,9 @@ namespace Presentation
                     //se logra enviar solicitud
                     Request r = new Request();
                     r.Description = requestTextBox.Text;
-                    if (RequestRadioButton.Checked == true) r.Type = Enumerators.RequirementType.Suggestion;
-                    else if (problemRadioButton.Checked == true) r.Type = Enumerators.RequirementType.Warning;
-                    else r.Type = Enumerators.RequirementType.Other;
+                    if (RequestRadioButton.Checked == true) r.Type = Enumerators.RequirementType.Sugerencia;
+                    else if (problemRadioButton.Checked == true) r.Type = Enumerators.RequirementType.Problema;
+                    else r.Type = Enumerators.RequirementType.Otro;
 
                     r.IdEmployee = bussinessLogic.returnIdUser(Constants.CurrentUserName);
                     bussinessLogic.newRequest(r);
