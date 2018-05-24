@@ -59,6 +59,7 @@
             this.button1.TabIndex = 36;
             this.button1.Text = "Aceptar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // emailCheckBox
             // 
@@ -69,6 +70,7 @@
             this.emailCheckBox.TabIndex = 35;
             this.emailCheckBox.Text = "E-mail:";
             this.emailCheckBox.UseVisualStyleBackColor = true;
+            this.emailCheckBox.CheckedChanged += new System.EventHandler(this.emailCheckBox_CheckedChanged_1);
             // 
             // phoneCheckBox
             // 
@@ -79,6 +81,7 @@
             this.phoneCheckBox.TabIndex = 34;
             this.phoneCheckBox.Text = "Teléfono:";
             this.phoneCheckBox.UseVisualStyleBackColor = true;
+            this.phoneCheckBox.CheckedChanged += new System.EventHandler(this.phoneCheckBox_CheckedChanged_1);
             // 
             // districtCheckBox
             // 
@@ -89,6 +92,7 @@
             this.districtCheckBox.TabIndex = 33;
             this.districtCheckBox.Text = "Direccion:";
             this.districtCheckBox.UseVisualStyleBackColor = true;
+            this.districtCheckBox.CheckedChanged += new System.EventHandler(this.districtCheckBox_CheckedChanged_1);
             // 
             // namesCheckBox
             // 
@@ -132,6 +136,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 26;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label9
             // 

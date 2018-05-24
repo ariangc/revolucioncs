@@ -87,9 +87,12 @@ namespace Presentation
                     if (phoneCheckBox.Checked) selectedClient.PhoneNumber = textBox5.Text;
                     if (emailCheckBox.Checked) selectedClient.Email = textBox6.Text;
                     naturalClientBL.updateNaturalClient(selectedClient);
+                    MessageBox.Show("Se modifico al cliente", "Modificacion completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
             }
             else MessageBox.Show("Debe ingresar algún campo", "Cambio de cmapos de cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            
 
         }
 

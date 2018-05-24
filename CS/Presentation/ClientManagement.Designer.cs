@@ -37,6 +37,12 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.IdentityDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.searchButon = new System.Windows.Forms.Button();
             this.surnameModifyClientTextBox = new System.Windows.Forms.TextBox();
             this.nameModifyClientTextBox = new System.Windows.Forms.TextBox();
@@ -60,12 +66,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.clientTabControl = new System.Windows.Forms.TabControl();
-            this.IdentityDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ModifyTabControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.RegisterTabControl.SuspendLayout();
@@ -172,6 +172,54 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
+            // IdentityDoc
+            // 
+            this.IdentityDoc.DataPropertyName = "Dni";
+            this.IdentityDoc.HeaderText = "DNI";
+            this.IdentityDoc.Name = "IdentityDoc";
+            this.IdentityDoc.ReadOnly = true;
+            this.IdentityDoc.Width = 50;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Name";
+            this.Column2.HeaderText = "Nombres";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 70;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Surname";
+            this.Column3.HeaderText = "Apellidos";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 70;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Address";
+            this.Column4.HeaderText = "Direccion";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 70;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "PhoneNumber";
+            this.Column5.HeaderText = "Telefono";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 50;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "Email";
+            this.Column6.HeaderText = "E-mail";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 70;
+            // 
             // searchButon
             // 
             this.searchButon.BackColor = System.Drawing.Color.Silver;
@@ -185,7 +233,7 @@
             // 
             // surnameModifyClientTextBox
             // 
-            this.surnameModifyClientTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.surnameModifyClientTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
             this.surnameModifyClientTextBox.Location = new System.Drawing.Point(319, 93);
             this.surnameModifyClientTextBox.Name = "surnameModifyClientTextBox";
             this.surnameModifyClientTextBox.Size = new System.Drawing.Size(100, 20);
@@ -195,7 +243,7 @@
             // 
             // nameModifyClientTextBox
             // 
-            this.nameModifyClientTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.nameModifyClientTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
             this.nameModifyClientTextBox.Location = new System.Drawing.Point(166, 93);
             this.nameModifyClientTextBox.Name = "nameModifyClientTextBox";
             this.nameModifyClientTextBox.Size = new System.Drawing.Size(100, 20);
@@ -205,7 +253,7 @@
             // 
             // dniModifyClientTextBox
             // 
-            this.dniModifyClientTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.dniModifyClientTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
             this.dniModifyClientTextBox.Location = new System.Drawing.Point(11, 93);
             this.dniModifyClientTextBox.Name = "dniModifyClientTextBox";
             this.dniModifyClientTextBox.Size = new System.Drawing.Size(100, 20);
@@ -326,67 +374,61 @@
             // 
             // emailTextBox
             // 
-            this.emailTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.emailTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
             this.emailTextBox.Location = new System.Drawing.Point(235, 294);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(100, 20);
             this.emailTextBox.TabIndex = 16;
-            this.emailTextBox.Text = "E-mail";
             this.emailTextBox.Click += new System.EventHandler(this.emailTextBox_Click);
             this.emailTextBox.TextChanged += new System.EventHandler(this.emailTextBox_TextChanged);
             // 
             // phoneTextBox
             // 
-            this.phoneTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.phoneTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
             this.phoneTextBox.Location = new System.Drawing.Point(235, 216);
             this.phoneTextBox.Name = "phoneTextBox";
             this.phoneTextBox.Size = new System.Drawing.Size(100, 20);
             this.phoneTextBox.TabIndex = 15;
-            this.phoneTextBox.Text = "Telefono";
             this.phoneTextBox.Click += new System.EventHandler(this.phoneTextBox_Click);
             this.phoneTextBox.TextChanged += new System.EventHandler(this.phoneTextBox_TextChanged);
             // 
             // districtTextBox
             // 
-            this.districtTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.districtTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
             this.districtTextBox.Location = new System.Drawing.Point(235, 144);
             this.districtTextBox.Name = "districtTextBox";
             this.districtTextBox.Size = new System.Drawing.Size(100, 20);
             this.districtTextBox.TabIndex = 14;
-            this.districtTextBox.Text = "Distrito";
             this.districtTextBox.Click += new System.EventHandler(this.districtTextBox_Click);
             this.districtTextBox.TextChanged += new System.EventHandler(this.districtTextBox_TextChanged);
             // 
             // lastnameTextBox
             // 
-            this.lastnameTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.lastnameTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lastnameTextBox.Location = new System.Drawing.Point(78, 294);
             this.lastnameTextBox.Name = "lastnameTextBox";
             this.lastnameTextBox.Size = new System.Drawing.Size(100, 20);
             this.lastnameTextBox.TabIndex = 13;
-            this.lastnameTextBox.Text = "Apellidos";
             this.lastnameTextBox.Click += new System.EventHandler(this.lastnameTextBox_Click);
             this.lastnameTextBox.TextChanged += new System.EventHandler(this.lastnameTextBox_TextChanged);
             // 
             // nameTextBox
             // 
-            this.nameTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.nameTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
             this.nameTextBox.Location = new System.Drawing.Point(78, 216);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(100, 20);
             this.nameTextBox.TabIndex = 12;
-            this.nameTextBox.Text = "Nombres";
             this.nameTextBox.Click += new System.EventHandler(this.nameTextBox_Click);
             this.nameTextBox.TextChanged += new System.EventHandler(this.nameTextBox_TextChanged);
             // 
             // dniTextBox
             // 
-            this.dniTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.dniTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
             this.dniTextBox.Location = new System.Drawing.Point(78, 144);
             this.dniTextBox.Name = "dniTextBox";
             this.dniTextBox.Size = new System.Drawing.Size(100, 20);
             this.dniTextBox.TabIndex = 11;
-            this.dniTextBox.Text = "DNI";
             this.dniTextBox.Click += new System.EventHandler(this.dniTextBox_Click);
             this.dniTextBox.TextChanged += new System.EventHandler(this.dniTextBox_TextChanged);
             // 
@@ -421,54 +463,6 @@
             this.clientTabControl.Size = new System.Drawing.Size(442, 429);
             this.clientTabControl.TabIndex = 6;
             this.clientTabControl.SelectedIndexChanged += new System.EventHandler(this.clientTabControl_SelectedIndexChanged);
-            // 
-            // IdentityDoc
-            // 
-            this.IdentityDoc.DataPropertyName = "Dni";
-            this.IdentityDoc.HeaderText = "DNI";
-            this.IdentityDoc.Name = "IdentityDoc";
-            this.IdentityDoc.ReadOnly = true;
-            this.IdentityDoc.Width = 50;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Name";
-            this.Column2.HeaderText = "Nombres";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 70;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "Surname";
-            this.Column3.HeaderText = "Apellidos";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 70;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "Address";
-            this.Column4.HeaderText = "Direccion";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 70;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "PhoneNumber";
-            this.Column5.HeaderText = "Telefono";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 50;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "Email";
-            this.Column6.HeaderText = "E-mail";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 70;
             // 
             // ClientManagement
             // 

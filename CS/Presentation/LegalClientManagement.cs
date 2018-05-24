@@ -38,7 +38,9 @@ namespace Presentation
 
         private void refreshButton_Click(object sender, EventArgs e)
         {
-
+            rucModifyTextBox.Text = "";
+            companyNameModifyTextBox.Text = "";
+            dataGridView1.DataSource = legalClientBL.listLegalClients("", "");
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -97,7 +99,11 @@ namespace Presentation
 
         private void modifyClientButton_Click(object sender, EventArgs e)
         {
-
+            EditLegalClient elc = new EditLegalClient((LegalClient)dataGridView1.CurrentRow.DataBoundItem);
+            this.Hide();
+            elc.ShowDialog();
+            dataGridView1.DataSource = legalClientBL.listLegalClients("", "");
+            this.Show();
         }
     }
 }
