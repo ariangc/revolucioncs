@@ -156,6 +156,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdentityDoc,
@@ -461,11 +463,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 24F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(82, 17);
+            this.label1.Location = new System.Drawing.Point(26, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(253, 34);
+            this.label1.Size = new System.Drawing.Size(372, 34);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Registrar Cliente";
+            this.label1.Text = "Registrar Cliente Natural";
             // 
             // clientTabControl
             // 

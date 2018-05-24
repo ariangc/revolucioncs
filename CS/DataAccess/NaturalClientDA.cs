@@ -25,31 +25,6 @@ namespace DataAccess {
             con.Close();
             return idNaturalClient;
         }
-        public BindingList<Person> listPeople()
-        {
-            BindingList<Person> list = new BindingList<Person>();
-            MySqlConnection con = new MySqlConnection(Constants.connectionString);
-            con.Open();
-            MySqlCommand cmd = new MySqlCommand();
-            cmd.Connection = con;
-            cmd.CommandText = "SELECT * FROM LegalClient";
-            MySqlDataReader reader = cmd.ExecuteReader();
-            Person p = new Person();
-            while (reader.Read())
-            {
-                //para persona natural
-                list.Add(p);
-            }
-            cmd.CommandText = "SELECT * FROM LegalClient";
-            reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                //para persona jurídica
-                list.Add(p);
-            }
-            con.Close();
-            return list;
-        }
 
         public void addNaturalClient(NaturalClient nc)
         {
