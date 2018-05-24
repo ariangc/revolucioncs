@@ -32,6 +32,7 @@ namespace DataAccess
                 else if (type == "Warning") r.Type = Enumerators.RequirementType.Warning;
                 else r.Type = Enumerators.RequirementType.Other;
                 r.IdEmployee = reader.GetInt32("Employee_IdPerson");
+                r.IdRequest = reader.GetInt32("IdRequirement");
                 r.Index = ++index;
                 list.Add(r);
             }
@@ -70,20 +71,20 @@ namespace DataAccess
         public void deleteRequest(Request r)
         {
             MySqlConnection con = new MySqlConnection(Constants.connectionString);
-            con.Open();
+            //con.Open();
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "SELECT IdRequirement FROM Requirement WHERE Description = \"" + r.Description + "\" and Type = \"" + r.Type.ToString() + "\" and Employee_IdPerson =" + r.IdEmployee + ";";
-            Console.WriteLine(cmd.CommandText);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            reader.Read();
-            int idRequest = reader.GetInt32("IdRequirement");
-            con.Close();
+            //cmd.CommandText = "SELECT IdRequirement FROM Requirement WHERE Description = \"" + r.Description + "\" and Type = \"" + r.Type.ToString() + "\" and Employee_IdPerson =" + r.IdEmployee + ";";
+            //Console.WriteLine(cmd.CommandText);
+            //MySqlDataReader reader = cmd.ExecuteReader();
+            //reader.Read();
+            //int idRequest = reader.GetInt32("IdRequirement");
+            //con.Close();
 
             con.Open();
             cmd.CommandText = "deleteInBDRequirement";
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
-            cmd.Parameters.Add("id", MySqlDbType.Int32).Value = idRequest;
+            cmd.Parameters.Add("id", MySqlDbType.Int32).Value = r.IdRequest;
             cmd.ExecuteNonQuery();
             con.Close();
         }
@@ -91,13 +92,15 @@ namespace DataAccess
         public void modifyRequest(Request r)
         {
             MySqlConnection con = new MySqlConnection(Constants.connectionString);
-            con.Open();
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = con;
+            con.Open();
             cmd.CommandText = "updateInBDRequirement";
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.Parameters.Add("_description", MySqlDbType.String).Value = r.Description;
-            //comentario Sergio
+            cmd.Parameters.Add("_idRequirement", MySqlDbType.Int32).Value = r.IdRequest;
+            cmd.ExecuteNonQuery();
+            con.Close();
         }
     }
 }

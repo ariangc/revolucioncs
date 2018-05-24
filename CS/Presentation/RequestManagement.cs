@@ -102,8 +102,8 @@ namespace Presentation
             {
                 Request r = (Request)dataGridView1.CurrentRow.DataBoundItem;
                 //Modificar campor descripcion en la BD
-
-                Console.WriteLine("Des: " + r.Description + " Type: " + r.Type.ToString() + "Index: " + r.Index);
+                bussinessLogic.modifyRequest(r);
+                Console.WriteLine("Des: " + r.Description + " Type: " + r.Type.ToString() + "idEmployee: " + r.IdEmployee);
             }
 
         }
