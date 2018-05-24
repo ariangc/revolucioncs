@@ -48,12 +48,6 @@
             this.modifyClientButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.refreshButton = new System.Windows.Forms.Button();
             this.searchButon = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
@@ -62,6 +56,12 @@
             this.rucModifyTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -281,38 +281,9 @@
             this.Column6});
             this.dataGridView1.Location = new System.Drawing.Point(23, 189);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(408, 182);
             this.dataGridView1.TabIndex = 25;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "RUC";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Razón Social";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Dirección";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Teléfono";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Email";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Seleccionar";
-            this.Column6.Name = "Column6";
             // 
             // refreshButton
             // 
@@ -390,6 +361,41 @@
             this.label11.Size = new System.Drawing.Size(261, 34);
             this.label11.TabIndex = 8;
             this.label11.Text = "Modificar Cliente";
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "RUC";
+            this.Column1.HeaderText = "RUC";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "CompanyName";
+            this.Column2.HeaderText = "Razón Social";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Address";
+            this.Column3.HeaderText = "Dirección";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "PhoneNumber";
+            this.Column4.HeaderText = "Teléfono";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "Email";
+            this.Column5.HeaderText = "Email";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Seleccionar";
+            this.Column6.Name = "Column6";
             // 
             // LegalClientManagement
             // 

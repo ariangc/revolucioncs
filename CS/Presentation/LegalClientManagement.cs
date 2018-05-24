@@ -20,6 +20,7 @@ namespace Presentation
             InitializeComponent();
             legalClientBL = new LegalClientBL();
             this.CenterToScreen();
+            dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = legalClientBL.listLegalClients("", "");
         }
 
