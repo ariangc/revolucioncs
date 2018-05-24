@@ -28,5 +28,10 @@ namespace BussinessLogic {
         {
             return dataAccess.listLegalClients(ruc, name);
         }
+
+        public void updateLegalClient(LegalClient lc)
+        {
+            dataAccess.updateLegalClient(lc);
+        }
     }
 }

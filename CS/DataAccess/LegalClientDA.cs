@@ -77,5 +77,24 @@ namespace DataAccess {
             con.Close();
             return list;
         }
+
+        public void updateLegalClient(LegalClient lc)
+        {
+            MySqlConnection con = new MySqlConnection(Constants.connectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "updateInBDLegalClient";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("_address", MySqlDbType.String).Value = lc.Address;
+            cmd.Parameters.Add("_phoneNumber", MySqlDbType.String).Value = lc.PhoneNumber;
+            cmd.Parameters.Add("_email", MySqlDbType.String).Value = lc.Email;
+            cmd.Parameters.Add("_ruc", MySqlDbType.String).Value = lc.RUC;
+            cmd.Parameters.Add("_companyName", MySqlDbType.String).Value = lc.CompanyName;
+
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
     }
 }
