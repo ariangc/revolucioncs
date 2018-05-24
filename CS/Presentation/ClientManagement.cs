@@ -231,6 +231,7 @@ namespace Presentation
                 nc.PhoneNumber = phone;
 
                 naturalClientBL.addNaturalClient(nc);
+                dataGridView1.DataSource = naturalClientBL.listNaturalClients("", "", "");
 
                 MessageBox.Show("El cliente ha sido registrado", "Registro de cliente nuevo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

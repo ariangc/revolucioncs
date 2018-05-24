@@ -85,6 +85,7 @@ namespace Presentation
                 lc.CompanyName = companyName;
                 lc.Email = email;
                 legalClientBL.addLegalClient(lc);
+                dataGridView1.DataSource = legalClientBL.listLegalClients("", "");
                 MessageBox.Show("El cliente ha sido registrado", "Registro de cliente nuevo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
