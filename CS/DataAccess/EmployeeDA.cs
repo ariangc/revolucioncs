@@ -43,5 +43,18 @@ namespace DataAccess
             Console.WriteLine(fullname);
             return fullname;
         }
+
+        public void changePassword(string pass)
+        {
+            MySqlConnection con = new MySqlConnection(Constants.connectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = "updatePassword";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add("_username", MySqlDbType.String).Value = Constants.CurrentUserName;
+            cmd.Parameters.Add("_newPassword", MySqlDbType.String).Value = pass;
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
     }
 }

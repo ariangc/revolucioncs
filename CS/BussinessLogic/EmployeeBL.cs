@@ -10,20 +10,25 @@ namespace BussinessLogic
 {
     public class EmployeeBL
     {
-        private EmployeeDA employeeDataAccess;
+        private EmployeeDA dataAccess;
         public EmployeeBL()
         {
-            employeeDataAccess = new EmployeeDA();
+            dataAccess = new EmployeeDA();
         }
 
         public bool passwordVerify(string username, string passwordRecieve)
         {
-            string passwordBD = employeeDataAccess.returnPassword(username);
+            string passwordBD = dataAccess.returnPassword(username);
             return passwordRecieve.Equals(passwordBD);
         }
 
         public string getEmployeeName(string dni) {
-            return employeeDataAccess.getEmployeeName(dni);
+            return dataAccess.getEmployeeName(dni);
+        }
+
+        public void changePassword(string pass)
+        {
+            dataAccess.changePassword(pass);
         }
     }
 }

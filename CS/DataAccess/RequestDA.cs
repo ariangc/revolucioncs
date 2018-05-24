@@ -101,7 +101,6 @@ namespace DataAccess
             cmd.Parameters.Add("_idRequirement", MySqlDbType.Int32).Value = r.IdRequest;
             cmd.ExecuteNonQuery();
             con.Close();
-            //comentario
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BussinessLogic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,12 @@ namespace Presentation
 {
     public partial class changePassword : Form
     {
+        private EmployeeBL bussinessLogic;
         public changePassword()
         {
             InitializeComponent();
             this.CenterToScreen();
+            bussinessLogic = new EmployeeBL();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -30,6 +33,9 @@ namespace Presentation
             }
             else
             {
+                //Se reliza el cambio de contraseña
+                string pass = newPasswordTextBox.Text;
+                bussinessLogic.changePassword(pass);
                 MessageBox.Show("La contraseña fue actualizada corectamente", "Contraseña Actualizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Application.Restart();
             }
