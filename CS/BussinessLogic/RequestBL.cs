@@ -16,7 +16,7 @@ namespace BussinessLogic
         {
             dataAccess = new RequestDA();
         }
-        
+
         public BindingList<Request> listRequests()
         {
             return dataAccess.listRequests();
@@ -35,6 +35,11 @@ namespace BussinessLogic
         public void deleteRequest(Request r)
         {
             dataAccess.deleteRequest(r);
+        }
+
+        public void modifyRequest()
+        {
+
         }
     }
 }

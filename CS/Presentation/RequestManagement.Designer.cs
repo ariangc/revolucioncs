@@ -210,6 +210,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.index,
@@ -220,12 +222,14 @@
             this.dataGridView1.Size = new System.Drawing.Size(481, 216);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
             // index
             // 
             this.index.DataPropertyName = "index";
             this.index.HeaderText = "N°";
             this.index.Name = "index";
+            this.index.ReadOnly = true;
             this.index.Width = 50;
             // 
             // Type
@@ -233,6 +237,7 @@
             this.Type.DataPropertyName = "type";
             this.Type.HeaderText = "Tipo";
             this.Type.Name = "Type";
+            this.Type.ReadOnly = true;
             // 
             // Descripcion
             // 

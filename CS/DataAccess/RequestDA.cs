@@ -20,7 +20,7 @@ namespace DataAccess
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = con;
             int id = returnIdUser(Constants.CurrentUserName);
-            cmd.CommandText = "SELECT * FROM Requirement WHERE Employee_IdPerson = "+ id +" and State = 1";
+            cmd.CommandText = "SELECT * FROM Requirement WHERE Employee_IdPerson = " + id + " and State = 1";
             MySqlDataReader reader = cmd.ExecuteReader();
             int index = 0;
             while (reader.Read())
@@ -73,7 +73,7 @@ namespace DataAccess
             con.Open();
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "SELECT IdRequirement FROM Requirement WHERE Description = \""+r.Description +"\" and Type = \""+r.Type.ToString()+"\" and Employee_IdPerson ="+r.IdEmployee+";";
+            cmd.CommandText = "SELECT IdRequirement FROM Requirement WHERE Description = \"" + r.Description + "\" and Type = \"" + r.Type.ToString() + "\" and Employee_IdPerson =" + r.IdEmployee + ";";
             Console.WriteLine(cmd.CommandText);
             MySqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
@@ -86,6 +86,18 @@ namespace DataAccess
             cmd.Parameters.Add("id", MySqlDbType.Int32).Value = idRequest;
             cmd.ExecuteNonQuery();
             con.Close();
+        }
+
+        public void modifyRequest(Request r)
+        {
+            MySqlConnection con = new MySqlConnection(Constants.connectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "updateInBDRequirement";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add("_description", MySqlDbType.String).Value = r.Description;
+            //comentario Sergio
         }
     }
 }

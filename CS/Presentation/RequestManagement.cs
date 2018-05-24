@@ -16,6 +16,7 @@ namespace Presentation
     public partial class RequestManagement : Form
     {
         private RequestBL bussinessLogic;
+        private bool dgvFlag = false;
         public RequestManagement()
         {
             InitializeComponent();
@@ -25,6 +26,7 @@ namespace Presentation
             bussinessLogic = new RequestBL();
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = bussinessLogic.listRequests();
+            dgvFlag = true;
         }
 
         private void sendButton_Click(object sender, EventArgs e)
@@ -56,6 +58,7 @@ namespace Presentation
 
                     r.IdEmployee = bussinessLogic.returnIdUser(Constants.CurrentUserName);
                     bussinessLogic.newRequest(r);
+                    dataGridView1.DataSource = bussinessLogic.listRequests();
 
                     MessageBox.Show("Solicitud enviada", "Estado de solicitud", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     requestTextBox.Text = "";
@@ -63,7 +66,7 @@ namespace Presentation
                     problemRadioButton.Checked = false;
                     otherRadioButton.Checked = false;
                 }
-                
+
             }
             else if (requestTextBox.Text == "")
             {
@@ -90,6 +93,18 @@ namespace Presentation
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvFlag)
+            {
+                Request r = (Request)dataGridView1.CurrentRow.DataBoundItem;
+                //Modificar campor descripcion en la BD
+
+                Console.WriteLine("Des: " + r.Description + " Type: " + r.Type.ToString() + "Index: " + r.Index);
+            }
 
         }
     }
