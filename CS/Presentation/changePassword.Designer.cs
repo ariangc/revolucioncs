@@ -43,6 +43,7 @@
             // 
             this.prevPasswordTextBox.Location = new System.Drawing.Point(64, 84);
             this.prevPasswordTextBox.Name = "prevPasswordTextBox";
+            this.prevPasswordTextBox.PasswordChar = '*';
             this.prevPasswordTextBox.Size = new System.Drawing.Size(182, 20);
             this.prevPasswordTextBox.TabIndex = 0;
             // 
@@ -50,6 +51,7 @@
             // 
             this.newPasswordTextBox.Location = new System.Drawing.Point(64, 144);
             this.newPasswordTextBox.Name = "newPasswordTextBox";
+            this.newPasswordTextBox.PasswordChar = '*';
             this.newPasswordTextBox.Size = new System.Drawing.Size(182, 20);
             this.newPasswordTextBox.TabIndex = 1;
             // 
@@ -57,6 +59,7 @@
             // 
             this.repeatPasswordTextbox.Location = new System.Drawing.Point(64, 204);
             this.repeatPasswordTextbox.Name = "repeatPasswordTextbox";
+            this.repeatPasswordTextbox.PasswordChar = '*';
             this.repeatPasswordTextbox.Size = new System.Drawing.Size(182, 20);
             this.repeatPasswordTextbox.TabIndex = 2;
             // 

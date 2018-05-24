@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Utils;
 
 namespace Presentation
 {
@@ -23,7 +24,10 @@ namespace Presentation
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(newPasswordTextBox.Text != repeatPasswordTextbox.Text)
+            if (!prevPasswordTextBox.Text.Equals(Constants.CurrentPassword)) {
+                MessageBox.Show("La contraseña actual no es correcta", "Error en contraseña", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else if (newPasswordTextBox.Text != repeatPasswordTextbox.Text)
             {
                 MessageBox.Show("Las contraseñas deben ser iguales", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
