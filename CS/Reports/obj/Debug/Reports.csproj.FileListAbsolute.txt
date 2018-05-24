@@ -16,3 +16,10 @@ C:\temp\revolucioncs\CS\Reports\bin\Debug\Reports.pdb
 C:\temp\revolucioncs\CS\Reports\obj\Debug\Reports.csprojResolveAssemblyReference.cache
 C:\temp\revolucioncs\CS\Reports\obj\Debug\Reports.dll
 C:\temp\revolucioncs\CS\Reports\obj\Debug\Reports.pdb
+C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolp2\revolucioncs\CS\Reports\bin\Debug\Reports.dll.config
+C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolp2\revolucioncs\CS\Reports\bin\Debug\Reports.dll
+C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolp2\revolucioncs\CS\Reports\bin\Debug\Reports.pdb
+C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolp2\revolucioncs\CS\Reports\obj\Debug\Reports.csprojResolveAssemblyReference.cache
+C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolp2\revolucioncs\CS\Reports\obj\Debug\Reports.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolp2\revolucioncs\CS\Reports\obj\Debug\Reports.dll
+C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolp2\revolucioncs\CS\Reports\obj\Debug\Reports.pdb
