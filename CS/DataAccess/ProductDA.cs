@@ -25,7 +25,9 @@ namespace DataAccess {
                 p.Id = reader.GetInt32("IdProduct");
                 p.Name = reader.GetString("Name");
                 p.Price = reader.GetDouble("Price");
-                p.NeedsPrescription = (reader.GetInt32("NeedsPrescription") == 1);
+                int pres = reader.GetInt32("NeedsPrescription");
+                if (pres == 1) p.NeedsPrescription = "SÍ";
+                else p.NeedsPrescription = "NO";
                 p.Utility = reader.GetDouble("Utility");
                 p.Points = reader.GetInt32("Points");
                 p.TotalItems = reader.GetInt32("TotalItems");
@@ -53,7 +55,9 @@ namespace DataAccess {
                 p.Id = reader.GetInt32("IdProduct");
                 p.Name = reader.GetString("Name");
                 p.Price = reader.GetDouble("Price");
-                p.NeedsPrescription = (reader.GetInt32("NeedsPrescription") == 1);
+                int pres = reader.GetInt32("NeedsPrescription");
+                if (pres == 1) p.NeedsPrescription = "SÍ";
+                else p.NeedsPrescription = "NO";
                 p.Utility = reader.GetDouble("Utility");
                 p.Points = reader.GetInt32("Points");
                 p.TotalItems = reader.GetInt32("TotalItems");

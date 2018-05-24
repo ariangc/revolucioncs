@@ -13,7 +13,7 @@ namespace Model
         private string name;
         private List<string> components = new List<string>();
         private double price;
-        private bool needsPrescription;
+        private string needsPrescription;
         private double utility;
         private int points;
         private int totalItems;
@@ -21,7 +21,7 @@ namespace Model
         public Product() { }
 
         //constructor con lista de componentes
-        public Product(int id, string name, List<string> components, double price, bool needsPrescription, double utility, int points)
+        public Product(int id, string name, List<string> components, double price, string needsPrescription, double utility, int points)
         {
             this.id = id;
             this.name = name;
@@ -33,7 +33,7 @@ namespace Model
             this.totalItems = 0;
         }
         //constructor sin lista de componentes
-        public Product(int id, string name, double price, bool needsPrescription, double utility, int points)
+        public Product(int id, string name, double price, string needsPrescription, double utility, int points)
         {
             this.id = id;
             this.name = name;
@@ -59,7 +59,7 @@ namespace Model
             get { return this.price; }
             set { this.price = value; }
         }
-        public bool NeedsPrescription
+        public string NeedsPrescription
         {
             get { return this.needsPrescription; }
             set { this.needsPrescription = value; }
