@@ -58,8 +58,8 @@ namespace DataAccess {
             if (ruc.Length == 0) cmd.Parameters.Add("_ruc", MySqlDbType.String).Value = DBNull.Value;
             else cmd.Parameters.Add("_ruc", MySqlDbType.String).Value = ruc;
 
-            if (name.Length == 0) cmd.Parameters.Add("_name", MySqlDbType.String).Value = DBNull.Value;
-            else cmd.Parameters.Add("_name", MySqlDbType.String).Value = name;
+            if (name.Length == 0) cmd.Parameters.Add("_companyName", MySqlDbType.String).Value = DBNull.Value;
+            else cmd.Parameters.Add("_companyName", MySqlDbType.String).Value = name;
 
             MySqlDataReader reader = cmd.ExecuteReader();
 

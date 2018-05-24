@@ -20,6 +20,7 @@ namespace Presentation
             InitializeComponent();
             legalClientBL = new LegalClientBL();
             this.CenterToScreen();
+            dataGridView1.DataSource = legalClientBL.listLegalClients("", "");
         }
 
         private void dniModifyClientTextBox_TextChanged(object sender, EventArgs e)
