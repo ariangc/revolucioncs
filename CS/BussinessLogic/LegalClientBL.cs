@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccess;
 using Model;
+using System.ComponentModel;
 
 namespace BussinessLogic {
     public class LegalClientBL {
@@ -21,6 +22,11 @@ namespace BussinessLogic {
         public void addLegalClient(LegalClient lc)
         {
             dataAccess.addLegalClient(lc);
+        }
+
+        public BindingList<LegalClient> listLegalClients(string ruc, string name)
+        {
+            return dataAccess.listLegalClients(ruc, name);
         }
     }
 }

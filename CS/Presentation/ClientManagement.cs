@@ -50,7 +50,7 @@ namespace Presentation
             */
 
             dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.DataSource = naturalClientBL.listNaturalClients();
+            dataGridView1.DataSource = naturalClientBL.listNaturalClients("","","");
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)
@@ -315,26 +315,10 @@ namespace Presentation
 
         private void searchButon_Click_1(object sender, EventArgs e)
         {
-            for (int i = 0; i < dataGridView1.RowCount - 1; i++)
-            {
-                dataGridView1.Rows[i].Visible = true;
-            }
-
-            bool flag = true;
-            for (int i = 0; i< dataGridView1.RowCount-1; i++)
-            {
-                if (dniModifyClientTextBox.Text == dataGridView1.Rows[i].Cells[0].Value.ToString()
-                    || nameModifyClientTextBox.Text == dataGridView1.Rows[i].Cells[1].Value.ToString()
-                    || surnameModifyClientTextBox.Text == dataGridView1.Rows[i].Cells[2].Value.ToString())
-                {
-                    flag = false;
-                }
-                else
-                {
-                    dataGridView1.Rows[i].Visible = false;
-                }
-            }
-            if (flag) MessageBox.Show("No se encontró el cliente buscado", "No encontrado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            String dni = dniModifyClientTextBox.Text;
+            String name = nameModifyClientTextBox.Text;
+            String surname = surnameModifyClientTextBox.Text;
+            dataGridView1.DataSource = naturalClientBL.listNaturalClients(dni, name, surname);
         }
 
         private void refreshButton_Click(object sender, EventArgs e)

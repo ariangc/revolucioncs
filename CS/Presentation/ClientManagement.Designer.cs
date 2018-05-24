@@ -37,6 +37,13 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.IdentityDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.searchButon = new System.Windows.Forms.Button();
             this.surnameModifyClientTextBox = new System.Windows.Forms.TextBox();
             this.nameModifyClientTextBox = new System.Windows.Forms.TextBox();
@@ -60,13 +67,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.clientTabControl = new System.Windows.Forms.TabControl();
-            this.IdentityDoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ModifyTabControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.RegisterTabControl.SuspendLayout();
@@ -172,6 +172,62 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
+            // IdentityDoc
+            // 
+            this.IdentityDoc.DataPropertyName = "Dni";
+            this.IdentityDoc.HeaderText = "DNI";
+            this.IdentityDoc.Name = "IdentityDoc";
+            this.IdentityDoc.ReadOnly = true;
+            this.IdentityDoc.Width = 50;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Name";
+            this.Column2.HeaderText = "Nombres";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 50;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Surname";
+            this.Column3.HeaderText = "Apellidos";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 50;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Address";
+            this.Column4.HeaderText = "Direccion";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 50;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "PhoneNumber";
+            this.Column5.HeaderText = "Telefono";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 50;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "Email";
+            this.Column6.HeaderText = "E-mail";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 50;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Seleccionar";
+            this.Column7.Name = "Column7";
+            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column7.Width = 70;
+            // 
             // searchButon
             // 
             this.searchButon.BackColor = System.Drawing.Color.Silver;
@@ -190,7 +246,6 @@
             this.surnameModifyClientTextBox.Name = "surnameModifyClientTextBox";
             this.surnameModifyClientTextBox.Size = new System.Drawing.Size(100, 20);
             this.surnameModifyClientTextBox.TabIndex = 11;
-            this.surnameModifyClientTextBox.Text = "Apellido";
             this.surnameModifyClientTextBox.Click += new System.EventHandler(this.surnameModifyClientTextBox_Click);
             this.surnameModifyClientTextBox.TextChanged += new System.EventHandler(this.surnameModifyClientTextBox_TextChanged);
             // 
@@ -201,7 +256,6 @@
             this.nameModifyClientTextBox.Name = "nameModifyClientTextBox";
             this.nameModifyClientTextBox.Size = new System.Drawing.Size(100, 20);
             this.nameModifyClientTextBox.TabIndex = 10;
-            this.nameModifyClientTextBox.Text = "Nombres";
             this.nameModifyClientTextBox.Click += new System.EventHandler(this.nameModifyClientTextBox_Click);
             this.nameModifyClientTextBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -212,7 +266,6 @@
             this.dniModifyClientTextBox.Name = "dniModifyClientTextBox";
             this.dniModifyClientTextBox.Size = new System.Drawing.Size(100, 20);
             this.dniModifyClientTextBox.TabIndex = 9;
-            this.dniModifyClientTextBox.Text = "DNI";
             this.dniModifyClientTextBox.Click += new System.EventHandler(this.dniModifyClientTextBox_Click);
             this.dniModifyClientTextBox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
@@ -424,62 +477,6 @@
             this.clientTabControl.Size = new System.Drawing.Size(442, 429);
             this.clientTabControl.TabIndex = 6;
             this.clientTabControl.SelectedIndexChanged += new System.EventHandler(this.clientTabControl_SelectedIndexChanged);
-            // 
-            // IdentityDoc
-            // 
-            this.IdentityDoc.DataPropertyName = "Dni";
-            this.IdentityDoc.HeaderText = "DNI";
-            this.IdentityDoc.Name = "IdentityDoc";
-            this.IdentityDoc.ReadOnly = true;
-            this.IdentityDoc.Width = 50;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Name";
-            this.Column2.HeaderText = "Nombres";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 50;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "Surname";
-            this.Column3.HeaderText = "Apellidos";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 50;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "Address";
-            this.Column4.HeaderText = "Direccion";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 50;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "PhoneNumber";
-            this.Column5.HeaderText = "Telefono";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 50;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "Email";
-            this.Column6.HeaderText = "E-mail";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 50;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Seleccionar";
-            this.Column7.Name = "Column7";
-            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column7.Width = 70;
             // 
             // ClientManagement
             // 

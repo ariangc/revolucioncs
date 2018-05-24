@@ -29,7 +29,9 @@ namespace Presentation
 
         private void searchButon_Click(object sender, EventArgs e)
         {
-
+            String ruc = rucModifyTextBox.Text;
+            String name = companyNameModifyTextBox.Text;
+            dataGridView1.DataSource =  legalClientBL.listLegalClients(ruc, name);
         }
 
         private void refreshButton_Click(object sender, EventArgs e)

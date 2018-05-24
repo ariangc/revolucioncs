@@ -24,8 +24,8 @@ namespace Presentation
             textBox2.Text = nc.Name;
             textBox3.Text = nc.Surname;
             textBox4.Text = nc.Address;
-            textBox4.Text = nc.PhoneNumber;
-            textBox5.Text = nc.Email;
+            textBox5.Text = nc.PhoneNumber;
+            textBox6.Text = nc.Email;
             textBox2.Enabled = false;
             textBox3.Enabled = false;
             textBox4.Enabled = false;

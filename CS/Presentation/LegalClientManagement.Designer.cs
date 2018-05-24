@@ -45,25 +45,23 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.modifyClientButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.refreshButton = new System.Windows.Forms.Button();
-            this.searchButon = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.surnameModifyClientTextBox = new System.Windows.Forms.TextBox();
-            this.nameModifyClientTextBox = new System.Windows.Forms.TextBox();
-            this.dniModifyClientTextBox = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.modifyClientButton = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.refreshButton = new System.Windows.Forms.Button();
+            this.searchButon = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.companyNameModifyTextBox = new System.Windows.Forms.TextBox();
+            this.rucModifyTextBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -100,7 +98,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(449, 396);
+            this.tabPage1.Size = new System.Drawing.Size(449, 436);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Registrar";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
@@ -235,12 +233,10 @@
             this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.Controls.Add(this.refreshButton);
             this.tabPage2.Controls.Add(this.searchButon);
-            this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.label13);
             this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.surnameModifyClientTextBox);
-            this.tabPage2.Controls.Add(this.nameModifyClientTextBox);
-            this.tabPage2.Controls.Add(this.dniModifyClientTextBox);
+            this.tabPage2.Controls.Add(this.companyNameModifyTextBox);
+            this.tabPage2.Controls.Add(this.rucModifyTextBox);
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -249,6 +245,17 @@
             this.tabPage2.Size = new System.Drawing.Size(449, 436);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Modificar/Eliminar";
+            // 
+            // modifyClientButton
+            // 
+            this.modifyClientButton.BackColor = System.Drawing.Color.Silver;
+            this.modifyClientButton.Location = new System.Drawing.Point(178, 377);
+            this.modifyClientButton.Name = "modifyClientButton";
+            this.modifyClientButton.Size = new System.Drawing.Size(89, 33);
+            this.modifyClientButton.TabIndex = 27;
+            this.modifyClientButton.Text = "Modificar";
+            this.modifyClientButton.UseVisualStyleBackColor = false;
+            this.modifyClientButton.Click += new System.EventHandler(this.modifyClientButton_Click);
             // 
             // label9
             // 
@@ -274,114 +281,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(408, 182);
             this.dataGridView1.TabIndex = 25;
-            // 
-            // refreshButton
-            // 
-            this.refreshButton.BackColor = System.Drawing.Color.Silver;
-            this.refreshButton.Location = new System.Drawing.Point(266, 152);
-            this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(89, 31);
-            this.refreshButton.TabIndex = 24;
-            this.refreshButton.Text = "Refrescar";
-            this.refreshButton.UseVisualStyleBackColor = false;
-            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
-            // 
-            // searchButon
-            // 
-            this.searchButon.BackColor = System.Drawing.Color.Silver;
-            this.searchButon.Location = new System.Drawing.Point(100, 152);
-            this.searchButon.Name = "searchButon";
-            this.searchButon.Size = new System.Drawing.Size(89, 31);
-            this.searchButon.TabIndex = 23;
-            this.searchButon.Text = "Buscar";
-            this.searchButon.UseVisualStyleBackColor = false;
-            this.searchButon.Click += new System.EventHandler(this.searchButon_Click);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(328, 110);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(47, 13);
-            this.label14.TabIndex = 22;
-            this.label14.Text = "Apellido:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(175, 110);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(52, 13);
-            this.label13.TabIndex = 21;
-            this.label13.Text = "Nombres:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(20, 110);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(29, 13);
-            this.label12.TabIndex = 20;
-            this.label12.Text = "DNI:";
-            // 
-            // surnameModifyClientTextBox
-            // 
-            this.surnameModifyClientTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.surnameModifyClientTextBox.Location = new System.Drawing.Point(331, 126);
-            this.surnameModifyClientTextBox.Name = "surnameModifyClientTextBox";
-            this.surnameModifyClientTextBox.Size = new System.Drawing.Size(100, 20);
-            this.surnameModifyClientTextBox.TabIndex = 19;
-            this.surnameModifyClientTextBox.Text = "Apellido";
-            // 
-            // nameModifyClientTextBox
-            // 
-            this.nameModifyClientTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.nameModifyClientTextBox.Location = new System.Drawing.Point(178, 126);
-            this.nameModifyClientTextBox.Name = "nameModifyClientTextBox";
-            this.nameModifyClientTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nameModifyClientTextBox.TabIndex = 18;
-            this.nameModifyClientTextBox.Text = "Nombres";
-            // 
-            // dniModifyClientTextBox
-            // 
-            this.dniModifyClientTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.dniModifyClientTextBox.Location = new System.Drawing.Point(23, 126);
-            this.dniModifyClientTextBox.Name = "dniModifyClientTextBox";
-            this.dniModifyClientTextBox.Size = new System.Drawing.Size(100, 20);
-            this.dniModifyClientTextBox.TabIndex = 17;
-            this.dniModifyClientTextBox.Text = "DNI";
-            this.dniModifyClientTextBox.TextChanged += new System.EventHandler(this.dniModifyClientTextBox_TextChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label7.Location = new System.Drawing.Point(77, 82);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(305, 20);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Complete los campos del cliente a buscar:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Modern No. 20", 24F, System.Drawing.FontStyle.Bold);
-            this.label11.Location = new System.Drawing.Point(94, 34);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(261, 34);
-            this.label11.TabIndex = 8;
-            this.label11.Text = "Modificar Cliente";
-            // 
-            // modifyClientButton
-            // 
-            this.modifyClientButton.BackColor = System.Drawing.Color.Silver;
-            this.modifyClientButton.Location = new System.Drawing.Point(178, 377);
-            this.modifyClientButton.Name = "modifyClientButton";
-            this.modifyClientButton.Size = new System.Drawing.Size(89, 33);
-            this.modifyClientButton.TabIndex = 27;
-            this.modifyClientButton.Text = "Modificar";
-            this.modifyClientButton.UseVisualStyleBackColor = false;
-            this.modifyClientButton.Click += new System.EventHandler(this.modifyClientButton_Click);
             // 
             // Column1
             // 
@@ -412,6 +311,83 @@
             // 
             this.Column6.HeaderText = "Seleccionar";
             this.Column6.Name = "Column6";
+            // 
+            // refreshButton
+            // 
+            this.refreshButton.BackColor = System.Drawing.Color.Silver;
+            this.refreshButton.Location = new System.Drawing.Point(266, 152);
+            this.refreshButton.Name = "refreshButton";
+            this.refreshButton.Size = new System.Drawing.Size(89, 31);
+            this.refreshButton.TabIndex = 24;
+            this.refreshButton.Text = "Refrescar";
+            this.refreshButton.UseVisualStyleBackColor = false;
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
+            // 
+            // searchButon
+            // 
+            this.searchButon.BackColor = System.Drawing.Color.Silver;
+            this.searchButon.Location = new System.Drawing.Point(100, 152);
+            this.searchButon.Name = "searchButon";
+            this.searchButon.Size = new System.Drawing.Size(89, 31);
+            this.searchButon.TabIndex = 23;
+            this.searchButon.Text = "Buscar";
+            this.searchButon.UseVisualStyleBackColor = false;
+            this.searchButon.Click += new System.EventHandler(this.searchButon_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(263, 110);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(70, 13);
+            this.label13.TabIndex = 21;
+            this.label13.Text = "Razon Social";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(54, 110);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(30, 13);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "RUC";
+            // 
+            // companyNameModifyTextBox
+            // 
+            this.companyNameModifyTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.companyNameModifyTextBox.Location = new System.Drawing.Point(178, 126);
+            this.companyNameModifyTextBox.Name = "companyNameModifyTextBox";
+            this.companyNameModifyTextBox.Size = new System.Drawing.Size(253, 20);
+            this.companyNameModifyTextBox.TabIndex = 18;
+            // 
+            // rucModifyTextBox
+            // 
+            this.rucModifyTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.rucModifyTextBox.Location = new System.Drawing.Point(23, 126);
+            this.rucModifyTextBox.Name = "rucModifyTextBox";
+            this.rucModifyTextBox.Size = new System.Drawing.Size(100, 20);
+            this.rucModifyTextBox.TabIndex = 17;
+            this.rucModifyTextBox.TextChanged += new System.EventHandler(this.dniModifyClientTextBox_TextChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label7.Location = new System.Drawing.Point(77, 82);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(305, 20);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Complete los campos del cliente a buscar:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Modern No. 20", 24F, System.Drawing.FontStyle.Bold);
+            this.label11.Location = new System.Drawing.Point(94, 34);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(261, 34);
+            this.label11.TabIndex = 8;
+            this.label11.Text = "Modificar Cliente";
             // 
             // LegalClientManagement
             // 
@@ -450,12 +426,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox surnameModifyClientTextBox;
-        private System.Windows.Forms.TextBox nameModifyClientTextBox;
-        private System.Windows.Forms.TextBox dniModifyClientTextBox;
+        private System.Windows.Forms.TextBox companyNameModifyTextBox;
+        private System.Windows.Forms.TextBox rucModifyTextBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button refreshButton;
         private System.Windows.Forms.Button searchButon;

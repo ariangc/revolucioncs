@@ -77,7 +77,7 @@ namespace DataAccess {
             con.Open();
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "updateToBDNaturalClient";
+            cmd.CommandText = "updateInBDNaturalClient";
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
             cmd.Parameters.Add("_address", MySqlDbType.String).Value = nc.Address;
@@ -90,8 +90,8 @@ namespace DataAccess {
             cmd.ExecuteNonQuery();
             con.Close();
         }
-
-        public BindingList<NaturalClient> listNaturalClients()
+        
+        public BindingList<NaturalClient> listNaturalClients(string dni, string name, string surname)
         {
             BindingList<NaturalClient> list = new BindingList<NaturalClient>();
             MySqlConnection con = new MySqlConnection(Constants.connectionString);
@@ -100,6 +100,15 @@ namespace DataAccess {
             cmd.Connection = con;
             cmd.CommandText = "listNaturalClients";
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            if (dni.Length == 0) cmd.Parameters.Add("_dni", MySqlDbType.String).Value = DBNull.Value;
+            else cmd.Parameters.Add("_dni", MySqlDbType.String).Value = dni;
+
+            if (name.Length == 0) cmd.Parameters.Add("_name", MySqlDbType.String).Value = DBNull.Value;
+            else cmd.Parameters.Add("_name", MySqlDbType.String).Value = name;
+
+            if (surname.Length == 0) cmd.Parameters.Add("_surname", MySqlDbType.String).Value = DBNull.Value;
+            else cmd.Parameters.Add("_surname", MySqlDbType.String).Value = surname;
 
             MySqlDataReader reader = cmd.ExecuteReader();
 
