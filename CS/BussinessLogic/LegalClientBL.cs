@@ -33,5 +33,10 @@ namespace BussinessLogic {
         {
             dataAccess.updateLegalClient(lc);
         }
+
+        public BindingList<LegalClient> searchLegalClients(string ruc, string name)
+        {
+            return dataAccess.searchLegalClients(ruc, name);
+        }
     }
 }

@@ -104,7 +104,7 @@ namespace DataAccess {
             con.Open();
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "listLegalClients";
+            cmd.CommandText = "searchLegalClients";
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
             if (ruc.Length == 0) cmd.Parameters.Add("_ruc", MySqlDbType.String).Value = DBNull.Value;

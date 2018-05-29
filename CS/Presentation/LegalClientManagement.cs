@@ -33,7 +33,7 @@ namespace Presentation
         {
             String ruc = rucModifyTextBox.Text;
             String name = companyNameModifyTextBox.Text;
-            dataGridView1.DataSource =  legalClientBL.listLegalClients(ruc, name);
+            dataGridView1.DataSource =  legalClientBL.searchLegalClients(ruc, name);
         }
 
         private void refreshButton_Click(object sender, EventArgs e)
