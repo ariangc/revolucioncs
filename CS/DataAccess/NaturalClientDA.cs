@@ -101,5 +101,41 @@ namespace DataAccess {
             con.Close();
             return list;
         }
+
+        public BindingList<NaturalClient> searchNaturalClients(string dni, string name, string surname)
+        {
+            BindingList<NaturalClient> list = new BindingList<NaturalClient>();
+            MySqlConnection con = new MySqlConnection(Constants.connectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "searchNaturalClients";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            if (dni.Length == 0) cmd.Parameters.Add("_dni", MySqlDbType.String).Value = DBNull.Value;
+            else cmd.Parameters.Add("_dni", MySqlDbType.String).Value = dni;
+
+            if (name.Length == 0) cmd.Parameters.Add("_name", MySqlDbType.String).Value = DBNull.Value;
+            else cmd.Parameters.Add("_name", MySqlDbType.String).Value = name;
+
+            if (surname.Length == 0) cmd.Parameters.Add("_surname", MySqlDbType.String).Value = DBNull.Value;
+            else cmd.Parameters.Add("_surname", MySqlDbType.String).Value = surname;
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                NaturalClient nc = new NaturalClient();
+                nc.Dni = reader.GetString("Dni");
+                nc.Name = reader.GetString("Name");
+                nc.Surname = reader.GetString("Surname");
+                nc.Address = reader.GetString("Address");
+                nc.PhoneNumber = reader.GetString("PhoneNumber");
+                nc.Email = reader.GetString("Email");
+                list.Add(nc);
+            }
+            con.Close();
+            return list;
+        }
     }
 }
