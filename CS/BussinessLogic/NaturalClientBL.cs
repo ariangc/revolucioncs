@@ -29,7 +29,6 @@ namespace BussinessLogic {
         {
             dataAccess.updateNaturalClient(nc);
         }
-       
 
         public BindingList<NaturalClient> listNaturalClients(string dni, string name, string surname)
         {

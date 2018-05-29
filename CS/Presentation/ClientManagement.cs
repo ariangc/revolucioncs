@@ -123,43 +123,15 @@ namespace Presentation
 
         private void ConfirmButton_Click(object sender, EventArgs e)
         {
-            bool flagDNI = false;
-            bool flagPhone = false;
-
             if(dniTextBox.Text== "" || nameTextBox.Text=="" || lastnameTextBox.Text=="" || districtTextBox.Text=="" || phoneTextBox.Text=="" || emailTextBox.Text == "")
             {
                 MessageBox.Show("Debe llenar todos los campos", "Error en registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 
             }
-
-            int i = 0;
-            string dni = dniTextBox.Text;
-            while (i < dni.Length)
-            {
-                if (dni[i] < '0' || dni[i] > '9')
-                {
-                    flagDNI = true;
-                    break;
-                }
-                i++;
+            else if (dniTextBox.Text.Length != 8 || !dniTextBox.Text.All(char.IsDigit)) {
+                MessageBox.Show("El campo DNI debe tener 8 dígitos", "Error en registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            i = 0;
-            string phone = phoneTextBox.Text;
-            while (i < phone.Length)
-            {
-                if (phone[i] < '0' || phone[i] > '9')
-                {
-                    flagPhone = true;
-                    break;
-                }
-                i++;
-            }
-
-            if (dniTextBox.Text != "" && flagDNI) {
-                MessageBox.Show("El campo DNI debe ser un número", "Error en registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (phoneTextBox.Text != "" && flagPhone) {
+            else if (!phoneTextBox.Text.All(char.IsDigit)) {
                 MessageBox.Show("El campo teléfono debe ser un número", "Error en registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else {
@@ -170,11 +142,11 @@ namespace Presentation
 
                 NaturalClient nc = new NaturalClient();
                 nc.Address = district;
-                nc.Dni = dni;
+                nc.Dni = dniTextBox.Text;
                 nc.Name = name;
                 nc.Surname = surname;
                 nc.Email = email;
-                nc.PhoneNumber = phone;
+                nc.PhoneNumber = phoneTextBox.Text;
 
                 naturalClientBL.addNaturalClient(nc);
                 dataGridView1.DataSource = naturalClientBL.listNaturalClients("", "", "");
