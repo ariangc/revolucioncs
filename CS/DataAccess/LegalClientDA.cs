@@ -96,5 +96,38 @@ namespace DataAccess {
             cmd.ExecuteNonQuery();
             con.Close();
         }
+
+        public BindingList<LegalClient> searchLegalClients(string ruc, string name)
+        {
+            BindingList<LegalClient> list = new BindingList<LegalClient>();
+            MySqlConnection con = new MySqlConnection(Constants.connectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "searchLegalClients";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            if (ruc.Length == 0) cmd.Parameters.Add("_ruc", MySqlDbType.String).Value = DBNull.Value;
+            else cmd.Parameters.Add("_ruc", MySqlDbType.String).Value = ruc;
+
+            if (name.Length == 0) cmd.Parameters.Add("_companyName", MySqlDbType.String).Value = DBNull.Value;
+            else cmd.Parameters.Add("_companyName", MySqlDbType.String).Value = name;
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                LegalClient lc = new LegalClient();
+                lc.Address = reader.GetString("Address");
+                lc.CompanyName = reader.GetString("CompanyName");
+                lc.Email = reader.GetString("Email");
+                lc.IdPerson = reader.GetInt32("IdPerson");
+                lc.PhoneNumber = reader.GetString("PhoneNumber");
+                lc.RUC = reader.GetString("Ruc");
+                list.Add(lc);
+            }
+            con.Close();
+            return list;
+        }
     }
 }

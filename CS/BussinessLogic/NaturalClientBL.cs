@@ -34,6 +34,10 @@ namespace BussinessLogic {
         {
             return dataAccess.listNaturalClients(dni, name, surname);
         }
-        
+
+        public BindingList<NaturalClient> searchNaturalClients(string dni, string name, string surname)
+        {
+            return dataAccess.searchNaturalClients(dni, name, surname);
+        }
     }
 }
