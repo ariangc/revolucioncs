@@ -68,10 +68,12 @@ namespace Presentation
             if(UsernameTextBox.Text== "" || PasswordTextBox.Text == "")
             {
                 MessageBox.Show("No ha ingresado todos los datos", "Error al iniciar sesión",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
             }
             else if (UsernameTextBox.Text.Length != 8)
             {
-                MessageBox.Show("Ingrese su número de DNI", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Su número de DNI debe tener 8 dígitos", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             
             string us = UsernameTextBox.Text;
@@ -82,8 +84,9 @@ namespace Presentation
                 if (us[i] < '0' || us[i] > '9') flag = false;
                 i++;
             }
-            
-            if (flag && employeeBussinessLogic.passwordVerify(us,pass))
+
+            bool passFlag = employeeBussinessLogic.passwordVerify(us, pass);
+            if (flag && passFlag)
             {
                 //success login
                 Constants.CurrentUserText = "Usuario: " + employeeBussinessLogic.getEmployeeName(us);
@@ -98,12 +101,12 @@ namespace Presentation
                 this.PasswordTextBox.Text = "";
             }
             else if(!flag){
-                MessageBox.Show("Ingresar número de documento de identidad", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Su DNI solo puede tener dígitos", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 //fail by username
-                MessageBox.Show("Error en ingresar el usuario", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Usuario y/o contraseña incorrecta", "Error al iniciar sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

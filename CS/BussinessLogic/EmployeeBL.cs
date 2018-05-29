@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Model;
+using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace BussinessLogic
 {
@@ -18,8 +20,15 @@ namespace BussinessLogic
 
         public bool passwordVerify(string username, string passwordRecieve)
         {
-            string passwordBD = dataAccess.returnPassword(username);
-            return passwordRecieve.Equals(passwordBD);
+            try
+            {
+                string passwordBD = dataAccess.returnPassword(username);
+                return passwordRecieve.Equals(passwordBD);
+            }
+            catch (MySqlException e)
+            {
+                return false;
+            }
         }
 
         public string getEmployeeName(string dni) {

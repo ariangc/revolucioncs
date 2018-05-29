@@ -28,8 +28,8 @@ namespace DataAccess
                 Request r = new Request();
                 r.Description = reader.GetString("Description");
                 string type = reader.GetString("Type");
-                if (type == "Suggestion") r.Type = Enumerators.RequirementType.Sugerencia;
-                else if (type == "Warning") r.Type = Enumerators.RequirementType.Problema;
+                if (type.Equals("Sugerencia")) r.Type = Enumerators.RequirementType.Sugerencia;
+                else if (type.Equals("Problema")) r.Type = Enumerators.RequirementType.Problema;
                 else r.Type = Enumerators.RequirementType.Otro;
                 r.IdEmployee = reader.GetInt32("Employee_IdPerson");
                 r.IdRequest = reader.GetInt32("IdRequirement");
@@ -71,15 +71,8 @@ namespace DataAccess
         public void deleteRequest(Request r)
         {
             MySqlConnection con = new MySqlConnection(Constants.connectionString);
-            //con.Open();
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = con;
-            //cmd.CommandText = "SELECT IdRequirement FROM Requirement WHERE Description = \"" + r.Description + "\" and Type = \"" + r.Type.ToString() + "\" and Employee_IdPerson =" + r.IdEmployee + ";";
-            //Console.WriteLine(cmd.CommandText);
-            //MySqlDataReader reader = cmd.ExecuteReader();
-            //reader.Read();
-            //int idRequest = reader.GetInt32("IdRequirement");
-            //con.Close();
 
             con.Open();
             cmd.CommandText = "deleteInBDRequirement";
