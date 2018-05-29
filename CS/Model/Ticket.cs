@@ -12,24 +12,35 @@ namespace Model
         private double igv;
         private List<Double> subtotal;
         private double total;
-        private int points;
+        private int pointsGained;
+        private int pointsUsed;
+        private int idEmployee;
+        private int idClient;
+        private char clientType;
 
         //Constructor, getters y setters
-        public Ticket(List<Product> product, DateTime transactionDate, List<int> productQuantity, DateTime expirationDate, int id, double igv, List<double> subtotal, double total, int points) : base(product, transactionDate, productQuantity, expirationDate)
+        public Ticket(List<Product> product, DateTime transactionDate, List<int> productQuantity, DateTime expirationDate, int id, double igv, List<double> subtotal, double total, int pointsGained, int idEmployee, int idClient, char clientType) : base(product, transactionDate, productQuantity, expirationDate)
         {
             this.Id = id;
             this.Igv = igv;
             this.Subtotal = null;
             this.Total = total;
-            this.Points = points;
+            this.PointsGained = pointsGained;
+            this.IdEmployee = idEmployee;
+            this.IdClient = idClient;
+            this.ClientType = clientType;
         }
+        
 
 
         public int Id { get => id; set => id = value; }
         public double Igv { get => igv; set => igv = value; }
         public List<double> Subtotal { get => subtotal; set => subtotal = value; }
         public double Total { get => total; set => total = value; }
-        public int Points { get => points; set => points = value; }
-        
+        public int PointsGained { get => pointsGained; set => pointsGained = value; }
+        public int PointsUsed { get => pointsUsed; set => pointsUsed = value; }
+        public int IdEmployee { get => idEmployee; set => idEmployee = value; }
+        public int IdClient { get => idClient; set => idClient = value; }
+        public char ClientType { get => clientType; set => clientType = value; }
     }
 }

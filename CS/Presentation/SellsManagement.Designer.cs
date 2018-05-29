@@ -38,8 +38,8 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.addProduct = new System.Windows.Forms.Button();
+            this.dropProduct = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,10 +53,15 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalItems = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.fechaTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.confirmSell = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -78,11 +83,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalItems = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -115,8 +115,8 @@
             this.tabPage1.Controls.Add(this.textBox8);
             this.tabPage1.Controls.Add(this.label16);
             this.tabPage1.Controls.Add(this.textBox7);
-            this.tabPage1.Controls.Add(this.button6);
-            this.tabPage1.Controls.Add(this.button5);
+            this.tabPage1.Controls.Add(this.addProduct);
+            this.tabPage1.Controls.Add(this.dropProduct);
             this.tabPage1.Controls.Add(this.label15);
             this.tabPage1.Controls.Add(this.dataGridView3);
             this.tabPage1.Controls.Add(this.label14);
@@ -129,7 +129,7 @@
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.fechaTextBox);
-            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.confirmSell);
             this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
@@ -196,29 +196,29 @@
             this.textBox7.Size = new System.Drawing.Size(100, 20);
             this.textBox7.TabIndex = 24;
             // 
-            // button6
+            // addProduct
             // 
-            this.button6.BackColor = System.Drawing.Color.Silver;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(650, 232);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(95, 36);
-            this.button6.TabIndex = 23;
-            this.button6.Text = "Agregar Producto";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.addProduct.BackColor = System.Drawing.Color.Silver;
+            this.addProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addProduct.Location = new System.Drawing.Point(650, 232);
+            this.addProduct.Name = "addProduct";
+            this.addProduct.Size = new System.Drawing.Size(95, 36);
+            this.addProduct.TabIndex = 23;
+            this.addProduct.Text = "Agregar Producto";
+            this.addProduct.UseVisualStyleBackColor = false;
+            this.addProduct.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button5
+            // dropProduct
             // 
-            this.button5.BackColor = System.Drawing.Color.Silver;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(650, 337);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(114, 33);
-            this.button5.TabIndex = 22;
-            this.button5.Text = "Quitar";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.dropProduct.BackColor = System.Drawing.Color.Silver;
+            this.dropProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.dropProduct.Location = new System.Drawing.Point(650, 337);
+            this.dropProduct.Name = "dropProduct";
+            this.dropProduct.Size = new System.Drawing.Size(114, 33);
+            this.dropProduct.TabIndex = 22;
+            this.dropProduct.Text = "Quitar";
+            this.dropProduct.UseVisualStyleBackColor = false;
+            this.dropProduct.Click += new System.EventHandler(this.button5_Click);
             // 
             // label15
             // 
@@ -344,6 +344,45 @@
             this.dataGridView2.TabIndex = 13;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick_1);
             // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "Id";
+            this.Column5.HeaderText = "Codigo";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 80;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "Name";
+            this.Column6.HeaderText = "Producto";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 80;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "Price";
+            this.Column8.HeaderText = "Precio";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Width = 80;
+            // 
+            // totalItems
+            // 
+            this.totalItems.DataPropertyName = "TotalItems";
+            this.totalItems.HeaderText = "Stock";
+            this.totalItems.Name = "totalItems";
+            this.totalItems.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "NeedsPrescription";
+            this.Column9.HeaderText = "Prescripción";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Width = 80;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -372,17 +411,17 @@
             this.fechaTextBox.TabIndex = 8;
             this.fechaTextBox.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
             // 
-            // button1
+            // confirmSell
             // 
-            this.button1.BackColor = System.Drawing.Color.Silver;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(650, 407);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 33);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Confirmar";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.confirmSell.BackColor = System.Drawing.Color.Silver;
+            this.confirmSell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.confirmSell.Location = new System.Drawing.Point(650, 407);
+            this.confirmSell.Name = "confirmSell";
+            this.confirmSell.Size = new System.Drawing.Size(114, 33);
+            this.confirmSell.TabIndex = 7;
+            this.confirmSell.Text = "Confirmar";
+            this.confirmSell.UseVisualStyleBackColor = false;
+            this.confirmSell.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // textBox1
             // 
@@ -584,45 +623,6 @@
             this.label12.Text = "< Regresar";
             this.label12.Click += new System.EventHandler(this.label12_Click_1);
             // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "Id";
-            this.Column5.HeaderText = "Codigo";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 80;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "Name";
-            this.Column6.HeaderText = "Producto";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 80;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "Price";
-            this.Column8.HeaderText = "Precio";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Width = 80;
-            // 
-            // totalItems
-            // 
-            this.totalItems.DataPropertyName = "TotalItems";
-            this.totalItems.HeaderText = "Stock";
-            this.totalItems.Name = "totalItems";
-            this.totalItems.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "NeedsPrescription";
-            this.Column9.HeaderText = "Prescripción";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Width = 80;
-            // 
             // SellsManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -664,7 +664,7 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox fechaTextBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button confirmSell;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView2;
@@ -675,12 +675,12 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button dropProduct;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button addProduct;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column1;
