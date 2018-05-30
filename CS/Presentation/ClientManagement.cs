@@ -121,6 +121,19 @@ namespace Presentation
            
         }
 
+        private bool isValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         private void ConfirmButton_Click(object sender, EventArgs e)
         {
             if(dniTextBox.Text== "" || nameTextBox.Text=="" || lastnameTextBox.Text=="" || districtTextBox.Text=="" || phoneTextBox.Text=="" || emailTextBox.Text == "")
@@ -133,6 +146,10 @@ namespace Presentation
             }
             else if (!phoneTextBox.Text.All(char.IsDigit)) {
                 MessageBox.Show("El campo teléfono debe ser un número", "Error en registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!isValidEmail(emailTextBox.Text))
+            {
+                MessageBox.Show("El campo E-mail debe ser correo electronico válido", "Error en registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else {
                 string name = nameTextBox.Text;
