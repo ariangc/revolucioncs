@@ -22,5 +22,10 @@ namespace BussinessLogic {
         public BindingList<Product> listProductsByName(string productName) {
             return dataAccess.listProductsByName(productName);
         }
+
+        public BindingList<Product> lstProductXTagByLetters(string symthomps)
+        {
+            return dataAccess.lstProductXTagByLetters(symthomps);
+        }
     }
 }
