@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
 using BussinessLogic;
+using Utils;
 
 namespace Presentation
 {
@@ -20,6 +21,7 @@ namespace Presentation
             InitializeComponent();
             legalClientBL = new LegalClientBL();
             this.CenterToScreen();
+            label2.Text = Constants.CurrentUserText;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = legalClientBL.listLegalClients("", "");
         }
