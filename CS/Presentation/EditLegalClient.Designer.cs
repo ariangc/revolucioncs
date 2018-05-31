@@ -50,6 +50,7 @@
             this.label3.Size = new System.Drawing.Size(59, 13);
             this.label3.TabIndex = 37;
             this.label3.Text = "< Regresar";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // button1
             // 

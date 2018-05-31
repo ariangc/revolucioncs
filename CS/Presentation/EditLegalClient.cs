@@ -112,5 +112,10 @@ namespace Presentation
             else MessageBox.Show("Debe ingresar algún campo", "Cambio de campos de cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
