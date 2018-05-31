@@ -60,6 +60,19 @@ namespace Presentation
             this.Close();
         }
 
+        private bool isValidEmail(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             String ruc = rucTextBox.Text;
@@ -80,15 +93,28 @@ namespace Presentation
             {
                 MessageBox.Show("Ingrese un numero telefonico correcto", "Telefono incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            else if (!isValidEmail(emailTextBox.Text))
+            {
+                MessageBox.Show("El campo E-mail debe ser correo electronico válido", "Error en registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             else
             {
+                //se logra la conexión con la BD
                 LegalClient lc = new LegalClient();
                 lc.Address = address;
                 lc.RUC = ruc;
                 lc.PhoneNumber = phone;
                 lc.CompanyName = companyName;
                 lc.Email = email;
-                legalClientBL.addLegalClient(lc);
+                try
+                {
+                    legalClientBL.addLegalClient(lc);
+                }catch(Exception ex)
+                {
+                    MessageBox.Show("Ya existe este cliente con RUC "+ruc, "Error al añadir cliente jurídico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 dataGridView1.DataSource = legalClientBL.listLegalClients("", "");
                 MessageBox.Show("El cliente ha sido registrado", "Registro de cliente nuevo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
