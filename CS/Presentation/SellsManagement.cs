@@ -184,14 +184,14 @@ namespace Presentation
             String productName = textBox2.Text;
             String symptoms = textBox6.Text;
 
-            dataGridView2.DataSource = productBL.lstProductXTagByLetters(productName);
+            dataGridView2.DataSource = productBL.lstProductXTagByLetters(symptoms);
         }
 
         private void textBox2_TextChanged_2(object sender, EventArgs e) {
             String productName = textBox2.Text;
             String symptoms = textBox6.Text;
 
-            dataGridView2.DataSource = productBL.listProductsByName(symptoms);
+            dataGridView2.DataSource = productBL.listProductsByName(productName);
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e) {
