@@ -165,7 +165,15 @@ namespace Presentation
                 nc.Email = email;
                 nc.PhoneNumber = phoneTextBox.Text;
 
-                naturalClientBL.addNaturalClient(nc);
+                try
+                {
+                    naturalClientBL.addNaturalClient(nc);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ya existe el cliente", "Error al añadir cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 dataGridView1.DataSource = naturalClientBL.listNaturalClients("", "", "");
 
                 MessageBox.Show("El cliente ha sido registrado", "Registro de cliente nuevo", MessageBoxButtons.OK, MessageBoxIcon.Information);
