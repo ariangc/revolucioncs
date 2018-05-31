@@ -18,6 +18,7 @@ namespace Presentation
         private ProductBL productBL;
         private NaturalClientBL naturalClientBL;
         private LegalClientBL legalClientBL;
+        //private TicketBL ticketBL;
 
         static int cliente = 0;
         static int productos = 0;
@@ -36,6 +37,7 @@ namespace Presentation
             productBL = new ProductBL();
             naturalClientBL = new NaturalClientBL();
             legalClientBL = new LegalClientBL();
+            //ticketBL = new TicketBL();
 
             DateTime thisDay = DateTime.Today;
             fechaTextBox.Text = thisDay.ToString("d");
@@ -204,14 +206,33 @@ namespace Presentation
             else {
                 int quantitySale;
                 if (Int32.TryParse(quantity, out quantitySale)) {
-                    Product p = (Product)dataGridView2.CurrentRow.DataBoundItem;
-                    p.QuantitySale = quantitySale;
+                    Product selectedProd = (Product)dataGridView2.CurrentRow.DataBoundItem;
+                    int pos = 0, flag = 1;
+                    foreach (Product x in listAdded) {
+                        if (x.Id == selectedProd.Id) {
+                            flag = 0;
+                        }
+                        if (flag == 0) break;
+                        pos++;
+                    }
+                    Product p;
 
-                    listAdded.Add(p);
+                    if (flag == 0) {
+                        p = listAdded[pos];
+                        totalSale -= p.Subtotal;
+                        p.QuantitySale += quantitySale;
+                        totalSale += p.Subtotal;
+                    }
+                    else {
+                        p = new Product(selectedProd.Id, selectedProd.Name, selectedProd.Price, selectedProd.NeedsPrescription, selectedProd.Utility, selectedProd.Points);
+                        p.QuantitySale = quantitySale;
+                        listAdded.Add(p);
+                        totalSale += p.Subtotal;
+                    }
+                    
                     dataGridView3.DataSource = listAdded;
-                    totalSale += p.Subtotal;
                     textBox8.Text = totalSale.ToString("0.00");
-                    MessageBox.Show("Producto " + p.Name + " agregado " + listAdded.Count, "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("Producto " + p.Name + " agregado " + listAdded.Count, "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else {
                     MessageBox.Show("Ingrese una cantidad numerica", "Cantidad no numerica", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -380,3 +380,5 @@ C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolucioncs\revolucioncs\CS\Present
 C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolucioncs\revolucioncs\CS\Presentation\obj\Debug\Presentation.csproj.CopyComplete
 C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolucioncs\revolucioncs\CS\Presentation\obj\Debug\Presentation.exe
 C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolucioncs\revolucioncs\CS\Presentation\obj\Debug\Presentation.pdb
+C:\Users\arian\Desktop\revolucioncs\CS\Presentation\obj\Debug\Presentation.EditLegalClient.resources
+C:\Users\arian\Desktop\revolucioncs\CS\Presentation\obj\Debug\Presentation.LegalClientManagement.resources
