@@ -244,7 +244,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(449, 436);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Modificar/Eliminar";
+            this.tabPage2.Text = "Modificar";
             // 
             // modifyClientButton
             // 
