@@ -31,9 +31,7 @@ namespace Presentation
             cliente = productos = 0;
             InitializeComponent();
             this.CenterToScreen();
-
-            label2.Text = Constants.CurrentUserText;
-
+            
             productBL = new ProductBL();
             naturalClientBL = new NaturalClientBL();
             legalClientBL = new LegalClientBL();
@@ -48,6 +46,8 @@ namespace Presentation
             listAdded = new BindingList<Product>();
             dataGridView2.DataSource = productBL.listProducts();
             dataGridView3.DataSource = listAdded;
+
+            textBox4.Text = Constants.CurrentUserText;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -56,11 +56,6 @@ namespace Presentation
         }
 
         private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
         {
 
         }
@@ -86,11 +81,7 @@ namespace Presentation
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e) {
-            if (cliente == 0) {
-                textBox1.Text = "";
-                textBox1.ForeColor = Color.Black;
-                cliente++;
-            }
+
         }
 
         private void textBox1_MouseClick(object sender, MouseEventArgs e) {
@@ -253,12 +244,73 @@ namespace Presentation
             dataGridView3.DataSource = listAdded;
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) {
-            if (comboBox1.SelectedIndex == 0) label3.Text = "DNI del Cliente";
-            else label3.Text = "RUC de la Empresa";
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex == 0)
+            {
+                label3.Text = "DNI del Cliente";
+                label10.Text = "Nombre completo";
+            }
+            else
+            {
+                label3.Text = "RUC de la Empresa";
+                label10.Text = "Razon Social";
+            }
         }
 
         private void label3_Click_1(object sender, EventArgs e) {
+
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            if(comboBox1.SelectedIndex == 0)
+            {
+                SearchNaturalClient snc = new SearchNaturalClient();
+                this.Hide();
+                snc.ShowDialog();
+                this.Show();
+                NaturalClient nc = snc.ClientSelected;
+                if (nc != null)
+                {
+                    textBox1.Text = nc.Dni;
+                    textBox3.Text = nc.Name + " " + nc.Surname;
+                }
+            }
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
 
         }
     }

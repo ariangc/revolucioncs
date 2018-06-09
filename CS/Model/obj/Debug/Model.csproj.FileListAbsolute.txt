@@ -62,3 +62,11 @@ C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolucioncs\revolucioncs\CS\Model\o
 C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolucioncs\revolucioncs\CS\Model\obj\Debug\Model.csproj.CopyComplete
 C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolucioncs\revolucioncs\CS\Model\obj\Debug\Model.dll
 C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolucioncs\revolucioncs\CS\Model\obj\Debug\Model.pdb
+C:\Users\alulab14.INF\Desktop\revolucioncs\CS\Model\bin\Debug\Model.dll
+C:\Users\alulab14.INF\Desktop\revolucioncs\CS\Model\bin\Debug\Model.pdb
+C:\Users\alulab14.INF\Desktop\revolucioncs\CS\Model\bin\Debug\Utils.dll
+C:\Users\alulab14.INF\Desktop\revolucioncs\CS\Model\bin\Debug\Utils.pdb
+C:\Users\alulab14.INF\Desktop\revolucioncs\CS\Model\bin\Debug\Utils.dll.config
+C:\Users\alulab14.INF\Desktop\revolucioncs\CS\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\alulab14.INF\Desktop\revolucioncs\CS\Model\obj\Debug\Model.dll
+C:\Users\alulab14.INF\Desktop\revolucioncs\CS\Model\obj\Debug\Model.pdb

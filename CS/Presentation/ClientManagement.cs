@@ -232,7 +232,6 @@ namespace Presentation
             String dni = dniModifyClientTextBox.Text;
             String name = nameModifyClientTextBox.Text;
             String surname = surnameModifyClientTextBox.Text;
-            //dataGridView1.DataSource = naturalClientBL.listNaturalClients(dni, name, surname);
             dataGridView1.DataSource = naturalClientBL.searchNaturalClients(dni, name, surname);
         }
 

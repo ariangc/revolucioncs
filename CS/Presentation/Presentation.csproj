@@ -93,6 +93,12 @@
     <Compile Include="RequestManagement.Designer.cs">
       <DependentUpon>RequestManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchNaturalClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchNaturalClient.Designer.cs">
+      <DependentUpon>SearchNaturalClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="SellsManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RequestManagement.resx">
       <DependentUpon>RequestManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchNaturalClient.resx">
+      <DependentUpon>SearchNaturalClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SellsManagement.resx">
       <DependentUpon>SellsManagement.cs</DependentUpon>
@@ -185,6 +194,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="keys.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="back.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
