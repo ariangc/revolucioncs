@@ -18,7 +18,7 @@ namespace Presentation
         private ProductBL productBL;
         private NaturalClientBL naturalClientBL;
         private LegalClientBL legalClientBL;
-        //private TicketBL ticketBL;
+        private TicketBL ticketBL;
 
         static int cliente = 0;
         static int productos = 0;
@@ -35,7 +35,7 @@ namespace Presentation
             productBL = new ProductBL();
             naturalClientBL = new NaturalClientBL();
             legalClientBL = new LegalClientBL();
-            //ticketBL = new TicketBL();
+            ticketBL = new TicketBL();
 
             DateTime thisDay = DateTime.Today;
             fechaTextBox.Text = thisDay.ToString("d");
@@ -48,11 +48,35 @@ namespace Presentation
             dataGridView3.DataSource = listAdded;
 
             textBox4.Text = Constants.CurrentUserText;
+            comboBox1.SelectedIndex = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Console.WriteLine(comboBox1.SelectedIndex);
+            if (comboBox1.SelectedIndex == 0) {
+                SearchNaturalClient snc = new SearchNaturalClient();
+                this.Hide();
+                snc.ShowDialog();
+                this.Show();
+                NaturalClient nc = snc.ClientSelected;
+                if (nc != null) {
+                    textBox1.Text = nc.Dni;
+                    textBox3.Text = nc.Name + " " + nc.Surname;
+                }
+            }
+            else {
+                Console.WriteLine("Searching Legal Client");
+                SearchLegalClient slc = new SearchLegalClient();
+                this.Hide();
+                slc.ShowDialog();
+                this.Show();
+                LegalClient lc = slc.SelectedClient;
+                if (lc != null) {
+                    textBox1.Text = lc.RUC;
+                    textBox3.Text = lc.CompanyName;
+                }
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -118,6 +142,7 @@ namespace Presentation
                     }
                     else {
                         MessageBox.Show("Se deberia insertar Ticket", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ticketBL.addTicket(listAdded, idNaturalClient, Constants.CurrentUserID, 'N', checkBox1.Checked);
                     }
                 }
                 else {
@@ -127,6 +152,7 @@ namespace Presentation
                     }
                     else {
                         MessageBox.Show("Se deberia insertar Ticket", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ticketBL.addTicket(listAdded, idLegalClient, Constants.CurrentUserID, 'L', checkBox1.Checked);
                     }
                 }
             }
@@ -250,12 +276,15 @@ namespace Presentation
             {
                 label3.Text = "DNI del Cliente";
                 label10.Text = "Nombre completo";
+                
             }
             else
             {
                 label3.Text = "RUC de la Empresa";
                 label10.Text = "Razon Social";
             }
+            textBox1.Text = "";
+            textBox3.Text = "";
         }
 
         private void label3_Click_1(object sender, EventArgs e) {
@@ -264,17 +293,28 @@ namespace Presentation
 
         private void button1_Click_2(object sender, EventArgs e)
         {
-            if(comboBox1.SelectedIndex == 0)
-            {
+            Console.WriteLine(comboBox1.SelectedIndex);
+            if (comboBox1.SelectedIndex == 0) {
                 SearchNaturalClient snc = new SearchNaturalClient();
                 this.Hide();
                 snc.ShowDialog();
                 this.Show();
                 NaturalClient nc = snc.ClientSelected;
-                if (nc != null)
-                {
+                if (nc != null) {
                     textBox1.Text = nc.Dni;
                     textBox3.Text = nc.Name + " " + nc.Surname;
+                }
+            }
+            else {
+                Console.WriteLine("Searching Legal Client");
+                SearchLegalClient slc = new SearchLegalClient();
+                this.Hide();
+                slc.ShowDialog();
+                this.Show();
+                LegalClient lc = slc.SelectedClient;
+                if (lc != null) {
+                    textBox1.Text = lc.RUC;
+                    textBox3.Text = lc.CompanyName;
                 }
             }
         }

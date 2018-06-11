@@ -11,14 +11,18 @@ namespace Model
 		private List<Product> product;
 		private DateTime transactionDate;
 		private List<int> productQuantity;
-		private DateTime expirationDate;
 
         //Constructor, getters y setters
-		public Transaction(List<Product> product, DateTime transactionDate, List<int> productQuantity, DateTime expirationDate){
+
+        public Transaction() {
+            this.product = null;
+            this.productQuantity = null;
+        }
+
+		public Transaction(List<Product> product, DateTime transactionDate, List<int> productQuantity){
 			this.Product = null;
 			this.transactionDate = transactionDate;
 			this.ProductQuantity = null;
-			this.expirationDate = expirationDate;
 		}
 
 		public DateTime TransactionDate {
@@ -27,15 +31,6 @@ namespace Model
 			}
 			get {
 				return transactionDate;
-			}
-		}
-
-		public DateTime ExpirationDate {
-			set {
-				expirationDate = value;
-			}
-			get {
-				return expirationDate;
 			}
 		}
 

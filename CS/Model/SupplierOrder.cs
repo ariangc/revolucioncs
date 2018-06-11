@@ -12,7 +12,7 @@ namespace Model
 		private int quantity;
 		private int boxSize;
 
-		public SupplierOrder(List<Product> product, DateTime transactionDate, List<int> productQuantity, DateTime expirationDate, Supplier mySupplier, int quantity, int boxSize): base(product, transactionDate, productQuantity, expirationDate){
+		public SupplierOrder(List<Product> product, DateTime transactionDate, List<int> productQuantity, DateTime expirationDate, Supplier mySupplier, int quantity, int boxSize): base(product, transactionDate, productQuantity){
 			this.mySupplier = mySupplier;
 			this.quantity = quantity;
 			this.boxSize = boxSize;

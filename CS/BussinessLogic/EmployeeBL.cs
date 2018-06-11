@@ -31,8 +31,8 @@ namespace BussinessLogic
             }
         }
 
-        public string getEmployeeName(string dni) {
-            return dataAccess.getEmployeeName(dni);
+        public Employee getEmployee(string dni) {
+            return dataAccess.getEmployee(dni);
         }
 
         public void changePassword(string pass)

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Utils;
+using Model;
 
 namespace DataAccess
 {
@@ -30,18 +31,19 @@ namespace DataAccess
             return pass;
         }
 
-        public string getEmployeeName(string username) {
+        public Employee getEmployee(string username) {
             MySqlConnection con = new MySqlConnection(Constants.connectionString);
             con.Open();
             MySqlCommand comando = new MySqlCommand();
-            comando.CommandText = "SELECT Name, Surname FROM Employee WHERE Dni = " + username + ";";
+            comando.CommandText = "SELECT * FROM Employee WHERE Dni = " + username + ";";
             comando.Connection = con;
             MySqlDataReader reader = comando.ExecuteReader();
             reader.Read();
-            string fullname = reader.GetString("Name") + " " + reader.GetString("Surname");
+            Employee employee = new Employee();
+            employee.FullName = reader.GetString("Name") + " " + reader.GetString("Surname");
+            employee.Id = reader.GetInt32("Person_IdPerson");
             con.Close();
-            Console.WriteLine(fullname);
-            return fullname;
+            return employee;
         }
 
         public void changePassword(string pass)

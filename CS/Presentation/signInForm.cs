@@ -89,9 +89,11 @@ namespace Presentation
             if (flag && passFlag)
             {
                 //success login
-                Constants.CurrentUserText = "Usuario: " + employeeBussinessLogic.getEmployeeName(us);
+                Employee employee = employeeBussinessLogic.getEmployee(us);
+                Constants.CurrentUserText = "Usuario: " + employee.FullName;
                 Constants.CurrentUserName = us;
                 Constants.CurrentPassword = pass;
+                Constants.CurrentUserID = employee.Id;
                 UserSession session = new UserSession();
 
                 this.Hide();

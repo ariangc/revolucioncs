@@ -19,7 +19,12 @@ namespace Model
         private char clientType;
 
         //Constructor, getters y setters
-        public Ticket(List<Product> product, DateTime transactionDate, List<int> productQuantity, DateTime expirationDate, int id, double igv, List<double> subtotal, double total, int pointsGained, int idEmployee, int idClient, char clientType) : base(product, transactionDate, productQuantity, expirationDate)
+
+        public Ticket(): base() {
+            subtotal = new List<Double>();
+        }
+
+        public Ticket(List<Product> product, DateTime transactionDate, List<int> productQuantity, int id, double igv, List<double> subtotal, double total, int pointsGained, int idEmployee, int idClient, char clientType) : base(product, transactionDate, productQuantity)
         {
             this.Id = id;
             this.Igv = igv;
