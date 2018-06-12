@@ -16,7 +16,7 @@ namespace Model
         private int pointsUsed;
         private int idEmployee;
         private int idClient;
-        private char clientType;
+        private int clientType;
 
         //Constructor, getters y setters
 
@@ -24,7 +24,7 @@ namespace Model
             subtotal = new List<Double>();
         }
 
-        public Ticket(List<Product> product, DateTime transactionDate, List<int> productQuantity, int id, double igv, List<double> subtotal, double total, int pointsGained, int idEmployee, int idClient, char clientType) : base(product, transactionDate, productQuantity)
+        public Ticket(List<Product> product, DateTime transactionDate, List<int> productQuantity, int id, double igv, List<double> subtotal, double total, int pointsGained, int idEmployee, int idClient, int clientType) : base(product, transactionDate, productQuantity)
         {
             this.Id = id;
             this.Igv = igv;
@@ -46,6 +46,6 @@ namespace Model
         public int PointsUsed { get => pointsUsed; set => pointsUsed = value; }
         public int IdEmployee { get => idEmployee; set => idEmployee = value; }
         public int IdClient { get => idClient; set => idClient = value; }
-        public char ClientType { get => clientType; set => clientType = value; }
+        public int ClientType { get => clientType; set => clientType = value; }
     }
 }

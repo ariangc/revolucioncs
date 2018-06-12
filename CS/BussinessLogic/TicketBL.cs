@@ -21,7 +21,7 @@ namespace BussinessLogic {
             legalClientDA = new LegalClientDA();
         }
 
-        public void addTicket(BindingList<Product> listProducts, int idClient, int idEmployee, char clientType, bool hasDiscount) {
+        public void addTicket(BindingList<Product> listProducts, int idClient, int idEmployee, int clientType, bool hasDiscount) { //clientType: 0->natural client; 1-> legal client
             List<int> productQuantity = new List<int>();
             List<double> subtotal = new List<double>();
             List<double> discFactor = new List<double>(); 
@@ -39,18 +39,14 @@ namespace BussinessLogic {
 
             //Agregar ticket
 
-            Ticket t = new Ticket(listProducts.ToList<Product>(), DateTime.Now, productQuantity, 0, 0.27, subtotal, total, (int)(total / 15), idEmployee, idClient, clientType);
-            //dataAccess.addTicket(t);
+            Ticket t = new Ticket(listProducts.ToList<Product>(), DateTime.Now, productQuantity, 0, total*0.18, subtotal, total, (int)(total / 15), idEmployee, idClient, clientType);
+            t.Id = dataAccess.addTicket(t);
 
             //Agregar productXTicket
-            /*
             foreach (Product p in listProducts) {
                 dataAccess.addProductXTicket(p, t);
                 productDA.substractStock(p);
             }
-            */
-
-
         }
     }
 }

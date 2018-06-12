@@ -96,5 +96,19 @@ namespace DataAccess {
             con.Close();
             return list;
         }
+
+        public void substractStock(Product p)
+        {
+            MySqlConnection con = new MySqlConnection(Constants.connectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "updateInBDProductQuantity";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add("_id", MySqlDbType.Int32).Value = p.Id;
+            cmd.Parameters.Add("_quantity", MySqlDbType.Int32).Value = p.QuantitySale;
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
     }
 }

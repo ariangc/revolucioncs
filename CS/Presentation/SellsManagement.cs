@@ -19,6 +19,7 @@ namespace Presentation
         private NaturalClientBL naturalClientBL;
         private LegalClientBL legalClientBL;
         private TicketBL ticketBL;
+        private EmployeeBL employeeBL;
 
         static int cliente = 0;
         static int productos = 0;
@@ -141,9 +142,11 @@ namespace Presentation
                         MessageBox.Show("No se encontró un cliente con DNI " + docClient, "No existe cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else {
-                        MessageBox.Show("Se deberia insertar Ticket", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        EmployeeBL
-                        ticketBL.addTicket(listAdded, idNaturalClient, Constants.CurrentUserID, 'N', checkBox1.Checked);
+                        MessageBox.Show("Venta Registrada", "Venta realizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ticketBL.addTicket(listAdded, idNaturalClient, Constants.CurrentUserID, 0, checkBox1.Checked);
+                        dataGridView2.DataSource = productBL.listProductsByName("");
+                        listAdded.Clear();
+                        dataGridView3.DataSource = listAdded;
                     }
                 }
                 else {
@@ -152,8 +155,11 @@ namespace Presentation
                         MessageBox.Show("No se encontró un cliente con RUC " + docClient, "No existe cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else {
-                        MessageBox.Show("Se deberia insertar Ticket", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        ticketBL.addTicket(listAdded, idLegalClient, Constants.CurrentUserID, 'L', checkBox1.Checked);
+                        MessageBox.Show("Venta Registrada", "Venta realizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ticketBL.addTicket(listAdded, idLegalClient, Constants.CurrentUserID, 1, checkBox1.Checked);
+                        dataGridView2.DataSource = productBL.listProductsByName("");
+                        listAdded.Clear();
+                        dataGridView3.DataSource = listAdded;
                     }
                 }
             }
@@ -225,6 +231,11 @@ namespace Presentation
                 int quantitySale;
                 if (Int32.TryParse(quantity, out quantitySale)) {
                     Product selectedProd = (Product)dataGridView2.CurrentRow.DataBoundItem;
+                    if(selectedProd.TotalItems < quantitySale)
+                    {
+                        MessageBox.Show("La cantidad solicitada es mayor al stock disponible del producto: " + selectedProd.Name , "Insuficiente Stock", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     int pos = 0, flag = 1;
                     foreach (Product x in listAdded) {
                         if (x.Id == selectedProd.Id) {
@@ -250,7 +261,6 @@ namespace Presentation
                     
                     dataGridView3.DataSource = listAdded;
                     textBox8.Text = totalSale.ToString("0.00");
-                    //MessageBox.Show("Producto " + p.Name + " agregado " + listAdded.Count, "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     textBox2.Text = ""; textBox6.Text = ""; textBox7.Text = "";
                     dataGridView2.DataSource = productBL.listProductsByName("");
                 }

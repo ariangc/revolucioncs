@@ -18,6 +18,8 @@ namespace Model
         private int points;
         private int totalItems;
 
+        public int idDiscount { get; set; }
+
         public Product() { }
 
         //constructor con lista de componentes
@@ -31,6 +33,7 @@ namespace Model
             this.utility = utility;
             this.points = points;
             this.totalItems = 0;
+            this.idDiscount = 0;
         }
         //constructor sin lista de componentes
         public Product(int id, string name, double price, string needsPrescription, double utility, int points)
@@ -41,6 +44,7 @@ namespace Model
             this.needsPrescription = needsPrescription;
             this.utility = utility;
             this.points = points;
+            this.idDiscount = 0;
         }
 
         //getters y setters
