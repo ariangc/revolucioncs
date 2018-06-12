@@ -142,6 +142,7 @@ namespace Presentation
                     }
                     else {
                         MessageBox.Show("Se deberia insertar Ticket", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        EmployeeBL
                         ticketBL.addTicket(listAdded, idNaturalClient, Constants.CurrentUserID, 'N', checkBox1.Checked);
                     }
                 }
