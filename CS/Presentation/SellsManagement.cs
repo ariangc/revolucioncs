@@ -250,6 +250,8 @@ namespace Presentation
                     dataGridView3.DataSource = listAdded;
                     textBox8.Text = totalSale.ToString("0.00");
                     //MessageBox.Show("Producto " + p.Name + " agregado " + listAdded.Count, "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    textBox2.Text = ""; textBox6.Text = ""; textBox7.Text = "";
+                    dataGridView2.DataSource = productBL.listProductsByName("");
                 }
                 else {
                     MessageBox.Show("Ingrese una cantidad numerica", "Cantidad no numerica", MessageBoxButtons.OK, MessageBoxIcon.Error);

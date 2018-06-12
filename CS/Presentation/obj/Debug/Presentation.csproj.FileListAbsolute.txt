@@ -445,3 +445,5 @@ C:\Users\arian\Desktop\LP2\revolucioncs\CS\Presentation\obj\Debug\Presentation.c
 C:\Users\arian\Desktop\LP2\revolucioncs\CS\Presentation\obj\Debug\Presentation.csproj.CopyComplete
 C:\Users\arian\Desktop\LP2\revolucioncs\CS\Presentation\obj\Debug\Presentation.exe
 C:\Users\arian\Desktop\LP2\revolucioncs\CS\Presentation\obj\Debug\Presentation.pdb
+C:\temp\revolucioncs\CS\Presentation\obj\Debug\Presentation.SearchLegalClient.resources
+C:\temp\revolucioncs\CS\Presentation\obj\Debug\Presentation.SearchNaturalClient.resources
