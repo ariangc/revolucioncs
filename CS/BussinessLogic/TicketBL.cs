@@ -26,6 +26,7 @@ namespace BussinessLogic {
             List<double> subtotal = new List<double>();
             List<double> discFactor = new List<double>(); 
             double total = 0.0;
+            int pointsGained = 0;
 
             if (hasDiscount) {
                 // aqui debemos hacer algo con los descuentos uwu
@@ -38,8 +39,8 @@ namespace BussinessLogic {
             }
 
             //Agregar ticket
-
-            Ticket t = new Ticket(listProducts.ToList<Product>(), DateTime.Now, productQuantity, 0, total*0.18, subtotal, total, (int)(total / 15), idEmployee, idClient, clientType);
+            pointsGained = (int)(total / 15); //pointsGained
+            Ticket t = new Ticket(listProducts.ToList<Product>(), DateTime.Now, productQuantity, 0, total*0.18, subtotal, total, pointsGained, idEmployee, idClient, clientType);
             t.Id = dataAccess.addTicket(t);
 
             //Agregar productXTicket
@@ -47,6 +48,10 @@ namespace BussinessLogic {
                 dataAccess.addProductXTicket(p, t);
                 productDA.substractStock(p);
             }
+
+            //Actualizar la cantidad de puntos del cliente si es que es diferente de cero
+            if (pointsGained > 0 && clientType == 0) naturalClientDA.updateNaturalClientPoints(idClient, pointsGained);
+            else if (pointsGained > 0 && clientType == 1) legalClientDA.updateLegalClientPoints(idClient, pointsGained);
         }
     }
 }

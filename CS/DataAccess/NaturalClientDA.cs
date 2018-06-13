@@ -137,5 +137,21 @@ namespace DataAccess {
             con.Close();
             return list;
         }
+
+        public void updateNaturalClientPoints(int personId, int pointsGained)
+        {
+            MySqlConnection con = new MySqlConnection(Constants.connectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "updateInBDNaturalClientPoints";
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("_personId", MySqlDbType.Int32).Value = personId;
+            cmd.Parameters.Add("_pointsGained", MySqlDbType.Int32).Value = pointsGained;
+
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
     }
 }

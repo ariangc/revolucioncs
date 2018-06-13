@@ -447,3 +447,5 @@ C:\Users\arian\Desktop\LP2\revolucioncs\CS\Presentation\obj\Debug\Presentation.e
 C:\Users\arian\Desktop\LP2\revolucioncs\CS\Presentation\obj\Debug\Presentation.pdb
 C:\temp\revolucioncs\CS\Presentation\obj\Debug\Presentation.SearchLegalClient.resources
 C:\temp\revolucioncs\CS\Presentation\obj\Debug\Presentation.SearchNaturalClient.resources
+C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolucioncs\revolucioncs\CS\Presentation\obj\Debug\Presentation.SearchLegalClient.resources
+C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolucioncs\revolucioncs\CS\Presentation\obj\Debug\Presentation.SearchNaturalClient.resources

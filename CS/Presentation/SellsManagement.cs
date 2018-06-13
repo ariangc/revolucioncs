@@ -142,7 +142,7 @@ namespace Presentation
                         MessageBox.Show("No se encontró un cliente con DNI " + docClient, "No existe cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else {
-                        MessageBox.Show("Venta Registrada", "Venta realizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Venta a Cliente Natural Registrada", "Venta realizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ticketBL.addTicket(listAdded, idNaturalClient, Constants.CurrentUserID, 0, checkBox1.Checked);
                         dataGridView2.DataSource = productBL.listProductsByName("");
                         listAdded.Clear();
@@ -155,7 +155,7 @@ namespace Presentation
                         MessageBox.Show("No se encontró un cliente con RUC " + docClient, "No existe cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else {
-                        MessageBox.Show("Venta Registrada", "Venta realizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Venta a Cliente jurídico Registrada", "Venta realizada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         ticketBL.addTicket(listAdded, idLegalClient, Constants.CurrentUserID, 1, checkBox1.Checked);
                         dataGridView2.DataSource = productBL.listProductsByName("");
                         listAdded.Clear();
