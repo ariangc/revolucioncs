@@ -153,5 +153,16 @@ namespace DataAccess {
             cmd.ExecuteNonQuery();
             con.Close();
         }
+
+        public int getPoints(int personId) {
+            MySqlConnection con = new MySqlConnection(Constants.connectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = "select Points from NaturalClient where Person_IdPerson =" + personId.ToString() + ";";
+            cmd.Connection = con;
+            MySqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            return reader.GetInt32("Points");
+        }
     }
 }

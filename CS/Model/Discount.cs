@@ -13,6 +13,8 @@ namespace Model
         private int productId;
         private double factor;
 
+        public Discount() { }
+
         public Discount(int points, string description, int productId, double factor)
         {
             this.clientPointsRequired = points;

@@ -84,6 +84,7 @@ namespace Model
         private int quantitySale;
         public int QuantitySale { get => quantitySale; set => quantitySale = value; }
         public double Subtotal { get => quantitySale * price; }
+        public double SubtotalDisc { get; set; }
 
         //Métodos
         public void addComponent(string componentName)
