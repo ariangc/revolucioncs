@@ -121,9 +121,9 @@
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(6, 23);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(65, 13);
+            this.label17.Size = new System.Drawing.Size(67, 13);
             this.label17.TabIndex = 27;
-            this.label17.Text = "Total Venta:";
+            this.label17.Text = "Precio Total:";
             // 
             // textBox8
             // 
@@ -336,7 +336,7 @@
             this.confirmSell.BackColor = System.Drawing.Color.DarkRed;
             this.confirmSell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.confirmSell.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.confirmSell.Location = new System.Drawing.Point(45, 97);
+            this.confirmSell.Location = new System.Drawing.Point(45, 107);
             this.confirmSell.Name = "confirmSell";
             this.confirmSell.Size = new System.Drawing.Size(114, 33);
             this.confirmSell.TabIndex = 7;
@@ -465,7 +465,7 @@
             this.groupBox3.Controls.Add(this.confirmSell);
             this.groupBox3.Location = new System.Drawing.Point(738, 74);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(193, 142);
+            this.groupBox3.Size = new System.Drawing.Size(193, 155);
             this.groupBox3.TabIndex = 40;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos de la Venta";
@@ -473,7 +473,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 74);
+            this.label8.Location = new System.Drawing.Point(6, 79);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 13);
             this.label8.TabIndex = 45;
@@ -482,15 +482,15 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 48);
+            this.label7.Location = new System.Drawing.Point(9, 43);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 13);
+            this.label7.Size = new System.Drawing.Size(62, 26);
             this.label7.TabIndex = 45;
-            this.label7.Text = "Descuento:";
+            this.label7.Text = "Precio con \r\nDescuento:";
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(77, 71);
+            this.textBox9.Location = new System.Drawing.Point(77, 76);
             this.textBox9.Name = "textBox9";
             this.textBox9.ReadOnly = true;
             this.textBox9.Size = new System.Drawing.Size(100, 20);
@@ -499,7 +499,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(77, 45);
+            this.textBox5.Location = new System.Drawing.Point(77, 47);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(100, 20);
