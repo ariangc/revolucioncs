@@ -72,6 +72,7 @@ namespace DataAccess {
                 lc.IdPerson = reader.GetInt32("IdPerson");
                 lc.PhoneNumber = reader.GetString("PhoneNumber");
                 lc.RUC = reader.GetString("Ruc");
+                lc.Points = reader.GetInt32("Points");
                 list.Add(lc);
             }
             con.Close();

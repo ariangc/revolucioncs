@@ -51,11 +51,6 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalItems = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.fechaTextBox = new System.Windows.Forms.TextBox();
@@ -70,15 +65,23 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.pointsTextBox = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalItems = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -291,7 +294,8 @@
             this.Column6,
             this.Column8,
             this.totalItems,
-            this.Column9});
+            this.Column9,
+            this.Column1});
             this.dataGridView2.Location = new System.Drawing.Point(12, 358);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
@@ -299,49 +303,10 @@
             this.dataGridView2.TabIndex = 13;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick_1);
             // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "Id";
-            this.Column5.HeaderText = "Codigo";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 80;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "Name";
-            this.Column6.HeaderText = "Producto";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 80;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "Price";
-            this.Column8.HeaderText = "Precio";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Width = 80;
-            // 
-            // totalItems
-            // 
-            this.totalItems.DataPropertyName = "TotalItems";
-            this.totalItems.HeaderText = "Stock";
-            this.totalItems.Name = "totalItems";
-            this.totalItems.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "NeedsPrescription";
-            this.Column9.HeaderText = "Prescripción";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Width = 80;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(445, 74);
+            this.label4.Location = new System.Drawing.Point(515, 74);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 12;
@@ -359,7 +324,7 @@
             // 
             // fechaTextBox
             // 
-            this.fechaTextBox.Location = new System.Drawing.Point(448, 90);
+            this.fechaTextBox.Location = new System.Drawing.Point(518, 90);
             this.fechaTextBox.Name = "fechaTextBox";
             this.fechaTextBox.ReadOnly = true;
             this.fechaTextBox.Size = new System.Drawing.Size(134, 20);
@@ -370,7 +335,7 @@
             // 
             this.confirmSell.BackColor = System.Drawing.Color.DarkRed;
             this.confirmSell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.confirmSell.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.confirmSell.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.confirmSell.Location = new System.Drawing.Point(45, 97);
             this.confirmSell.Name = "confirmSell";
             this.confirmSell.Size = new System.Drawing.Size(114, 33);
@@ -454,6 +419,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.pointsTextBox);
             this.groupBox1.Controls.Add(this.label18);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label3);
@@ -464,7 +431,7 @@
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Location = new System.Drawing.Point(12, 110);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(570, 90);
+            this.groupBox1.Size = new System.Drawing.Size(649, 90);
             this.groupBox1.TabIndex = 38;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del Cliente";
@@ -502,6 +469,42 @@
             this.groupBox3.TabIndex = 40;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos de la Venta";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(6, 74);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(65, 13);
+            this.label8.TabIndex = 45;
+            this.label8.Text = "Total Venta:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 48);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(62, 13);
+            this.label7.TabIndex = 45;
+            this.label7.Text = "Descuento:";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(77, 71);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
+            this.textBox9.Size = new System.Drawing.Size(100, 20);
+            this.textBox9.TabIndex = 29;
+            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(77, 45);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(100, 20);
+            this.textBox5.TabIndex = 28;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // groupBox4
             // 
@@ -557,41 +560,70 @@
             this.textBox4.TabIndex = 44;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // textBox5
+            // pointsTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(77, 45);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 28;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.pointsTextBox.Location = new System.Drawing.Point(564, 49);
+            this.pointsTextBox.Name = "pointsTextBox";
+            this.pointsTextBox.ReadOnly = true;
+            this.pointsTextBox.Size = new System.Drawing.Size(64, 20);
+            this.pointsTextBox.TabIndex = 38;
             // 
-            // textBox9
+            // label11
             // 
-            this.textBox9.Location = new System.Drawing.Point(77, 71);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 29;
-            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged);
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(561, 33);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(40, 13);
+            this.label11.TabIndex = 39;
+            this.label11.Text = "Puntos";
             // 
-            // label7
+            // Column5
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 48);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 13);
-            this.label7.TabIndex = 45;
-            this.label7.Text = "Descuento:";
+            this.Column5.DataPropertyName = "Id";
+            this.Column5.HeaderText = "Codigo";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 80;
             // 
-            // label8
+            // Column6
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 74);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(65, 13);
-            this.label8.TabIndex = 45;
-            this.label8.Text = "Total Venta:";
+            this.Column6.DataPropertyName = "Name";
+            this.Column6.HeaderText = "Producto";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 120;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "Price";
+            this.Column8.HeaderText = "Precio";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Width = 80;
+            // 
+            // totalItems
+            // 
+            this.totalItems.DataPropertyName = "TotalItems";
+            this.totalItems.HeaderText = "Stock";
+            this.totalItems.Name = "totalItems";
+            this.totalItems.ReadOnly = true;
+            this.totalItems.Width = 45;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "NeedsPrescription";
+            this.Column9.HeaderText = "Prescripción";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Width = 70;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Points";
+            this.Column1.HeaderText = "Puntos Requeridos";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 70;
             // 
             // SellsManagement
             // 
@@ -655,11 +687,6 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalItems;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
@@ -683,5 +710,13 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox pointsTextBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalItems;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }

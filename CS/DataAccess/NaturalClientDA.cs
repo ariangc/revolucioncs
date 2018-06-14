@@ -96,6 +96,7 @@ namespace DataAccess {
                 nc.Address = reader.GetString("Address");
                 nc.PhoneNumber = reader.GetString("PhoneNumber");
                 nc.Email = reader.GetString("Email");
+                nc.Points = reader.GetInt32("Points");
                 list.Add(nc);
             }
             con.Close();

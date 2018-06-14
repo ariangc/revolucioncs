@@ -44,6 +44,8 @@ namespace Presentation
 
             dataGridView3.AutoGenerateColumns = false;
             dataGridView2.AutoGenerateColumns = false;
+            dataGridView2.RowHeadersVisible = false;
+            dataGridView3.RowHeadersVisible = false;
 
             listAdded = new BindingList<Product>();
             dataGridView2.DataSource = productBL.listProducts();
@@ -335,6 +337,7 @@ namespace Presentation
             }
             textBox1.Text = "";
             textBox3.Text = "";
+            pointsTextBox.Text = "";
         }
 
         private void label3_Click_1(object sender, EventArgs e) {
@@ -353,12 +356,13 @@ namespace Presentation
                 if (nc != null) {
                     textBox1.Text = nc.Dni;
                     textBox3.Text = nc.Name + " " + nc.Surname;
-                }
-                
-                nc.IdPerson = naturalClientBL.searchNaturalClient(nc.Dni);
+                    pointsTextBox.Text = nc.Points.ToString();
 
-                idClient = nc.IdPerson;
-                Console.WriteLine("ID del cliente natural: " + nc.IdPerson);
+                    nc.IdPerson = naturalClientBL.searchNaturalClient(nc.Dni);
+
+                    idClient = nc.IdPerson;
+                    Console.WriteLine("ID del cliente natural: " + nc.IdPerson);
+                }
             }
             else {
                 Console.WriteLine("Searching Legal Client");
@@ -370,11 +374,12 @@ namespace Presentation
                 if (lc != null) {
                     textBox1.Text = lc.RUC;
                     textBox3.Text = lc.CompanyName;
-                }
+                    pointsTextBox.Text = lc.Points.ToString();
 
-                lc.IdPerson = legalClientBL.searchLegalClient(lc.RUC);
-                idClient = lc.IdPerson;
-                Console.WriteLine("ID del cliente legal: " + lc.IdPerson);
+                    lc.IdPerson = legalClientBL.searchLegalClient(lc.RUC);
+                    idClient = lc.IdPerson;
+                    Console.WriteLine("ID del cliente legal: " + lc.IdPerson);
+                }
             }
         }
 

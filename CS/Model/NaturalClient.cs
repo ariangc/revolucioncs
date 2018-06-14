@@ -9,11 +9,13 @@ namespace Model {
         private string name;
         private string surname;
         private string dni;
+        private int points;
 
         public NaturalClient() : base() { }
 
         public string Name { get => name; set => name = value; }
         public string Surname { get => surname; set => surname = value; }
         public string Dni { get => dni; set => dni = value; }
+        public int Points { get => points; set => points = value; }
     }
 }
