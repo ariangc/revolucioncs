@@ -63,6 +63,8 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pointsTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -74,14 +76,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.pointsTextBox = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalItems = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -294,8 +293,7 @@
             this.Column6,
             this.Column8,
             this.totalItems,
-            this.Column9,
-            this.Column1});
+            this.Column9});
             this.dataGridView2.Location = new System.Drawing.Point(12, 358);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
@@ -437,6 +435,23 @@
             this.groupBox1.Text = "Datos del Cliente";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(561, 33);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(40, 13);
+            this.label11.TabIndex = 39;
+            this.label11.Text = "Puntos";
+            // 
+            // pointsTextBox
+            // 
+            this.pointsTextBox.Location = new System.Drawing.Point(564, 49);
+            this.pointsTextBox.Name = "pointsTextBox";
+            this.pointsTextBox.ReadOnly = true;
+            this.pointsTextBox.Size = new System.Drawing.Size(64, 20);
+            this.pointsTextBox.TabIndex = 38;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label13);
@@ -560,23 +575,6 @@
             this.textBox4.TabIndex = 44;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // pointsTextBox
-            // 
-            this.pointsTextBox.Location = new System.Drawing.Point(564, 49);
-            this.pointsTextBox.Name = "pointsTextBox";
-            this.pointsTextBox.ReadOnly = true;
-            this.pointsTextBox.Size = new System.Drawing.Size(64, 20);
-            this.pointsTextBox.TabIndex = 38;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(561, 33);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(40, 13);
-            this.label11.TabIndex = 39;
-            this.label11.Text = "Puntos";
-            // 
             // Column5
             // 
             this.Column5.DataPropertyName = "Id";
@@ -616,14 +614,6 @@
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
             this.Column9.Width = 70;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "Points";
-            this.Column1.HeaderText = "Puntos Requeridos";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 70;
             // 
             // SellsManagement
             // 
@@ -717,6 +707,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalItems;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
     }
 }
