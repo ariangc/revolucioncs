@@ -131,6 +131,9 @@
     <EmbeddedResource Include="ClientManagement.resx">
       <DependentUpon>ClientManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ClientType.resx">
+      <DependentUpon>ClientType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditClient.resx">
       <DependentUpon>EditClient.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,6 +212,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="venta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="solicitud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="persona.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="empresa.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

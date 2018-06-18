@@ -66,16 +66,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.clientTabControl = new System.Windows.Forms.TabControl();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ModifyTabControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.RegisterTabControl.SuspendLayout();
             this.clientTabControl.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 432);
+            this.label3.Location = new System.Drawing.Point(9, 450);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 13);
             this.label3.TabIndex = 5;
@@ -84,7 +88,7 @@
             // 
             // ModifyTabControl
             // 
-            this.ModifyTabControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ModifyTabControl.BackColor = System.Drawing.Color.White;
             this.ModifyTabControl.Controls.Add(this.refreshButton);
             this.ModifyTabControl.Controls.Add(this.modifyClientButton);
             this.ModifyTabControl.Controls.Add(this.label14);
@@ -281,21 +285,10 @@
             // 
             // RegisterTabControl
             // 
-            this.RegisterTabControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.RegisterTabControl.Controls.Add(this.label10);
-            this.RegisterTabControl.Controls.Add(this.label8);
-            this.RegisterTabControl.Controls.Add(this.label7);
-            this.RegisterTabControl.Controls.Add(this.label6);
-            this.RegisterTabControl.Controls.Add(this.label5);
-            this.RegisterTabControl.Controls.Add(this.label4);
+            this.RegisterTabControl.BackColor = System.Drawing.Color.White;
+            this.RegisterTabControl.Controls.Add(this.groupBox2);
+            this.RegisterTabControl.Controls.Add(this.groupBox1);
             this.RegisterTabControl.Controls.Add(this.ConfirmButton);
-            this.RegisterTabControl.Controls.Add(this.emailTextBox);
-            this.RegisterTabControl.Controls.Add(this.phoneTextBox);
-            this.RegisterTabControl.Controls.Add(this.districtTextBox);
-            this.RegisterTabControl.Controls.Add(this.lastnameTextBox);
-            this.RegisterTabControl.Controls.Add(this.nameTextBox);
-            this.RegisterTabControl.Controls.Add(this.dniTextBox);
-            this.RegisterTabControl.Controls.Add(this.label2);
             this.RegisterTabControl.Controls.Add(this.label1);
             this.RegisterTabControl.Location = new System.Drawing.Point(4, 22);
             this.RegisterTabControl.Name = "RegisterTabControl";
@@ -307,7 +300,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(307, 278);
+            this.label10.Location = new System.Drawing.Point(192, 74);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(39, 13);
             this.label10.TabIndex = 24;
@@ -316,7 +309,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(108, 278);
+            this.label8.Location = new System.Drawing.Point(191, 74);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 13);
             this.label8.TabIndex = 22;
@@ -325,7 +318,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(307, 200);
+            this.label7.Location = new System.Drawing.Point(6, 74);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 13);
             this.label7.TabIndex = 21;
@@ -334,7 +327,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(108, 200);
+            this.label6.Location = new System.Drawing.Point(6, 74);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 13);
             this.label6.TabIndex = 20;
@@ -343,7 +336,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(307, 128);
+            this.label5.Location = new System.Drawing.Point(6, 29);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 13);
             this.label5.TabIndex = 19;
@@ -352,7 +345,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(108, 128);
+            this.label4.Location = new System.Drawing.Point(6, 26);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 13);
             this.label4.TabIndex = 18;
@@ -362,7 +355,7 @@
             // 
             this.ConfirmButton.BackColor = System.Drawing.Color.Silver;
             this.ConfirmButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ConfirmButton.Location = new System.Drawing.Point(218, 346);
+            this.ConfirmButton.Location = new System.Drawing.Point(207, 358);
             this.ConfirmButton.Name = "ConfirmButton";
             this.ConfirmButton.Size = new System.Drawing.Size(75, 23);
             this.ConfirmButton.TabIndex = 17;
@@ -373,9 +366,9 @@
             // emailTextBox
             // 
             this.emailTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.emailTextBox.Location = new System.Drawing.Point(300, 294);
+            this.emailTextBox.Location = new System.Drawing.Point(192, 90);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(100, 20);
+            this.emailTextBox.Size = new System.Drawing.Size(176, 20);
             this.emailTextBox.TabIndex = 16;
             this.emailTextBox.Click += new System.EventHandler(this.emailTextBox_Click);
             this.emailTextBox.TextChanged += new System.EventHandler(this.emailTextBox_TextChanged);
@@ -383,9 +376,9 @@
             // phoneTextBox
             // 
             this.phoneTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.phoneTextBox.Location = new System.Drawing.Point(300, 216);
+            this.phoneTextBox.Location = new System.Drawing.Point(9, 90);
             this.phoneTextBox.Name = "phoneTextBox";
-            this.phoneTextBox.Size = new System.Drawing.Size(100, 20);
+            this.phoneTextBox.Size = new System.Drawing.Size(177, 20);
             this.phoneTextBox.TabIndex = 15;
             this.phoneTextBox.Click += new System.EventHandler(this.phoneTextBox_Click);
             this.phoneTextBox.TextChanged += new System.EventHandler(this.phoneTextBox_TextChanged);
@@ -393,9 +386,9 @@
             // districtTextBox
             // 
             this.districtTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.districtTextBox.Location = new System.Drawing.Point(300, 144);
+            this.districtTextBox.Location = new System.Drawing.Point(9, 45);
             this.districtTextBox.Name = "districtTextBox";
-            this.districtTextBox.Size = new System.Drawing.Size(100, 20);
+            this.districtTextBox.Size = new System.Drawing.Size(176, 20);
             this.districtTextBox.TabIndex = 14;
             this.districtTextBox.Click += new System.EventHandler(this.districtTextBox_Click);
             this.districtTextBox.TextChanged += new System.EventHandler(this.districtTextBox_TextChanged);
@@ -403,9 +396,9 @@
             // lastnameTextBox
             // 
             this.lastnameTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lastnameTextBox.Location = new System.Drawing.Point(107, 294);
+            this.lastnameTextBox.Location = new System.Drawing.Point(191, 94);
             this.lastnameTextBox.Name = "lastnameTextBox";
-            this.lastnameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.lastnameTextBox.Size = new System.Drawing.Size(174, 20);
             this.lastnameTextBox.TabIndex = 13;
             this.lastnameTextBox.Click += new System.EventHandler(this.lastnameTextBox_Click);
             this.lastnameTextBox.TextChanged += new System.EventHandler(this.lastnameTextBox_TextChanged);
@@ -413,9 +406,9 @@
             // nameTextBox
             // 
             this.nameTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.nameTextBox.Location = new System.Drawing.Point(107, 216);
+            this.nameTextBox.Location = new System.Drawing.Point(9, 94);
             this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nameTextBox.Size = new System.Drawing.Size(176, 20);
             this.nameTextBox.TabIndex = 12;
             this.nameTextBox.Click += new System.EventHandler(this.nameTextBox_Click);
             this.nameTextBox.TextChanged += new System.EventHandler(this.nameTextBox_TextChanged);
@@ -423,7 +416,7 @@
             // dniTextBox
             // 
             this.dniTextBox.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.dniTextBox.Location = new System.Drawing.Point(107, 144);
+            this.dniTextBox.Location = new System.Drawing.Point(9, 42);
             this.dniTextBox.Name = "dniTextBox";
             this.dniTextBox.Size = new System.Drawing.Size(100, 20);
             this.dniTextBox.TabIndex = 11;
@@ -433,10 +426,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Modern No. 20", 12F);
-            this.label2.Location = new System.Drawing.Point(141, 65);
+            this.label2.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(269, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(194, 18);
+            this.label2.Size = new System.Drawing.Size(268, 18);
             this.label2.TabIndex = 10;
             this.label2.Text = "Usuario: Daniela Argumanis";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -444,10 +437,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Modern No. 20", 24F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(55, 18);
+            this.label1.Font = new System.Drawing.Font("Calibri Light", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(6, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(372, 34);
+            this.label1.Size = new System.Drawing.Size(276, 33);
             this.label1.TabIndex = 9;
             this.label1.Text = "Registrar Cliente Natural";
             // 
@@ -455,20 +449,53 @@
             // 
             this.clientTabControl.Controls.Add(this.RegisterTabControl);
             this.clientTabControl.Controls.Add(this.ModifyTabControl);
-            this.clientTabControl.Location = new System.Drawing.Point(6, 0);
+            this.clientTabControl.Location = new System.Drawing.Point(12, 21);
             this.clientTabControl.Name = "clientTabControl";
             this.clientTabControl.SelectedIndex = 0;
             this.clientTabControl.Size = new System.Drawing.Size(510, 429);
             this.clientTabControl.TabIndex = 6;
             this.clientTabControl.SelectedIndexChanged += new System.EventHandler(this.clientTabControl_SelectedIndexChanged);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.dniTextBox);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.nameTextBox);
+            this.groupBox1.Controls.Add(this.lastnameTextBox);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Location = new System.Drawing.Point(12, 60);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(380, 143);
+            this.groupBox1.TabIndex = 25;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Datos del Cliente";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.districtTextBox);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.phoneTextBox);
+            this.groupBox2.Controls.Add(this.emailTextBox);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Location = new System.Drawing.Point(12, 209);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(380, 122);
+            this.groupBox2.TabIndex = 26;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Datos de contacto";
+            // 
             // ClientManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(530, 454);
+            this.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.ClientSize = new System.Drawing.Size(533, 472);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.clientTabControl);
+            this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ClientManagement";
             this.Text = "Administración de clientes";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClientManagement_FormClosing);
@@ -479,6 +506,10 @@
             this.RegisterTabControl.ResumeLayout(false);
             this.RegisterTabControl.PerformLayout();
             this.clientTabControl.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -523,5 +554,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
