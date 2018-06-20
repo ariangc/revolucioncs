@@ -27,6 +27,7 @@ namespace Presentation
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = bussinessLogic.listRequests();
             dgvFlag = true;
+            textBox1.Text = Constants.CurrentUserText;
         }
 
         private void sendButton_Click(object sender, EventArgs e)
@@ -105,6 +106,14 @@ namespace Presentation
                 bussinessLogic.modifyRequest(r);
                 Console.WriteLine("Des: " + r.Description + " Type: " + r.Type.ToString() + "idEmployee: " + r.IdEmployee);
             }
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e) {
+            this.Close();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e) {
 
         }
     }

@@ -72,5 +72,15 @@ namespace Presentation
         private void userNameLabel_Click(object sender, EventArgs e) {
 
         }
+
+        private void button2_Click(object sender, EventArgs e) {
+            DialogResult result;
+
+            result = MessageBox.Show("Seguro que quiere cerrar sesión", "Cerrar Sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == System.Windows.Forms.DialogResult.Yes) {
+                this.Close();
+                Application.Restart();
+            }
+        }
     }
 }

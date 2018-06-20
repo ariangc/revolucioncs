@@ -110,7 +110,7 @@ namespace DataAccess {
             con.Open();
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = "searchNaturalClients";
+            cmd.CommandText = "listNaturalClients";
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
             if (dni.Length == 0) cmd.Parameters.Add("_dni", MySqlDbType.String).Value = DBNull.Value;
@@ -163,7 +163,9 @@ namespace DataAccess {
             cmd.Connection = con;
             MySqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
-            return reader.GetInt32("Points");
+            int points = reader.GetInt32("Points");
+            con.Close();
+            return points;
         }
     }
 }

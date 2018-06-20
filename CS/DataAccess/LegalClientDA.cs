@@ -43,6 +43,7 @@ namespace DataAccess {
             cmd.Parameters.Add("_ruc", MySqlDbType.String).Value = lc.RUC;
 
             cmd.ExecuteNonQuery();
+            con.Close();
         }
 
         public BindingList<LegalClient> listLegalClients(string ruc, string name)
@@ -155,7 +156,9 @@ namespace DataAccess {
             cmd.Connection = con;
             MySqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
-            return reader.GetInt32("Points");
+            int points = reader.GetInt32("Points");
+            con.Close();
+            return points;
         }
     }
 }

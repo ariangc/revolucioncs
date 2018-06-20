@@ -27,6 +27,7 @@ namespace Presentation
 
         private BindingList<Product> listAdded;
         private Dictionary<int, double> discountFactor;
+        private Dictionary<int, int> addedQuantity;
         private int idClient = -1;
 
         public SellsManagement() {
@@ -38,6 +39,8 @@ namespace Presentation
             naturalClientBL = new NaturalClientBL();
             legalClientBL = new LegalClientBL();
             ticketBL = new TicketBL();
+
+            addedQuantity = new Dictionary<int, int>();
 
             DateTime thisDay = DateTime.Today;
             fechaTextBox.Text = thisDay.ToString("d");
@@ -53,6 +56,16 @@ namespace Presentation
 
             textBox4.Text = Constants.CurrentUserText;
             comboBox1.SelectedIndex = 0;
+            comboBox2.SelectedIndex = 0;
+
+            textBox2.Show();
+            textBox6.Hide();
+
+            BindingList<Product> products = productBL.listProducts();
+
+            foreach (Product p in products) {
+                addedQuantity.Add(p.Id, 0);
+            }
         }
 
         private void updateDictionary() {
@@ -163,6 +176,16 @@ namespace Presentation
                         dataGridView2.DataSource = productBL.listProductsByName("");
                         listAdded.Clear();
                         dataGridView3.DataSource = listAdded;
+                        totalSale = 0.0;
+                        totalSaleDisc = 0.0;
+                        textBox8.Text = ""; textBox5.Text = ""; textBox9.Text = "";
+                        idClient = -1;
+                        textBox1.Text = ""; textBox3.Text = ""; pointsTextBox.Text = "";
+                        addedQuantity.Clear();
+                        BindingList<Product> products = productBL.listProducts();
+                        foreach (Product p in products) {
+                            addedQuantity.Add(p.Id, 0);
+                        }
                     }
                 }
                 else {
@@ -177,6 +200,16 @@ namespace Presentation
                         dataGridView2.DataSource = productBL.listProductsByName("");
                         listAdded.Clear();
                         dataGridView3.DataSource = listAdded;
+                        totalSale = 0.0;
+                        totalSaleDisc = 0.0;
+                        textBox8.Text = ""; textBox5.Text = ""; textBox9.Text = "";
+                        idClient = -1;
+                        textBox1.Text = ""; textBox3.Text = ""; pointsTextBox.Text = "";
+                        addedQuantity.Clear();
+                        BindingList<Product> products = productBL.listProducts();
+                        foreach (Product p in products) {
+                            addedQuantity.Add(p.Id, 0);
+                        }
                     }
                 }
             }
@@ -222,28 +255,37 @@ namespace Presentation
         }
 
         private void button4_Click(object sender, EventArgs e) {
-            String productName = textBox2.Text;
-            String symptoms = textBox6.Text;
-
-            dataGridView2.DataSource = productBL.lstProductXTagByLetters(symptoms);
+            
         }
 
         private void textBox2_TextChanged_2(object sender, EventArgs e) {
             String productName = textBox2.Text;
             String symptoms = textBox6.Text;
 
+            bool flagOK = true;
+
+            if (!DataValidation.ValidField(Constants.NameRegex, productName, ref flagOK)) label13.ForeColor = Color.Red;
+            else label13.ForeColor = Color.Black;
+
             dataGridView2.DataSource = productBL.listProductsByName(productName);
         }
 
         private void textBox6_TextChanged(object sender, EventArgs e) {
+            String productName = textBox2.Text;
+            String symptoms = textBox6.Text;
 
+            dataGridView2.DataSource = productBL.lstProductXTagByLetters(symptoms);
         }
 
         private void button6_Click(object sender, EventArgs e) {
             String quantity = textBox7.Text;
             Console.WriteLine("ID del cliente: " + idClient);
+            bool flagOK = true;
             if (quantity.Equals("")) {
                 MessageBox.Show("Por favor ingrese la cantidad a vender", "Falta cantidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (!DataValidation.ValidField(Constants.IntegerRegex, quantity, ref flagOK)){
+                MessageBox.Show("Por favor ingrese una cantidad correcta vender", "Cantidad incorrecta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (idClient == -1) {
                 MessageBox.Show("Por favor, primero seleccione el cliente", "Falta cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -252,7 +294,7 @@ namespace Presentation
                 int quantitySale;
                 if (Int32.TryParse(quantity, out quantitySale)) {
                     Product selectedProd = (Product)dataGridView2.CurrentRow.DataBoundItem;
-                    if (selectedProd.TotalItems < quantitySale) {
+                    if (selectedProd.TotalItems < addedQuantity[selectedProd.Id] + quantitySale) {
                         MessageBox.Show("La cantidad solicitada es mayor al stock disponible del producto: " + selectedProd.Name, "Insuficiente Stock", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
@@ -290,7 +332,9 @@ namespace Presentation
                         textBox9.Text = textBox8.Text;
                     }
                     textBox2.Text = ""; textBox6.Text = ""; textBox7.Text = "";
+                    addedQuantity[p.Id] += quantitySale;
                     dataGridView2.DataSource = productBL.listProductsByName("");
+                    dataGridView3.DataSource = listAdded;
                 }
                 else {
                     MessageBox.Show("Ingrese una cantidad numerica", "Cantidad no numerica", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -316,6 +360,7 @@ namespace Presentation
                     textBox9.Text = textBox8.Text;
                 }
                 textBox2.Text = ""; textBox6.Text = ""; textBox7.Text = "";
+                addedQuantity[listAdded[positionDelete].Id] -= listAdded[positionDelete].QuantitySale;
                 listAdded.RemoveAt(positionDelete);
                 dataGridView3.DataSource = listAdded;
                 updateDictionary();
@@ -385,7 +430,11 @@ namespace Presentation
 
         private void textBox7_TextChanged(object sender, EventArgs e)
         {
+            string quantity = textBox7.Text;
+            bool flagOK = true;
 
+            if (!DataValidation.ValidField(Constants.IntegerRegex, quantity, ref flagOK)) label16.ForeColor = Color.Red;
+            else label16.ForeColor = Color.Black;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -426,6 +475,7 @@ namespace Presentation
             String docClient = textBox1.Text;
             String document = (comboBox1.SelectedIndex == 0 ? "DNI" : "RUC");
             if (docClient.Equals("")) {
+                if (checkBox1.Checked == false) return;
                 MessageBox.Show("Por favor, inserte el " + document + " del cliente", "Falta " + document, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 checkBox1.Checked = false;
             }
@@ -451,6 +501,33 @@ namespace Presentation
         }
 
         private void textBox9_TextChanged(object sender, EventArgs e) {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e) {
+            Console.WriteLine(comboBox2.SelectedIndex);
+            if (comboBox2.SelectedIndex == 0) {
+                
+                textBox2.Show();
+                textBox6.Hide();
+
+                textBox2.Text = ""; textBox6.Text = "";
+                label13.Text = "Nombre del Producto";
+            }
+            else {
+                textBox2.Hide();
+                textBox6.Show();
+
+                textBox2.Text = ""; textBox6.Text = "";
+                label13.Text = "Sintomas asociados";
+            }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e) {
+
+        }
+
+        private void SellsManagement_Load(object sender, EventArgs e) {
 
         }
     }

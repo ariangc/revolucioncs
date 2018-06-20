@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
-using Utils;
 using BussinessLogic;
+using Utils;
 
 namespace Presentation
 {
@@ -34,7 +34,7 @@ namespace Presentation
 
             this.CenterToScreen();
 
-            label2.Text = Constants.CurrentUserText;
+            textBox4.Text = Constants.CurrentUserText;
 
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataSource = naturalClientBL.listNaturalClients("","","");
@@ -63,7 +63,7 @@ namespace Presentation
 
         private void dniTextBox_TextChanged(object sender, EventArgs e)
         {
-           
+            label4.ForeColor = Color.Black;
         }
 
         private void dniTextBox_Click(object sender, EventArgs e)
@@ -73,7 +73,7 @@ namespace Presentation
 
         private void nameTextBox_TextChanged(object sender, EventArgs e)
         {
-           
+            label6.ForeColor = Color.Black;
         }
 
         private void nameTextBox_Click(object sender, EventArgs e)
@@ -83,7 +83,7 @@ namespace Presentation
 
         private void lastnameTextBox_TextChanged(object sender, EventArgs e)
         {
-            
+            label8.ForeColor = Color.Black;
         }
 
         private void lastnameTextBox_Click(object sender, EventArgs e)
@@ -93,7 +93,7 @@ namespace Presentation
 
         private void districtTextBox_TextChanged(object sender, EventArgs e)
         {
-            
+            label5.ForeColor = Color.Black;
         }
 
         private void districtTextBox_Click(object sender, EventArgs e)
@@ -103,7 +103,7 @@ namespace Presentation
 
         private void phoneTextBox_TextChanged(object sender, EventArgs e)
         {
-           
+            label7.ForeColor = Color.Black;
         }
 
         private void phoneTextBox_Click(object sender, EventArgs e)
@@ -113,7 +113,7 @@ namespace Presentation
 
         private void emailTextBox_TextChanged(object sender, EventArgs e)
         {
-            
+            label10.ForeColor = Color.Black;   
         }
 
         private void emailTextBox_Click(object sender, EventArgs e)
@@ -136,54 +136,41 @@ namespace Presentation
 
         private void ConfirmButton_Click(object sender, EventArgs e)
         {
-            if(dniTextBox.Text== "" || nameTextBox.Text=="" || lastnameTextBox.Text=="" || districtTextBox.Text=="" || phoneTextBox.Text=="" || emailTextBox.Text == "")
-            {
-                MessageBox.Show("Debe llenar todos los campos", "Error en registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
-            }
-            else if (dniTextBox.Text.Length != 8 || !dniTextBox.Text.All(char.IsDigit)) {
-                MessageBox.Show("El campo DNI debe tener 8 dígitos", "Error en registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (!phoneTextBox.Text.All(char.IsDigit)) {
-                MessageBox.Show("El campo teléfono debe ser un número", "Error en registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else if (!isValidEmail(emailTextBox.Text))
-            {
-                MessageBox.Show("El campo E-mail debe ser correo electronico válido", "Error en registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            string dni = dniTextBox.Text;
+            string name = nameTextBox.Text;
+            string surname = lastnameTextBox.Text;
+            string district = districtTextBox.Text;
+            string email = emailTextBox.Text;
+            string phoneNumber = phoneTextBox.Text;
+
+            bool flagOK = true;
+
+            if (!DataValidation.ValidField(Constants.DniRegex, dni, ref flagOK)) label4.ForeColor = Color.Red;
+            if (!DataValidation.ValidField(Constants.NameRegex, name, ref flagOK)) label6.ForeColor = Color.Red;
+            if (!DataValidation.ValidField(Constants.SurnameRegex, surname, ref flagOK)) label8.ForeColor = Color.Red;
+            if (!DataValidation.ValidField(Constants.PlaceRegex, district, ref flagOK)) label5.ForeColor = Color.Red;
+            if (!DataValidation.ValidField(Constants.PhoneRegex, phoneNumber, ref flagOK)) label7.ForeColor = Color.Red;
+            if (!DataValidation.ValidField(Constants.EmailRegex, email, ref flagOK)) label10.ForeColor = Color.Red;
+
+            if (flagOK) {
+                NaturalClient nc = new NaturalClient();
+                nc.Dni = dni; nc.Name = name; nc.Surname = surname; nc.Address = district; nc.Email = email; nc.PhoneNumber = phoneNumber;
+                try {
+                    naturalClientBL.addNaturalClient(nc);
+                    MessageBox.Show("El cliente ha sido registrado", "Registro de cliente nuevo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dniTextBox.Clear();
+                    nameTextBox.Clear();
+                    lastnameTextBox.Clear();
+                    districtTextBox.Clear();
+                    emailTextBox.Clear();
+                    phoneTextBox.Clear();
+                }
+                catch (Exception ex) {
+                    MessageBox.Show("¡Existe un cliente con el mismo DNI!", "Error al añadir cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else {
-                string name = nameTextBox.Text;
-                string surname = lastnameTextBox.Text;
-                string district = districtTextBox.Text;
-                string email = emailTextBox.Text;
-
-                NaturalClient nc = new NaturalClient();
-                nc.Address = district;
-                nc.Dni = dniTextBox.Text;
-                nc.Name = name;
-                nc.Surname = surname;
-                nc.Email = email;
-                nc.PhoneNumber = phoneTextBox.Text;
-
-                try
-                {
-                    naturalClientBL.addNaturalClient(nc);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Ya existe el cliente", "Error al añadir cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                dataGridView1.DataSource = naturalClientBL.listNaturalClients("", "", "");
-
-                MessageBox.Show("El cliente ha sido registrado", "Registro de cliente nuevo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                dniTextBox.Text = "";
-                nameTextBox.Text = "";
-                lastnameTextBox.Text = "";
-                districtTextBox.Text = "";
-                phoneTextBox.Text = "";
-                emailTextBox.Text = "";
+                MessageBox.Show("Uno o más campos son incorrectos. Revise los campos en rojo.", "Error en registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -199,7 +186,16 @@ namespace Presentation
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-           
+            String dni = dniModifyClientTextBox.Text;
+            String name = nameModifyClientTextBox.Text;
+            String surname = surnameModifyClientTextBox.Text;
+
+            bool flagOK = true;
+
+            if (!DataValidation.ValidField(Constants.IntegerRegex, dni, ref flagOK)) label12.ForeColor = Color.Red;
+            else label12.ForeColor = Color.Black;
+
+            dataGridView1.DataSource = naturalClientBL.searchNaturalClients(dni, name, surname);
         }
 
         private void dniModifyClientTextBox_Click(object sender, EventArgs e)
@@ -209,12 +205,30 @@ namespace Presentation
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-           
+            String dni = dniModifyClientTextBox.Text;
+            String name = nameModifyClientTextBox.Text;
+            String surname = surnameModifyClientTextBox.Text;
+
+            bool flagOK = true;
+
+            if (!DataValidation.ValidField(Constants.NameRegex, name, ref flagOK)) label13.ForeColor = Color.Red;
+            else label13.ForeColor = Color.Black;
+
+            dataGridView1.DataSource = naturalClientBL.searchNaturalClients(dni, name, surname);
         }
 
         private void surnameModifyClientTextBox_TextChanged(object sender, EventArgs e)
         {
-            
+            String dni = dniModifyClientTextBox.Text;
+            String name = nameModifyClientTextBox.Text;
+            String surname = surnameModifyClientTextBox.Text;
+
+            bool flagOK = true;
+
+            if (!DataValidation.ValidField(Constants.SurnameRegex, surname, ref flagOK)) label14.ForeColor = Color.Red;
+            else label14.ForeColor = Color.Black;
+
+            dataGridView1.DataSource = naturalClientBL.searchNaturalClients(dni, name, surname);
         }
 
         private void nameModifyClientTextBox_Click(object sender, EventArgs e)
@@ -232,6 +246,13 @@ namespace Presentation
             String dni = dniModifyClientTextBox.Text;
             String name = nameModifyClientTextBox.Text;
             String surname = surnameModifyClientTextBox.Text;
+
+            bool flagOK = true;
+
+            if (!DataValidation.ValidField(Constants.DniRegex, dni, ref flagOK)) label12.ForeColor = Color.Red;
+            if (!DataValidation.ValidField(Constants.NameRegex, name, ref flagOK)) label13.ForeColor = Color.Red;
+            if (!DataValidation.ValidField(Constants.SurnameRegex, surname, ref flagOK)) label14.ForeColor = Color.Red;
+
             dataGridView1.DataSource = naturalClientBL.searchNaturalClients(dni, name, surname);
         }
 
@@ -269,6 +290,34 @@ namespace Presentation
         }
 
         private void label2_Click(object sender, EventArgs e) {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e) {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e) {
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e) {
+            this.Close();
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e) {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e) {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e) {
+            this.Close();
+        }
+
+        private void RegisterTabControl_Click(object sender, EventArgs e) {
 
         }
     }

@@ -20,6 +20,7 @@ namespace Presentation
             InitializeComponent();
             this.CenterToScreen();
             bussinessLogic = new EmployeeBL();
+            textBox1.Text = Constants.CurrentUserText;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -50,6 +51,18 @@ namespace Presentation
         private void label5_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e) {
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e) {
+            this.Close();
+        }
+
+        private void changePassword_Load(object sender, EventArgs e) {
+
         }
     }
 }

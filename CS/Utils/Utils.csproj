@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="Enumerators.cs" />
+    <Compile Include="DataValidation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

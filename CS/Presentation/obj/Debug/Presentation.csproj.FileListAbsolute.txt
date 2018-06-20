@@ -412,6 +412,14 @@ C:\Users\alulab14.INF\Desktop\revolucioncs\CS\Presentation\obj\Debug\Presentatio
 C:\Users\alulab14.INF\Desktop\revolucioncs\CS\Presentation\obj\Debug\Presentation.exe
 C:\Users\alulab14.INF\Desktop\revolucioncs\CS\Presentation\obj\Debug\Presentation.pdb
 C:\Users\alulab14.INF\Desktop\revolucioncs\CS\Presentation\obj\Debug\Presentation.SearchNaturalClient.resources
+C:\temp\revolucioncs\CS\Presentation\obj\Debug\Presentation.SearchLegalClient.resources
+C:\temp\revolucioncs\CS\Presentation\obj\Debug\Presentation.SearchNaturalClient.resources
+C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolucioncs\revolucioncs\CS\Presentation\obj\Debug\Presentation.SearchLegalClient.resources
+C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolucioncs\revolucioncs\CS\Presentation\obj\Debug\Presentation.SearchNaturalClient.resources
+C:\Users\alulab14.INF\Desktop\revolucioncs\CS\Presentation\obj\Debug\Presentation.SearchLegalClient.resources
+C:\Users\arian\Desktop\revolucioncs\CS\Presentation\obj\Debug\Presentation.SearchLegalClient.resources
+C:\Users\arian\Desktop\revolucioncs\CS\Presentation\obj\Debug\Presentation.SearchNaturalClient.resources
+C:\Users\arian\Desktop\revolucioncs\CS\Presentation\obj\Debug\Presentation.ClientType.resources
 C:\Users\arian\Desktop\LP2\revolucioncs\CS\Presentation\bin\Debug\Presentation.exe.config
 C:\Users\arian\Desktop\LP2\revolucioncs\CS\Presentation\bin\Debug\Presentation.exe
 C:\Users\arian\Desktop\LP2\revolucioncs\CS\Presentation\bin\Debug\Presentation.pdb
@@ -429,6 +437,7 @@ C:\Users\arian\Desktop\LP2\revolucioncs\CS\Presentation\bin\Debug\DataAccess.pdb
 C:\Users\arian\Desktop\LP2\revolucioncs\CS\Presentation\obj\Debug\Presentation.csprojResolveAssemblyReference.cache
 C:\Users\arian\Desktop\LP2\revolucioncs\CS\Presentation\obj\Debug\Presentation.changePassword.resources
 C:\Users\arian\Desktop\LP2\revolucioncs\CS\Presentation\obj\Debug\Presentation.ClientManagement.resources
+C:\Users\arian\Desktop\LP2\revolucioncs\CS\Presentation\obj\Debug\Presentation.ClientType.resources
 C:\Users\arian\Desktop\LP2\revolucioncs\CS\Presentation\obj\Debug\Presentation.EditClient.resources
 C:\Users\arian\Desktop\LP2\revolucioncs\CS\Presentation\obj\Debug\Presentation.EditLegalClient.resources
 C:\Users\arian\Desktop\LP2\revolucioncs\CS\Presentation\obj\Debug\Presentation.first.resources
@@ -445,11 +454,3 @@ C:\Users\arian\Desktop\LP2\revolucioncs\CS\Presentation\obj\Debug\Presentation.c
 C:\Users\arian\Desktop\LP2\revolucioncs\CS\Presentation\obj\Debug\Presentation.csproj.CopyComplete
 C:\Users\arian\Desktop\LP2\revolucioncs\CS\Presentation\obj\Debug\Presentation.exe
 C:\Users\arian\Desktop\LP2\revolucioncs\CS\Presentation\obj\Debug\Presentation.pdb
-C:\temp\revolucioncs\CS\Presentation\obj\Debug\Presentation.SearchLegalClient.resources
-C:\temp\revolucioncs\CS\Presentation\obj\Debug\Presentation.SearchNaturalClient.resources
-C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolucioncs\revolucioncs\CS\Presentation\obj\Debug\Presentation.SearchLegalClient.resources
-C:\Users\Lenovo\Documents\Cursos\2018-1\LP2\revolucioncs\revolucioncs\CS\Presentation\obj\Debug\Presentation.SearchNaturalClient.resources
-C:\Users\alulab14.INF\Desktop\revolucioncs\CS\Presentation\obj\Debug\Presentation.SearchLegalClient.resources
-C:\Users\arian\Desktop\revolucioncs\CS\Presentation\obj\Debug\Presentation.SearchLegalClient.resources
-C:\Users\arian\Desktop\revolucioncs\CS\Presentation\obj\Debug\Presentation.SearchNaturalClient.resources
-C:\Users\arian\Desktop\revolucioncs\CS\Presentation\obj\Debug\Presentation.ClientType.resources

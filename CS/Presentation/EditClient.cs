@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BussinessLogic;
 using Model;
+using Utils;
 
 namespace Presentation
 {
@@ -21,6 +22,7 @@ namespace Presentation
             InitializeComponent();
             naturalClientBL = new NaturalClientBL();
             selectedClient = nc;
+            textBox1.Text = Constants.CurrentUserText;
             textBox2.Text = nc.Name;
             textBox3.Text = nc.Surname;
             textBox4.Text = nc.Address;
@@ -75,24 +77,37 @@ namespace Presentation
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(namesCheckBox.Checked || surnameCheckBox.Checked || districtCheckBox.Checked || phoneCheckBox.Checked || emailCheckBox.Checked)
-            {
+            string name = textBox2.Text;
+            string surname = textBox3.Text;
+            string district = textBox4.Text;
+            string phoneNumber = textBox5.Text;
+            string email = textBox6.Text;
+
+            bool flagOK = true;
+
+            if (!DataValidation.ValidField(Constants.NameRegex, name, ref flagOK)) namesCheckBox.ForeColor = Color.Red;
+            if (!DataValidation.ValidField(Constants.SurnameRegex, surname, ref flagOK)) surnameCheckBox.ForeColor = Color.Red;
+            if (!DataValidation.ValidField(Constants.PlaceRegex, district, ref flagOK)) districtCheckBox.ForeColor = Color.Red;
+            if (!DataValidation.ValidField(Constants.PhoneRegex, phoneNumber, ref flagOK)) phoneCheckBox.ForeColor = Color.Red;
+            if (!DataValidation.ValidField(Constants.EmailRegex, email, ref flagOK)) emailCheckBox.ForeColor = Color.Red;
+
+            if (flagOK) {
                 DialogResult result;
                 result = MessageBox.Show("¿Esta Seguro de que desea cambiar el/los campo(s)?", "Cambio de cmapos de cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == System.Windows.Forms.DialogResult.Yes)
-                {
-                    if (namesCheckBox.Checked) selectedClient.Name = textBox2.Text;
-                    if (surnameCheckBox.Checked) selectedClient.Surname = textBox3.Text;
-                    if (districtCheckBox.Checked) selectedClient.Address = textBox4.Text;
-                    if (phoneCheckBox.Checked) selectedClient.PhoneNumber = textBox5.Text;
-                    if (emailCheckBox.Checked) selectedClient.Email = textBox6.Text;
+                if (result == System.Windows.Forms.DialogResult.Yes) {
+                    if (namesCheckBox.Checked) selectedClient.Name = name;
+                    if (surnameCheckBox.Checked) selectedClient.Surname = surname;
+                    if (districtCheckBox.Checked) selectedClient.Address = district ;
+                    if (phoneCheckBox.Checked) selectedClient.PhoneNumber = phoneNumber;
+                    if (emailCheckBox.Checked) selectedClient.Email = email;
                     naturalClientBL.updateNaturalClient(selectedClient);
                     MessageBox.Show("Se modifico al cliente", "Modificacion completada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
             }
-            else MessageBox.Show("Debe ingresar algún campo", "Cambio de cmapos de cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            
+            else {
+                MessageBox.Show("Uno o más campos son incorrectos. Revise los campos en rojo.", "Error en registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
@@ -103,7 +118,39 @@ namespace Presentation
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+            namesCheckBox.ForeColor = Color.Black;
+        }
 
+        private void button2_Click(object sender, EventArgs e) {
+            this.Close();
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e) {
+            surnameCheckBox.ForeColor = Color.Black;
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e) {
+            districtCheckBox.ForeColor = Color.Black;
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e) {
+            phoneCheckBox.ForeColor = Color.Black;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e) {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e) {
+            emailCheckBox.ForeColor = Color.Black;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e) {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e) {
+            this.Close();
         }
     }
 }
