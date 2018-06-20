@@ -201,6 +201,7 @@
             this.Subtotal});
             this.dataGridView3.Location = new System.Drawing.Point(514, 324);
             this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView3.Size = new System.Drawing.Size(397, 308);
             this.dataGridView3.TabIndex = 20;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
@@ -283,6 +284,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(12, 324);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(439, 308);
             this.dataGridView2.TabIndex = 13;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick_1);
