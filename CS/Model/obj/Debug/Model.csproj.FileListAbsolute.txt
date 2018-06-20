@@ -80,3 +80,13 @@ C:\Users\arian\Desktop\LP2\revolucioncs\CS\Model\obj\Debug\Model.csproj.CoreComp
 C:\Users\arian\Desktop\LP2\revolucioncs\CS\Model\obj\Debug\Model.csproj.CopyComplete
 C:\Users\arian\Desktop\LP2\revolucioncs\CS\Model\obj\Debug\Model.dll
 C:\Users\arian\Desktop\LP2\revolucioncs\CS\Model\obj\Debug\Model.pdb
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Model\bin\Debug\Model.dll
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Model\bin\Debug\Model.pdb
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Model\bin\Debug\Utils.dll
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Model\bin\Debug\Utils.pdb
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Model\bin\Debug\Utils.dll.config
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Model\obj\Debug\Model.csproj.CopyComplete
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Model\obj\Debug\Model.dll
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Model\obj\Debug\Model.pdb

@@ -454,3 +454,37 @@ C:\Users\arian\Desktop\LP2\revolucioncs\CS\Presentation\obj\Debug\Presentation.c
 C:\Users\arian\Desktop\LP2\revolucioncs\CS\Presentation\obj\Debug\Presentation.csproj.CopyComplete
 C:\Users\arian\Desktop\LP2\revolucioncs\CS\Presentation\obj\Debug\Presentation.exe
 C:\Users\arian\Desktop\LP2\revolucioncs\CS\Presentation\obj\Debug\Presentation.pdb
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\bin\Debug\Presentation.exe.config
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\bin\Debug\Presentation.exe
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\bin\Debug\Presentation.pdb
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\bin\Debug\BussinessLogic.dll
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\bin\Debug\Model.dll
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\bin\Debug\Utils.dll
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\bin\Debug\DataAccess.dll
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\bin\Debug\MySql.Data.dll
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\bin\Debug\Google.Protobuf.dll
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\bin\Debug\BussinessLogic.pdb
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\bin\Debug\Model.pdb
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\bin\Debug\Utils.pdb
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\bin\Debug\Utils.dll.config
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\bin\Debug\DataAccess.pdb
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\obj\Debug\Presentation.csprojResolveAssemblyReference.cache
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\obj\Debug\Presentation.changePassword.resources
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\obj\Debug\Presentation.ClientManagement.resources
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\obj\Debug\Presentation.ClientType.resources
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\obj\Debug\Presentation.EditClient.resources
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\obj\Debug\Presentation.EditLegalClient.resources
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\obj\Debug\Presentation.first.resources
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\obj\Debug\Presentation.LegalClientManagement.resources
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\obj\Debug\Presentation.RequestManagement.resources
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\obj\Debug\Presentation.SearchLegalClient.resources
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\obj\Debug\Presentation.SearchNaturalClient.resources
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\obj\Debug\Presentation.SellsManagement.resources
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\obj\Debug\Presentation.UserSession.resources
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\obj\Debug\Presentation.signInForm.resources
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\obj\Debug\Presentation.Properties.Resources.resources
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\obj\Debug\Presentation.csproj.GenerateResource.cache
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\obj\Debug\Presentation.csproj.CoreCompileInputs.cache
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\obj\Debug\Presentation.csproj.CopyComplete
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\obj\Debug\Presentation.exe
+C:\Users\arian\Desktop\LP2\CS - Usuario\CS\Presentation\obj\Debug\Presentation.pdb

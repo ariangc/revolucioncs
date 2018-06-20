@@ -147,5 +147,9 @@ namespace Presentation
         private void textBox1_TextChanged(object sender, EventArgs e) {
 
         }
+
+        private void button2_Click_1(object sender, EventArgs e) {
+            this.Close();
+        }
     }
 }
